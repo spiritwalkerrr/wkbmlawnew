@@ -627,10 +627,12 @@ input, textarea{
         margin: 0 10px;
     }
     .carousel-control-prev{
-        left:0;
+        left:20%;
+        top: -60%;
     }
     .carousel-control-next{
-        right: 0;
+        right: 20%;
+        top: -60%;
     }
     body{
         overflow: auto;
@@ -647,6 +649,7 @@ input, textarea{
     }
     #wrapper1{
         padding-top: 10%;
+        padding-bottom: 5%;
     }
     #wrapper3{
         margin-bottom: 60px;
@@ -656,6 +659,15 @@ input, textarea{
     }
     #legalNotice{
         margin-bottom: 20px;
+    }
+    .carousel-inner{
+        height: 100%;
+    }
+    .smallNavButtons{
+        width: 20%;
+    }
+    .navWrapper{
+        background-color: rgba(0, 0, 0);
     }
 }
 /* MOBILE SIZE */
