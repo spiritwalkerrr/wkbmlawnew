@@ -307,6 +307,11 @@ nav{
     .topBox{
         padding-top: 50px !important;
     }
+    .servicesBox:hover{
+        font-size: 1.2em;
+        transition: 200ms;
+        padding: 0;
+    }
 }
 .aboutImg1{
     background-image: url("https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
@@ -342,11 +347,6 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.servicesBox:hover{
-    font-size: 1.2em;
-    transition: 200ms;
-    padding: 0;
 }
 .servicesBox svg{
     margin-bottom: 20px;
@@ -411,7 +411,6 @@ nav{
         border-left: none;
         text-align: center;
         padding-left: 0;
-        border-top: solid 1px white;
         height: auto;
         width: 70%;
         padding-top: 20px;
@@ -463,6 +462,7 @@ input, textarea{
     margin: auto;
     font-weight: 200;
     font-size: 0.8em;
+    text-align: center;
 }
 /* FOOTER */
 .footer {
@@ -627,12 +627,10 @@ input, textarea{
         margin: 0 10px;
     }
     .carousel-control-prev{
-        left:20%;
-        top: -60%;
+    display:none
     }
     .carousel-control-next{
-        right: 20%;
-        top: -60%;
+    display:none
     }
     body{
         overflow: auto;
@@ -646,6 +644,7 @@ input, textarea{
     }
     section{
         height: 100%;
+        width: 100vw;
     }
     #wrapper1{
         padding-top: 10%;
