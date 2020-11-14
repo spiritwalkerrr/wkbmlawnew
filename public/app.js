@@ -184,30 +184,6 @@ function checkKey(e) {
         scrollDown()
     }
 }
-//TOUCH SCROLL
-let ts;
-let tm;
-//GIVES THE Y OF THE TOUCHSTART
-const touchStart = (event)=>{
-    ts = (event.touches[0].screenY)
-    window.removeEventListener("touchstart", touchStart)
-}
-//GIVES THE Y OF WHERE YOU MOVED
-const touchMove = (event)=>{
-    tm = (event.touches[0].screenY)
-    window.removeEventListener("touchmove", touchMove)
-    if(ts > tm){
-        scrollUp()
-    } else {
-        scrollDown()
-    } 
-    setTimeout(() => {
-        window.addEventListener("touchmove", touchMove)
-        window.addEventListener("touchstart", touchStart) 
-    }, 200);
-}
-
-
 //REGISTERS THE TOUCHSTART
 window.addEventListener("touchstart", touchStart)
 //REGISTERS THE MOVE ON TOUCHSCREEN
