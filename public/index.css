@@ -113,14 +113,7 @@ img{
         margin:0
     }
     .footer{
-        display: flex;
-        flex-direction: column;
-        height: 150px;
-        padding: 5px;
-    }
-    .separator{
         display: none;
-
     }
 }
 @media only screen and (max-width: 768px) {
