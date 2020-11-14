@@ -50,7 +50,7 @@ img{
 }
 .logo{
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
     height: 70%;
     margin: 10px 0;
     background-image: url("/images/logo2.svg");
@@ -131,9 +131,7 @@ img{
         height: 180px;
     }
     .enterButton{
-        width: 150px;
-        height: 30px;
-        font-size: 1.2em;
+        font-size: 0.9em;
     }
 }
 @media only screen and (max-width: 550px) {
