@@ -593,7 +593,7 @@ input, textarea{
     }
     .memberDesc p{
         font-size: 0.8em;
-        line-height: 1.1em;
+        line-height: 1em;
     }
     .memberDesc h3{
         font-size: 1em;
@@ -647,7 +647,7 @@ input, textarea{
         width: 100vw;
     }
     #wrapper1{
-        padding-top: 10%;
+        padding-top: 13%;
         padding-bottom: 5%;
     }
     #wrapper3{
