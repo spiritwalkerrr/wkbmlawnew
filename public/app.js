@@ -184,11 +184,7 @@ function checkKey(e) {
         scrollDown()
     }
 }
-//REGISTERS THE TOUCHSTART
-window.addEventListener("touchstart", touchStart)
-//REGISTERS THE MOVE ON TOUCHSCREEN
-window.addEventListener("touchmove", touchMove)
-//LEGAL NOTICE SCROLL
+
 noticeButton.addEventListener("click", ()=>{
     scrollToFour()
 })
