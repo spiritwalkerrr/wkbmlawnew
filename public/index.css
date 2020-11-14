@@ -1,0 +1,146 @@
+body{
+    background-color: #1e1a38;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow:hidden;
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.mail{
+    text-decoration: under;
+}
+
+a:hover 
+{
+     color:white; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+.mail{
+    text-decoration: underline;
+}
+button:focus{
+    outline: none;
+}
+/* JUSTITIA */
+.justitia{
+    position: fixed;
+}
+img{
+    height: 100vh;
+    opacity: 0.5;
+    position: fixed;
+    left: 55%;
+}
+/* HEADER */
+.background{
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 240px;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.logo{
+    width: 90%;
+    max-width: 1200px;
+    height: 70%;
+    margin: 10px 0;
+    background-image: url("/images/logo2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.enterButton{
+    background-color:rgba(240, 200, 121, 0.5);
+    margin:30px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
+    letter-spacing: 4px;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    transition: border 200ms;
+    transition: background-color 200ms;
+}
+.enterButton:hover{
+    background-color:rgba(240, 200, 121, 0.8);
+    transition: 200ms;
+    border-bottom: 2px solid white;
+}
+/* FOOTER */
+.footer {
+    position: fixed;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 0.8em;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.separator{
+    padding: 0 7px;
+}
+@media only screen and (max-width: 1200px) {
+    img{
+        left:45%
+    }
+    .background{
+        height: 240px;
+        
+    }
+}
+@media only screen and (max-width: 992px) {
+    img{
+        left:30%
+    }
+    .background{
+        height: 210px
+    }
+    .logo{
+        margin:0
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+        padding: 5px;
+    }
+    .separator{
+        display: none;
+
+    }
+}
+@media only screen and (max-width: 768px) {
+    img{
+        left:20%
+    }
+    .background{
+        height: 180px;
+    }
+    .enterButton{
+        width: 150px;
+        height: 30px;
+        font-size: 1.2em;
+    }
+}
+@media only screen and (max-width: 550px) {
+    img{
+        left:0%
+    }
+    .background{
+        height: 150px;
+    }
+}
