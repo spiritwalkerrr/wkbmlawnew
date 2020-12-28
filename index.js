@@ -21,9 +21,6 @@ app.engine("ejs", ejsMate)
 app.get("/", (req,res)=>{
     res.render("index.ejs")
 });
-app.get("/home", (req,res)=>{
-    res.render("home.ejs")
-});
 app.post("/home", (req,res)=>{
     //WORK IN PROGRESS
 })
