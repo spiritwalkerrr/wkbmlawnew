@@ -123,10 +123,10 @@ button, button:active{
 .menu{
     background: darkblue;
     height: 300vh;
-    width: 40vw;
+    width: 350px;
     z-index: 1;
     position: fixed;
-    left: -40vw;
+    left: -350px;
     transition: 300ms;
 }
 .menuExtended{

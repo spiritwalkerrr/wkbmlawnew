@@ -91,22 +91,6 @@ const showTeam = () => {
         resetOpacity();
     }, 500)
 }
-const showImp = () => {
-    resetOpacity();
-    impContainer.classList.remove("noDisplay");
-    impContainer.classList.add("fullOpacity");
-    homeContainer.classList.add("nullOpacity");
-    strContainer.classList.add("nullOpacity");
-    teamContainer.classList.add("nullOpacity");
-    stmtContainer.classList.add("nullOpacity");
-    setTimeout(() => {
-        homeContainer.classList.add("noDisplay");
-        strContainer.classList.add("noDisplay");
-        teamContainer.classList.add("noDisplay");
-        stmtContainer.classList.add("noDisplay");
-        resetOpacity();
-    }, 500)
-}
 const showStmt = () => {
     resetOpacity();
     stmtContainer.classList.remove("noDisplay");
@@ -120,6 +104,22 @@ const showStmt = () => {
         strContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
+        resetOpacity();
+    }, 500)
+}
+const showImp = () => {
+    resetOpacity();
+    impContainer.classList.remove("noDisplay");
+    impContainer.classList.add("fullOpacity");
+    homeContainer.classList.add("nullOpacity");
+    strContainer.classList.add("nullOpacity");
+    teamContainer.classList.add("nullOpacity");
+    stmtContainer.classList.add("nullOpacity");
+    setTimeout(() => {
+        homeContainer.classList.add("noDisplay");
+        strContainer.classList.add("noDisplay");
+        teamContainer.classList.add("noDisplay");
+        stmtContainer.classList.add("noDisplay");
         resetOpacity();
     }, 500)
 }
@@ -169,6 +169,16 @@ menuNavButton[2].addEventListener("click", () => {
         currentPage = 3;
     }
 })
+// SCRIPT THAT SHOWS THE CORRECT SECTION FOR "PRIVACY STATEMENT"
+for (let button of stmtButton) {
+    button.addEventListener("click", () => {
+        if (currentPage !== 5) {
+            window.scrollTo(0, 0);
+            showStmt();
+            currentPage = 5;
+        }
+    })
+}
 // SCRIPT THAT SHOWS THE CORRECT SECTION FOR "LEGAL NOTICE"
 for (let button of impButton) {
     button.addEventListener("click", () => {
@@ -179,13 +189,4 @@ for (let button of impButton) {
         }
     })
 }
-// SCRIPT THAT SHOWS THE CORRECT SECTION FOR "LEGAL NOTICE"
-for (let button of stmtButton) {
-    button.addEventListener("click", () => {
-        if (currentPage !== 5) {
-            window.scrollTo(0, 0);
-            showStmt();
-            currentPage = 5;
-        }
-    })
-}
+
