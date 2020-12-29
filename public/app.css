@@ -55,7 +55,6 @@ body{
     display: flex;
     justify-content: center;
     font-family: roboto;
-    overflow: hidden;
 }
 a{
     color: inherit;
@@ -87,23 +86,6 @@ button:hover{
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
-/* NAVBAR */
-nav{
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    display: flex;
-    border-bottom: 2px solid black;
-    background: white;
-    align-items: center;
-    z-index: 0.5;
-}
-.navbar{
-    margin-left: 50px;
-    width: 90%;
-    display: flex;
-    align-items: center;
-}
 button, button:active{
     border: none;
     background: inherit;
@@ -114,18 +96,64 @@ button, button:active{
 .infoButton{
     text-decoration: underline;
 }
+/* HEADER */
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    border-bottom: 2px solid black;
+    background: white;
+    align-items: center;
+}
+.headContainer{
+    margin-left: 50px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
 .temporary{
     font-size: 1.8em;
     margin-left: auto;
 }
+/* NAVICON */
+.navButton{
+    position: fixed;
+    top: 28px;
+    left: 50px;
+    z-index: 2;
+}
+.navButtonRotated{
+    color: white;
+    transform: rotate(90deg);
+}
+@keyframes navIconRotateIn{
+    from{transform: rotate(0deg); color: black}
+    to{transform: rotate(90deg); color: white}
+}
+@keyframes navIconRotateOut{
+    from{transform: rotate(90deg); color: white}
+    to{transform: rotate(0deg); color: black}
+}
+.navButtonRotateIn{
+    animation-name: navIconRotateIn;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+.navButtonRotateOut{
+    animation-name: navIconRotateOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
 /* MENU */
 /* MENU GENERAL */
 .menu{
     background: darkblue;
-    height: 300vh;
     width: 350px;
+    height: 100vh;
     z-index: 1;
-    position: fixed;
+    position: absolute;
     left: -350px;
     transition: 300ms;
 }
@@ -139,17 +167,7 @@ button, button:active{
     margin: auto;
 }
 /* MENUHEADER */
-.menuHeader{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    color: white;
-    align-items: center;
-    font-size: 2em;
-}
-.menuHeader span{
-    margin-left: 60px;
-}
+
 .menuButton{
     margin-left: auto;
     color: inherit;
@@ -160,7 +178,7 @@ button, button:active{
     color: white;
     font-size: 1.6em;
     line-height: 2em;
-    margin: 30px 0;
+    margin: 130px 0 30px;
     margin-left: 60px;
 }
 .menuNav ul li button svg{

@@ -2,9 +2,10 @@
 const body = document.querySelector("body");
 const menu = document.querySelector(".menu");
 const footer = document.querySelector("footer");
+const main = document.querySelector("main");
+const header = document.querySelector("header");
 
 const navButton = document.querySelector(".navButton");
-const menuButton = document.querySelector(".menuButton");
 
 const menuNavButton = document.querySelectorAll(".menuNavButton");
 const homeContainer = document.querySelector("#homeContainer");
@@ -16,15 +17,26 @@ const impButton = document.querySelectorAll(".impButton");
 const stmtButton = document.querySelectorAll(".stmtButton");
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
+let navExtended = false;
+// false = Menu Hidden
+// true = Menu Extended
 const navToggle = () => {
-    menu.classList.toggle("menuExtended");
-    footer.classList.toggle("footerHidden");
+    if (navExtended == false) {
+        navButton.classList.remove("navButtonRotateOut")
+        menu.classList.toggle("menuExtended");
+        footer.classList.toggle("footerHidden");
+        navButton.classList.add("navButtonRotateIn");
+        navExtended = true;
+    } else {
+        navButton.classList.remove("navButtonRotateIn");
+        menu.classList.toggle("menuExtended");
+        footer.classList.toggle("footerHidden");
+        navButton.classList.add("navButtonRotateOut");
+        navExtended = false;
+    }
 }
 // EVENTLISTENERS FOR NAV MENU TOGGLE
 navButton.addEventListener("click", () => {
-    navToggle()
-})
-menuButton.addEventListener("click", () => {
     navToggle()
 })
 for (let button of menuNavButton) {
@@ -36,13 +48,24 @@ contactButton.addEventListener("click", () => {
     navToggle();
 })
 //SCRIPT TO HIDE THE SIDEBAR IF LEGAL NOTICE OR PRIVACY STATEMENT ARE OPENED FROM SIDEBAR
-impButton[0].addEventListener("click", ()=>{
+impButton[0].addEventListener("click", () => {
     navToggle();
 })
-stmtButton[0].addEventListener("click", ()=>{
+stmtButton[0].addEventListener("click", () => {
     navToggle();
 })
-// TOGGLE FUNCTIONS
+// TOGGLE SIDE BAR BY HOVERING OFF IT
+main.addEventListener("mouseenter", (event) => {
+    if (event.target == main && navExtended == true) {
+        navToggle();
+    }
+})
+header.addEventListener("mouseenter", (event) => {
+    if (event.target == header && navExtended == true) {
+        navToggle();
+    }
+})
+// TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showHome = () => {
     resetOpacity();
     homeContainer.classList.remove("noDisplay");
