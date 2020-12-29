@@ -26,7 +26,9 @@ const navToggle = () => {
         menu.classList.toggle("menuExtended");
         footer.classList.toggle("footerHidden");
         navButton.classList.add("navButtonRotateIn");
-        navExtended = true;
+        setTimeout(() => {
+            navExtended = true;
+        }, 200)
     } else {
         navButton.classList.remove("navButtonRotateIn");
         menu.classList.toggle("menuExtended");
