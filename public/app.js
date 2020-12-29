@@ -1,16 +1,18 @@
 // SELECTORS
 const body = document.querySelector("body");
 const menu = document.querySelector(".menu");
-const footer = document.querySelector("footer");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
 
 const navButton = document.querySelector(".navButton");
-
 const menuNavButton = document.querySelectorAll(".menuNavButton");
+
 const homeContainer = document.querySelector("#homeContainer");
-const strContainer = document.querySelector("#strContainer");
+const aboutContainer = document.querySelector("#aboutContainer")
 const teamContainer = document.querySelector("#teamContainer");
+const contactContainer = document.querySelector("#contactContainer");
+const impContainer = document.querySelector("#impContainer");
+const stmtContainer = document.querySelector("#stmtContainer");
 
 const contactButton = document.querySelector(".contactButton");
 const impButton = document.querySelectorAll(".impButton");
@@ -24,7 +26,6 @@ const navToggle = () => {
     if (navExtended == false) {
         navButton.classList.remove("navButtonRotateOut")
         menu.classList.toggle("menuExtended");
-        footer.classList.toggle("footerHidden");
         navButton.classList.add("navButtonRotateIn");
         setTimeout(() => {
             navExtended = true;
@@ -32,30 +33,23 @@ const navToggle = () => {
     } else {
         navButton.classList.remove("navButtonRotateIn");
         menu.classList.toggle("menuExtended");
-        footer.classList.toggle("footerHidden");
         navButton.classList.add("navButtonRotateOut");
         navExtended = false;
     }
 }
-// EVENTLISTENERS FOR NAV MENU TOGGLE
+// EVENTLISTENERS FOR NAV MENU TOGGLE WITH SPAM PROTECTION
 navButton.addEventListener("click", () => {
+    navButton.setAttribute("disabled", "");
     navToggle()
+    setTimeout(()=>{
+        navButton.removeAttribute("disabled", "");
+    },300)
 })
 for (let button of menuNavButton) {
     button.addEventListener("click", () => {
         navToggle()
     })
 }
-contactButton.addEventListener("click", () => {
-    navToggle();
-})
-//SCRIPT TO HIDE THE SIDEBAR IF LEGAL NOTICE OR PRIVACY STATEMENT ARE OPENED FROM SIDEBAR
-impButton[0].addEventListener("click", () => {
-    navToggle();
-})
-stmtButton[0].addEventListener("click", () => {
-    navToggle();
-})
 // TOGGLE SIDE BAR BY HOVERING OFF IT
 main.addEventListener("mouseenter", (event) => {
     if (event.target == main && navExtended == true) {
@@ -67,33 +61,65 @@ header.addEventListener("mouseenter", (event) => {
         navToggle();
     }
 })
+//TOGGLE HEADER FUNCTION
+const hideHeader = () => {
+    header.classList.add("headerHidden");
+}
+const showHeader = () => {
+    header.classList.remove("headerHidden");
+}
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showHome = () => {
     resetOpacity();
     homeContainer.classList.remove("noDisplay");
     homeContainer.classList.add("fullOpacity");
-    strContainer.classList.add("nullOpacity");
+    aboutContainer.classList.add("nullOpacity");
+    contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    hideHeader();
     setTimeout(() => {
-        strContainer.classList.add("noDisplay");
+        contactContainer.classList.add("noDisplay");
+        aboutContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
         stmtContainer.classList.add("noDisplay");
         resetOpacity();
     }, 500)
 }
-const showStr = () => {
+const showAbout = () => {
     resetOpacity();
-    strContainer.classList.remove("noDisplay");
-    strContainer.classList.add("fullOpacity");
+    aboutContainer.classList.remove("noDisplay");
+    aboutContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
+    contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    showHeader();
+    setTimeout(() => {
+        contactContainer.classList.add("noDisplay");
+        homeContainer.classList.add("noDisplay");
+        teamContainer.classList.add("noDisplay");
+        impContainer.classList.add("noDisplay");
+        stmtContainer.classList.add("noDisplay");
+        resetOpacity();
+    }, 500)
+}
+const showContact = () => {
+    resetOpacity();
+    contactContainer.classList.remove("noDisplay");
+    contactContainer.classList.add("fullOpacity");
+    homeContainer.classList.add("nullOpacity");
+    aboutContainer.classList.add("nullOpacity");
+    teamContainer.classList.add("nullOpacity");
+    impContainer.classList.add("nullOpacity");
+    stmtContainer.classList.add("nullOpacity");
+    showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
+        aboutContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
         stmtContainer.classList.add("noDisplay");
@@ -105,12 +131,15 @@ const showTeam = () => {
     teamContainer.classList.remove("noDisplay");
     teamContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
-    strContainer.classList.add("nullOpacity");
+    aboutContainer.classList.add("nullOpacity");
+    contactContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
-        strContainer.classList.add("noDisplay");
+        aboutContainer.classList.add("noDisplay");
+        contactContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
         stmtContainer.classList.add("noDisplay");
         resetOpacity();
@@ -121,12 +150,15 @@ const showStmt = () => {
     stmtContainer.classList.remove("noDisplay");
     stmtContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
-    strContainer.classList.add("nullOpacity");
+    aboutContainer.classList.add("nullOpacity");
+    contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
+    showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
-        strContainer.classList.add("noDisplay");
+        aboutContainer.classList.add("noDisplay");
+        contactContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
         resetOpacity();
@@ -137,12 +169,15 @@ const showImp = () => {
     impContainer.classList.remove("noDisplay");
     impContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
-    strContainer.classList.add("nullOpacity");
+    aboutContainer.classList.add("nullOpacity");
+    contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
-        strContainer.classList.add("noDisplay");
+        aboutContainer.classList.add("noDisplay");
+        contactContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
         stmtContainer.classList.add("noDisplay");
         resetOpacity();
@@ -150,12 +185,14 @@ const showImp = () => {
 }
 //RESET OPACITY CLASSES FUNCTION
 const resetOpacity = () => {
-    homeContainer.classList.remove("fullOpacity")
-    homeContainer.classList.remove("nullOpacity")
-    strContainer.classList.remove("fullOpacity")
-    strContainer.classList.remove("nullOpacity")
-    teamContainer.classList.remove("fullOpacity")
-    teamContainer.classList.remove("nullOpacity")
+    homeContainer.classList.remove("fullOpacity");
+    homeContainer.classList.remove("nullOpacity");
+    aboutContainer.classList.remove("fullOpacity");
+    aboutContainer.classList.remove("nullOpacity");
+    teamContainer.classList.remove("fullOpacity");
+    teamContainer.classList.remove("nullOpacity");
+    contactContainer.classList.remove("fullOpacity");
+    contactContainer.classList.remove("nullOpacity");
     impContainer.classList.remove("fullOpacity");
     impContainer.classList.remove("nullOpacity");
     stmtContainer.classList.remove("fullOpacity");
@@ -165,10 +202,11 @@ const resetOpacity = () => {
 //NAVIGATION SCRIPT
 let currentPage = 1
 // 1 = HOME
-// 2 = STRENGTHS
+// 2 = ABOUT US
 // 3 = TEAM
-// 4 = LEGAL NOTICE
-// 5 = PRIVACY STATEMENT
+// 4 = CONTACT
+// 5 = LEGAL NOTICE
+// 6 = PRIVACY STATEMENT
 
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "HOME"
 menuNavButton[0].addEventListener("click", () => {
@@ -178,11 +216,11 @@ menuNavButton[0].addEventListener("click", () => {
         currentPage = 1;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "STRENGTHS"
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "ABOUT US"
 menuNavButton[1].addEventListener("click", () => {
     if (currentPage !== 2) {
         window.scrollTo(0, 0);
-        showStr();
+        showAbout();
         currentPage = 2;
     }
 })
@@ -194,24 +232,29 @@ menuNavButton[2].addEventListener("click", () => {
         currentPage = 3;
     }
 })
-// SCRIPT THAT SHOWS THE CORRECT SECTION FOR "PRIVACY STATEMENT"
-for (let button of stmtButton) {
-    button.addEventListener("click", () => {
-        if (currentPage !== 5) {
-            window.scrollTo(0, 0);
-            showStmt();
-            currentPage = 5;
-        }
-    })
-}
-// SCRIPT THAT SHOWS THE CORRECT SECTION FOR "LEGAL NOTICE"
-for (let button of impButton) {
-    button.addEventListener("click", () => {
-        if (currentPage !== 4) {
-            window.scrollTo(0, 0);
-            showImp();
-            currentPage = 4;
-        }
-    })
-}
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
+menuNavButton[3].addEventListener("click", () => {
+    if (currentPage !== 4) {
+        window.scrollTo(0, 0);
+        showContact();
+        currentPage = 4;
+    }
+})
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
+menuNavButton[4].addEventListener("click", () => {
+    if (currentPage !== 5) {
+        window.scrollTo(0, 0);
+        showImp();
+        currentPage = 5;
+    }
+})
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
+menuNavButton[5].addEventListener("click", () => {
+    if (currentPage !== 6) {
+        window.scrollTo(0, 0);
+        showStmt();
+        currentPage = 6;
+    }
+})
+
 
