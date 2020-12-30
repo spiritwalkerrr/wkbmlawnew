@@ -7,7 +7,6 @@ const header = document.querySelector("header");
 const navButton = document.querySelector(".navButton");
 const menuNavButton = document.querySelectorAll(".menuNavButton");
 
-const navIndicator = document.querySelector(".navIndicator");
 
 const homeContainer = document.querySelector("#homeContainer");
 const aboutContainer = document.querySelector("#aboutContainer")
@@ -71,26 +70,6 @@ const showHeader = () => {
     header.classList.remove("headerHidden");
 }
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
-const showHome = () => {
-    resetOpacity();
-    homeContainer.classList.remove("noDisplay");
-    homeContainer.classList.add("fullOpacity");
-    aboutContainer.classList.add("nullOpacity");
-    contactContainer.classList.add("nullOpacity");
-    teamContainer.classList.add("nullOpacity");
-    impContainer.classList.add("nullOpacity");
-    stmtContainer.classList.add("nullOpacity");
-    navIndicator.innerText ="Home";
-    hideHeader();
-    setTimeout(() => {
-        contactContainer.classList.add("noDisplay");
-        aboutContainer.classList.add("noDisplay");
-        teamContainer.classList.add("noDisplay");
-        impContainer.classList.add("noDisplay");
-        stmtContainer.classList.add("noDisplay");
-        resetOpacity();
-    }, 500)
-}
 const showAbout = () => {
     resetOpacity();
     aboutContainer.classList.remove("noDisplay");
@@ -100,7 +79,6 @@ const showAbout = () => {
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
-    navIndicator.innerText ="Kanzlei";
     showHeader();
     setTimeout(() => {
         contactContainer.classList.add("noDisplay");
@@ -120,7 +98,6 @@ const showContact = () => {
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
-    navIndicator.innerText ="Kontakt";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -140,7 +117,6 @@ const showTeam = () => {
     contactContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
-    navIndicator.innerText ="Anwälte";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -160,7 +136,6 @@ const showStmt = () => {
     contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
-    navIndicator.innerText ="Datenschutzerklärung";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -180,7 +155,6 @@ const showImp = () => {
     contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
-    navIndicator.innerText ="Impressum";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -218,38 +192,30 @@ let currentPage = 1
 
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "HOME"
 menuNavButton[0].addEventListener("click", () => {
-    if (currentPage !== 1) {
-        window.scrollTo(0, 0);
-        showHome();
-        currentPage = 1;
-    }
-})
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "ABOUT US"
-menuNavButton[1].addEventListener("click", () => {
     if (currentPage !== 2) {
         window.scrollTo(0, 0);
         showAbout();
         currentPage = 2;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
-menuNavButton[2].addEventListener("click", () => {
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "ABOUT US"
+menuNavButton[1].addEventListener("click", () => {
     if (currentPage !== 3) {
         window.scrollTo(0, 0);
         showTeam();
         currentPage = 3;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
-menuNavButton[3].addEventListener("click", () => {
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
+menuNavButton[2].addEventListener("click", () => {
     if (currentPage !== 4) {
         window.scrollTo(0, 0);
         showContact();
         currentPage = 4;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
-menuNavButton[4].addEventListener("click", () => {
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
+menuNavButton[3].addEventListener("click", () => {
     if (currentPage !== 5) {
         window.scrollTo(0, 0);
         showImp();
@@ -257,10 +223,11 @@ menuNavButton[4].addEventListener("click", () => {
     }
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
-menuNavButton[5].addEventListener("click", () => {
+menuNavButton[4].addEventListener("click", () => {
     if (currentPage !== 6) {
         window.scrollTo(0, 0);
         showStmt();
         currentPage = 6;
     }
 })
+

@@ -53,7 +53,7 @@ body{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica Neue" , "Arial Narrow", sans-serif;
     overflow-x: hidden;
     font-size: 1em
 }
@@ -103,21 +103,21 @@ header{
     height: 100px;
     position: fixed;
     display: flex;
+    background: white;
     top: 0;
-    background: lightgray;
     align-items: center;
-    justify-content: right;
     transition: 300ms;
+    border-bottom: 1px solid black;
 }
 .headerHidden{
     top: -100px;
     transition: 300ms;
 }
 .headContainer{
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .headLogo{
     width: 50%;
@@ -170,7 +170,7 @@ header{
     width: 350px;
     height: 100vh;
     z-index: 1;
-    position: absolute;
+    position: fixed;
     left: -350px;
     transition: 300ms;
 }
@@ -228,7 +228,7 @@ main{
 }
 /* CONTAINERS */
 .container{
-    margin-top: 120px;
+    margin-top: 130px;
     width: 90%;
     height: auto;
     position: absolute;
@@ -278,7 +278,6 @@ main{
 .lawyerContainer{
     width: 100%;
     height: 400px;
-    border-bottom: 1px solid black;
     display: flex;
     margin-bottom: 30px;
 }
@@ -286,5 +285,21 @@ main{
     width: 40%;
     height: 100%;
     background: url(https://www.seekpng.com/png/full/349-3499598_portrait-placeholder-placeholder-person.png);
+    background-size: cover;
+}
+.bgGray{
+    background: lightgray;
+}
+.lawyerDescription{
+    border: 1px dashed lightgray;
+    width: 60%;
+}
+.lawyerDescription h3{
+    font-size: 1.8em;
+}
+/* DR. WOHLMACHER */
+.wohlmacherPicture{
+    background: url(/images/wohlmacher.png);
+    background-repeat: no-repeat;
     background-size: cover;
 }
