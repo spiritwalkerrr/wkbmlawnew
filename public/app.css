@@ -79,12 +79,12 @@ button:hover{
 }
 .fullOpacity{
     animation-name: fadeIn;
-    animation-duration: 500ms;
+    animation-duration: 250ms;
     animation-fill-mode: forwards;
 }
 .nullOpacity{
     animation-name: fadeOut;
-    animation-duration: 500ms;
+    animation-duration: 250ms;
     animation-fill-mode: forwards;
 }
 button, button:active{
@@ -93,9 +93,6 @@ button, button:active{
     outline: none;
     color: inherit;
     font-size: inherit;
-}
-.infoButton{
-    text-decoration: underline;
 }
 /* HEADER */
 header{
@@ -184,7 +181,6 @@ header{
     margin: auto;
 }
 /* MENUHEADER */
-
 .menuButton{
     margin-left: auto;
     color: inherit;
@@ -222,84 +218,28 @@ header{
 /* MAIN */
 /* GENERAL */
 main{
-    width: 90%;
+    width: 100%;
+    margin-top: 120px;
     display: flex;
     justify-content: center;
 }
-/* CONTAINERS */
-.container{
-    margin-top: 130px;
-    width: 90%;
-    height: auto;
-    position: absolute;
-    min-height: 80%;
-    z-index: -1;
-    text-align: left;
-}
-.container h2{
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-/* HOME */
+/* LANDING PAGE */
 #homeContainer{
-    margin-top: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 .homeLogo{
-    max-width: 1000px;
-    min-width: 300px;
-    width: 80%;
-    height: 150px;
-    margin-top: 10%;
-}
-.homeIntro{
-    font-size: 1.3rem;
-    margin: 5% 0;
-    line-height: 1.5em;
-    width: 80%;
-    height: 100px;
-    color: rgb(71, 71, 71);
-}
-.homeFooter{
-    font-size: 0.8rem;
-    border-top: 1px solid black;
-    padding: 15px 30px 0;
-    
-}
-.homeSeparator{
-    margin: 0 10px;
-}
-/* ABOUT US */
-/* LAWYERS */
-.lawyerContainer{
-    width: 100%;
-    height: 400px;
-    display: flex;
-    margin-bottom: 30px;
-}
-.lawyerPicture{
-    width: 40%;
-    height: 100%;
-    background: url(https://www.seekpng.com/png/full/349-3499598_portrait-placeholder-placeholder-person.png);
-    background-size: cover;
-}
-.bgGray{
-    background: lightgray;
-}
-.lawyerDescription{
-    border: 1px dashed lightgray;
-    width: 60%;
-}
-.lawyerDescription h3{
-    font-size: 1.8em;
-}
-/* DR. WOHLMACHER */
-.wohlmacherPicture{
-    background: url(/images/wohlmacher.png);
+    width: 90%;
+    max-width: 1200px;
+    height: 200px;
+    background: url(/images/logo2.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+}
+/* CONTAINER */
+.container{
+    width: 90%;
+    max-width: 1400px;
+    height: 90%;
 }

@@ -42,9 +42,9 @@ const navToggle = () => {
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", "");
     navToggle()
-    setTimeout(()=>{
+    setTimeout(() => {
         navButton.removeAttribute("disabled", "");
-    },300)
+    }, 300)
 })
 for (let button of menuNavButton) {
     button.addEventListener("click", () => {
@@ -72,8 +72,6 @@ const showHeader = () => {
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showAbout = () => {
     resetOpacity();
-    aboutContainer.classList.remove("noDisplay");
-    aboutContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
@@ -86,32 +84,15 @@ const showAbout = () => {
         teamContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
         stmtContainer.classList.add("noDisplay");
-        resetOpacity();
-    }, 500)
-}
-const showContact = () => {
-    resetOpacity();
-    contactContainer.classList.remove("noDisplay");
-    contactContainer.classList.add("fullOpacity");
-    homeContainer.classList.add("nullOpacity");
-    aboutContainer.classList.add("nullOpacity");
-    teamContainer.classList.add("nullOpacity");
-    impContainer.classList.add("nullOpacity");
-    stmtContainer.classList.add("nullOpacity");
-    showHeader();
+        aboutContainer.classList.remove("noDisplay");
+        aboutContainer.classList.add("fullOpacity");
+    }, 250)
     setTimeout(() => {
-        homeContainer.classList.add("noDisplay");
-        aboutContainer.classList.add("noDisplay");
-        teamContainer.classList.add("noDisplay");
-        impContainer.classList.add("noDisplay");
-        stmtContainer.classList.add("noDisplay");
         resetOpacity();
     }, 500)
 }
 const showTeam = () => {
     resetOpacity();
-    teamContainer.classList.remove("noDisplay");
-    teamContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
@@ -124,32 +105,36 @@ const showTeam = () => {
         contactContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
         stmtContainer.classList.add("noDisplay");
+        teamContainer.classList.remove("noDisplay");
+        teamContainer.classList.add("fullOpacity");
+    }, 250)
+    setTimeout(() => {
         resetOpacity();
     }, 500)
 }
-const showStmt = () => {
+const showContact = () => {
     resetOpacity();
-    stmtContainer.classList.remove("noDisplay");
-    stmtContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
-    contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
+    stmtContainer.classList.add("nullOpacity");
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
         aboutContainer.classList.add("noDisplay");
-        contactContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
         impContainer.classList.add("noDisplay");
+        stmtContainer.classList.add("noDisplay");
+        contactContainer.classList.remove("noDisplay");
+        contactContainer.classList.add("fullOpacity");
+    }, 250)
+    setTimeout(() => {
         resetOpacity();
     }, 500)
 }
 const showImp = () => {
     resetOpacity();
-    impContainer.classList.remove("noDisplay");
-    impContainer.classList.add("fullOpacity");
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
@@ -162,6 +147,31 @@ const showImp = () => {
         contactContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
         stmtContainer.classList.add("noDisplay");
+        impContainer.classList.remove("noDisplay");
+        impContainer.classList.add("fullOpacity");
+    }, 250)
+    setTimeout(() => {
+        resetOpacity();
+    }, 500)
+}
+const showStmt = () => {
+    resetOpacity();
+    homeContainer.classList.add("nullOpacity");
+    aboutContainer.classList.add("nullOpacity");
+    contactContainer.classList.add("nullOpacity");
+    teamContainer.classList.add("nullOpacity");
+    impContainer.classList.add("nullOpacity");
+    showHeader();
+    setTimeout(() => {
+        homeContainer.classList.add("noDisplay");
+        aboutContainer.classList.add("noDisplay");
+        contactContainer.classList.add("noDisplay");
+        teamContainer.classList.add("noDisplay");
+        impContainer.classList.add("noDisplay");
+        stmtContainer.classList.remove("noDisplay");
+        stmtContainer.classList.add("fullOpacity");
+    }, 250)
+    setTimeout(() => {
         resetOpacity();
     }, 500)
 }
