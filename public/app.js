@@ -7,6 +7,8 @@ const header = document.querySelector("header");
 const navButton = document.querySelector(".navButton");
 const menuNavButton = document.querySelectorAll(".menuNavButton");
 
+const navIndicator = document.querySelector(".navIndicator");
+
 const homeContainer = document.querySelector("#homeContainer");
 const aboutContainer = document.querySelector("#aboutContainer")
 const teamContainer = document.querySelector("#teamContainer");
@@ -78,6 +80,7 @@ const showHome = () => {
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    navIndicator.innerText ="Home";
     hideHeader();
     setTimeout(() => {
         contactContainer.classList.add("noDisplay");
@@ -97,6 +100,7 @@ const showAbout = () => {
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    navIndicator.innerText ="Kanzlei";
     showHeader();
     setTimeout(() => {
         contactContainer.classList.add("noDisplay");
@@ -116,6 +120,7 @@ const showContact = () => {
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    navIndicator.innerText ="Kontakt";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -135,6 +140,7 @@ const showTeam = () => {
     contactContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    navIndicator.innerText ="Anwälte";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -154,6 +160,7 @@ const showStmt = () => {
     contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
+    navIndicator.innerText ="Datenschutzerklärung";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -173,6 +180,7 @@ const showImp = () => {
     contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    navIndicator.innerText ="Impressum";
     showHeader();
     setTimeout(() => {
         homeContainer.classList.add("noDisplay");
@@ -256,5 +264,3 @@ menuNavButton[5].addEventListener("click", () => {
         currentPage = 6;
     }
 })
-
-
