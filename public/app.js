@@ -244,4 +244,10 @@ contactButton.addEventListener("click", () => {
     showContact();
     currentPage = 4;
 })
-
+// SCROLLING SCRIPT FOR NAVBAR
+window.onscroll = (event) => {
+    header.classList.add("headerScrolled");
+    if(window.pageYOffset == 0){
+        header.classList.remove("headerScrolled")
+    }
+}
