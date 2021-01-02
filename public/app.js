@@ -16,8 +16,6 @@ const impContainer = document.querySelector("#impContainer");
 const stmtContainer = document.querySelector("#stmtContainer");
 
 const contactButton = document.querySelector(".contactButton");
-const impButton = document.querySelectorAll(".impButton");
-const stmtButton = document.querySelectorAll(".stmtButton");
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
 let navExtended = false;
@@ -239,5 +237,11 @@ menuNavButton[4].addEventListener("click", () => {
         showStmt();
         currentPage = 6;
     }
+})
+// OTHER "REDIRECT" SCRIPTS NOT RELATED TO THE SIDEBAR BUTTONS
+contactButton.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+    showContact();
+    currentPage = 4;
 })
 

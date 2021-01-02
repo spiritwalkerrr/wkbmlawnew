@@ -219,7 +219,7 @@ header{
 /* GENERAL */
 main{
     width: 100%;
-    margin-top: 120px;
+    margin-top: 140px;
     display: flex;
     justify-content: center;
 }
@@ -240,6 +240,91 @@ main{
 /* CONTAINER */
 .container{
     width: 90%;
-    max-width: 1400px;
     height: 90%;
+}
+/* INDIVIDUAL CONTAINERS */
+/* ABOUT */
+#aboutContainer p{
+    font-size: 1.2em;
+    line-height: 1.2em;
+    padding: 10px 0;
+    padding-left: 20px;
+    border-left: 1px solid gray;
+    text-align: justify;
+    width: 80%;
+    margin: auto;
+}
+.contactButton{
+    text-decoration: underline;
+}
+/* LAWYERS */
+#teamContainer{
+    width: 100% !important;
+}
+.lawyerContainer{
+    width: 100vw;
+    height: 350px;
+    display: flex;
+}
+.lawyerPicture{
+    width: 40%;
+    height: 100%;
+}
+.lawyerDescription{
+    width: 60%;
+    max-width: 600px;
+    height: 100%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.lawyerDescription h3{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.lawyerDescription h4{
+    font-size: 1.6em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.lawyerDescription li{
+    font-size: 1.1em;
+    line-height: 1.3em;
+    padding-left: 10px;
+}
+.bg-dark{
+    background: lightgray;
+}
+.blankspace{
+    height: 50px;
+}
+/* WOHLMACHER */
+.wohlmacherPicture{
+    background: url("/images/wohlmacher.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+/* KAISER */
+.kaiserPicture{
+    background: url("/images/kaiser.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+/* BECKER */
+.beckerPicture{
+    background: url("/images/becker.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; 
+}
+/* MOHR-EGGER */
+.mohrEggerPicture{
+    background: url("/images/mohr-egger.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; 
 }
