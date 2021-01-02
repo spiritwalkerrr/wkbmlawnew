@@ -307,19 +307,19 @@ main{
 /* RIGHTALIGN */
 .rightAlign{
     background: rgb(231, 231, 231);
-    text-align: right;
+    /* text-align: right; */
 }
 .rightAlign .lawyerWrapper{
     display: flex;
     flex-direction: row-reverse;
 }
-.rightAlign .lawyerDescription{
+/* .rightAlign .lawyerDescription{
     padding-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-}
+} */
 .rightAlign .lawyerDescription li{
     padding-right: 10px;
 }
