@@ -173,7 +173,7 @@ const showStmt = () => {
         resetOpacity();
     }, 500)
 }
-//RESET OPACITY CLASSES FUNCTION
+//RESET OPACITY CLASSES FUNCTION & REMOVE HEADER BAR
 const resetOpacity = () => {
     homeContainer.classList.remove("fullOpacity");
     homeContainer.classList.remove("nullOpacity");
@@ -187,6 +187,7 @@ const resetOpacity = () => {
     impContainer.classList.remove("nullOpacity");
     stmtContainer.classList.remove("fullOpacity");
     stmtContainer.classList.remove("nullOpacity");
+    header.classList.remove("headerScrolled")
 }
 
 //NAVIGATION SCRIPT
@@ -246,8 +247,11 @@ contactButton.addEventListener("click", () => {
 })
 // SCROLLING SCRIPT FOR NAVBAR
 window.onscroll = (event) => {
-    header.classList.add("headerScrolled");
-    if(window.pageYOffset == 0){
+    if (currentPage == 3) {
+        header.classList.add("headerScrolled");
+        
+    }
+    if (window.pageYOffset == 0) {
         header.classList.remove("headerScrolled")
     }
 }
