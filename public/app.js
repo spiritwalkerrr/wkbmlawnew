@@ -3,6 +3,7 @@ const body = document.querySelector("body");
 const menu = document.querySelector(".menu");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
+const footer = document.querySelector("footer");
 
 const navButton = document.querySelector(".navButton");
 const menuNavButton = document.querySelectorAll(".menuNavButton");
@@ -40,13 +41,15 @@ const navToggle = () => {
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", "");
     navToggle()
+    toggleFooter();
     setTimeout(() => {
         navButton.removeAttribute("disabled", "");
     }, 300)
 })
 for (let button of menuNavButton) {
     button.addEventListener("click", () => {
-        navToggle()
+        navToggle();
+        toggleFooter();
     })
 }
 // TOGGLE SIDE BAR BY HOVERING OFF IT
@@ -66,6 +69,10 @@ const hideHeader = () => {
 }
 const showHeader = () => {
     header.classList.remove("headerHidden");
+}
+// TOGGLE FOOTER FUNCTION
+const toggleFooter = () => {
+    footer.classList.toggle("footerHidden");
 }
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showAbout = () => {
