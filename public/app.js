@@ -40,8 +40,8 @@ const navToggle = () => {
 // EVENTLISTENERS FOR NAV MENU TOGGLE WITH SPAM PROTECTION
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", "");
-    navToggle()
-    toggleFooter();
+    navToggle();
+    footerToggle();
     setTimeout(() => {
         navButton.removeAttribute("disabled", "");
     }, 300)
@@ -49,18 +49,19 @@ navButton.addEventListener("click", () => {
 for (let button of menuNavButton) {
     button.addEventListener("click", () => {
         navToggle();
-        toggleFooter();
     })
 }
 // TOGGLE SIDE BAR BY HOVERING OFF IT
 main.addEventListener("mouseenter", (event) => {
     if (event.target == main && navExtended == true) {
         navToggle();
+        footerToggle();
     }
 })
 header.addEventListener("mouseenter", (event) => {
     if (event.target == header && navExtended == true) {
         navToggle();
+        footerToggle();
     }
 })
 //TOGGLE HEADER FUNCTION
@@ -70,15 +71,20 @@ const hideHeader = () => {
 const showHeader = () => {
     header.classList.remove("headerHidden");
 }
-// TOGGLE FOOTER FUNCTION
-const toggleFooter = () => {
-    setTimeout(() => {
+// SHOW AND HIDE FOOTER FOOTER FUNCTIONS
+const footerToggle = () => {
+    if (currentPage == 3) {
+        setTimeout(() => {
+            footer.classList.toggle("footerHidden");
+        }, 250)
+    } else {
         footer.classList.toggle("footerHidden");
-    },250)
+    }
 }
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showAbout = () => {
     resetOpacity();
+    footerToggle();
     homeContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
@@ -116,11 +122,13 @@ const showTeam = () => {
         teamContainer.classList.add("fullOpacity");
     }, 250)
     setTimeout(() => {
+        footerToggle();
         resetOpacity();
     }, 500)
 }
 const showContact = () => {
     resetOpacity();
+    footerToggle();
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
@@ -142,6 +150,7 @@ const showContact = () => {
 }
 const showImp = () => {
     resetOpacity();
+    footerToggle();
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
@@ -163,6 +172,7 @@ const showImp = () => {
 }
 const showStmt = () => {
     resetOpacity();
+    footerToggle();
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
@@ -254,16 +264,7 @@ contactButton.addEventListener("click", () => {
     showContact();
     currentPage = 4;
 })
-// SCROLLING SCRIPT FOR NAVBAR
-window.onscroll = (event) => {
-    if (currentPage == 3) {
-        header.classList.add("headerScrolled");
 
-    }
-    if (window.pageYOffset == 0) {
-        header.classList.remove("headerScrolled")
-    }
-}
 // MAPBOX SCRIPT
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3Bpcml0d2Fsa2VyIiwiYSI6ImNraGY0MHAycDAzb2Iyem1jcXU0aWV2cGIifQ.MfTbOJHB_HK3lD0O6hNt-Q';
 var map = new mapboxgl.Map({

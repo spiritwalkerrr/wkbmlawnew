@@ -118,9 +118,6 @@ header{
     top: -110px;
     transition: 300ms;
 }
-.headerScrolled{
-    border-bottom: 1px solid black;
-}
 .headContainer{
     width: 100%;
     display: flex;
