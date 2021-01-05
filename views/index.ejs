@@ -12,6 +12,9 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- MAPBOX -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
 </head>
 
@@ -166,15 +169,25 @@
             <div class="blankspace"></div>
         </div>
         <div class="container noDisplay" id="contactContainer">
-            <!-- Landjaeger salami spare ribs, kielbasa turducken ham hock swine porchetta kevin boudin pastrami sausage.
-            Pork pork chop flank boudin bacon, chislic drumstick andouille beef ribs turkey. Pork belly hamburger
-            sausage shoulder tri-tip meatloaf beef ribs kielbasa chislic ground round buffalo fatback chicken. Pig
-            tri-tip picanha kevin swine shankle short loin brisket.
-
-            Frankfurter bacon kevin, corned beef kielbasa chuck meatball bresaola sirloin spare ribs salami. Ribeye
-            shankle shank, sirloin pork chop swine leberkas corned beef. Pork frankfurter sirloin, capicola pig kielbasa
-            buffalo salami ball tip pork loin shank. Meatball kevin buffalo, cupim ham hock picanha boudin sausage shank
-            t-bone chuck drumstick andouille salami turducken. -->
+            <div class="contactInfo">
+                <div class="map" id='map' style='width: 400px; height: 300px;'></div>
+                <div class="address">
+                    <ul>
+                        <h4>Address:</h4>
+                        <li>Wohlmacher Kaiser Becker Mohr-Egger</li>
+                        <li>Altenbach 8</li>
+                        <li>P.O. Box 949</li>
+                        <li>9490 Vaduz</li>
+                        <li>Liechtenstein</li>
+                    </ul>
+                    <ul>
+                        <h4>Contact:</h4>
+                        <li>Tel: +423 233 44 44</li>
+                        <li>Fax: +423 233 45 04 </li>
+                        <li>Email: wh@whlaw.li</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="container noDisplay" id="stmtContainer">
             <!-- Tri-tip pastrami tenderloin meatloaf. Tongue frankfurter alcatra tenderloin turkey pig prosciutto landjaeger

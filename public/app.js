@@ -249,9 +249,20 @@ contactButton.addEventListener("click", () => {
 window.onscroll = (event) => {
     if (currentPage == 3) {
         header.classList.add("headerScrolled");
-        
+
     }
     if (window.pageYOffset == 0) {
         header.classList.remove("headerScrolled")
     }
 }
+// MAPBOX SCRIPT
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3Bpcml0d2Fsa2VyIiwiYSI6ImNraGY0MHAycDAzb2Iyem1jcXU0aWV2cGIifQ.MfTbOJHB_HK3lD0O6hNt-Q';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [9.52230, 47.14193],
+    zoom: 13
+});
+var marker = new mapboxgl.Marker()
+    .setLngLat([9.52230, 47.14193])
+    .addTo(map);

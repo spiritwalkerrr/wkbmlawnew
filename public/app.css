@@ -347,3 +347,35 @@ main{
     background-size: contain;
     background-position: bottom; 
 }
+/* CONTACT */
+/* MAP & ADDRESS */
+#map{
+    border-radius: 20px;
+}
+.contactInfo{
+    width: 80%;
+    height: 300px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.address{
+    margin-left: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.address h4{
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+.address li{
+    font-size: 1.3em;
+    line-height: 1.2em;
+    padding-left: 10px;
+    border-left: 1px solid black;
+}
+.address ul:first-of-type{
+    margin-bottom: 15px;
+}
