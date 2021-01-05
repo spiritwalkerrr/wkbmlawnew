@@ -72,7 +72,9 @@ const showHeader = () => {
 }
 // TOGGLE FOOTER FUNCTION
 const toggleFooter = () => {
-    footer.classList.toggle("footerHidden");
+    setTimeout(() => {
+        footer.classList.toggle("footerHidden");
+    },250)
 }
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showAbout = () => {

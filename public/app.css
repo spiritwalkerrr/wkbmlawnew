@@ -56,7 +56,9 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
     overflow-x: hidden;
-    font-size: 1em
+    font-size: 1em;
+    display: flex;
+    flex-wrap: wrap;
 }
 a{
     color: inherit;
@@ -165,11 +167,11 @@ header{
 /* MENU GENERAL */
 .menu{
     background: rgb(41, 41, 41);
-    width: 350px;
+    width: 20%;
     height: 100vh;
     z-index: 1;
     position: fixed;
-    left: -350px;
+    left: -20%;
     transition: 300ms;
 }
 .menuExtended{
@@ -248,7 +250,7 @@ main{
     z-index: -1;
 }
 .container{
-    width: 90%;
+    width: 60%;
     /* height: 90%; */
 }
 /* INDIVIDUAL CONTAINERS */
@@ -276,7 +278,7 @@ main{
     display: flex;
 }
 .lawyerWrapper{
-    width: 80%;
+    width: 60%;
     height: 100%;
     display: flex;
     margin: auto;
@@ -383,14 +385,15 @@ main{
 }
 /* FOOTER */
 footer{
+    align-self: flex-end;
     width: 100%;
-    height: 40px;
+    height: 70px;
     background: lightgray;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
-    transition: 300ms;
+    transition: 250ms;
 }
 .footerHidden{
-    bottom: -40px;
+    bottom: -70px;
 }
