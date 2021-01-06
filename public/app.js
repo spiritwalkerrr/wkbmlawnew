@@ -16,7 +16,7 @@ const contactContainer = document.querySelector("#contactContainer");
 const impContainer = document.querySelector("#impContainer");
 const stmtContainer = document.querySelector("#stmtContainer");
 
-const contactButton = document.querySelector(".contactButton");
+const teamButton = document.querySelector(".teamButton");
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
 let navExtended = false;
@@ -259,20 +259,9 @@ menuNavButton[4].addEventListener("click", () => {
     }
 })
 // OTHER "REDIRECT" SCRIPTS NOT RELATED TO THE SIDEBAR BUTTONS
-contactButton.addEventListener("click", () => {
+teamButton.addEventListener("click", () => {
     window.scrollTo(0, 0);
-    showContact();
-    currentPage = 4;
+    showTeam();
+    footerToggle();
+    currentPage = 3;
 })
-
-// MAPBOX SCRIPT
-mapboxgl.accessToken = 'pk.eyJ1Ijoic3Bpcml0d2Fsa2VyIiwiYSI6ImNraGY0MHAycDAzb2Iyem1jcXU0aWV2cGIifQ.MfTbOJHB_HK3lD0O6hNt-Q';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [9.52230, 47.14193],
-    zoom: 13
-});
-var marker = new mapboxgl.Marker()
-    .setLngLat([9.52230, 47.14193])
-    .addTo(map);

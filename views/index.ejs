@@ -7,26 +7,17 @@
     <title>Wohlmacher Kaiser Becker Mohr-Egger</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="/app.css">
-    <!-- ROBOTO -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <!-- STAATLICHES -->
+    <!-- SOURCE SANS PRO FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Staatliches&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap"
         rel="stylesheet">
-    <!-- MAPBOX -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
-
 </head>
 
 <body>
     <!-- NAVBAR -->
     <header class="headerHidden">
-        <div class="headContainer">
-            <span class="headLogo"></span>
+        <div class="headerContainer">
+            <span class="headerLogo"></span>
         </div>
     </header>
     <nav>
@@ -37,7 +28,7 @@
             </svg></button>
     </nav>
     <!-- MENU -->
-    <div class="menu menuHidden">
+    <div class="menu">
         <!-- NAV -->
         <div class="menuNav">
             <ul>
@@ -51,17 +42,13 @@
     </div>
     <!-- MAIN -->
     <main>
-        <div class="container" id="homeContainer">
+        <div id="homeContainer">
             <div class="homeLogo">
 
             </div>
         </div>
         <div class="container noDisplay" id="aboutContainer">
-            <h2>About Us</h2>
-            <p>
-                Wohlmacher Kaiser Becker Mohr-Egger is an internationally oriented law firm based in Vaduz, Principality
-                of Liechtenstein.
-            </p>
+            <h2>An internatioally-oriented law form in Vaduz, Principality of of Liechtenstein</h2>
             <p>
                 Our lawyers have been serving clients for more than forty years.
             </p>
@@ -70,18 +57,16 @@
             </p>
             <p>
                 Assisted by a network of first rate correspondents, we work successfully in all major international
-                centres. As an independent firm, we are free to choose the correspondents most suited for our clients’
+                centres.
+            <p>As an independent firm, we are free to choose the correspondents most suited for our clients’
                 needs.
             </p>
             <p>
                 We are able to advise in English, German, French and Italian.
             </p>
-            <p>
-                <button class="contactButton">Contact Us</button>
-            </p>
+            <div><button class="teamButton">Our Lawyers</button></div>
         </div>
         <div class="container noDisplay" id="teamContainer">
-            <h2>Our Lawyers</h2>
             <!-- WOHLMACHER -->
             <div class="lawyerContainer">
                 <div class="lawyerWrapper">
@@ -175,24 +160,21 @@
         </div>
         <div class="container noDisplay" id="contactContainer">
             <h2>Contact</h2>
-            <div class="contactInfo ">
-                <div class="map" id='map' style='width: 400px; height: 300px;'></div>
-                <div class="address">
-                    <ul>
-                        <h4>Address:</h4>
-                        <li>Wohlmacher Kaiser Becker Mohr-Egger</li>
-                        <li>Altenbach 8</li>
-                        <li>P.O. Box 949</li>
-                        <li>9490 Vaduz</li>
-                        <li>Liechtenstein</li>
-                    </ul>
-                    <ul>
-                        <h4>Contact:</h4>
-                        <li>Tel: +423 233 44 44</li>
-                        <li>Fax: +423 233 45 04 </li>
-                        <li>Email: wh@whlaw.li</li>
-                    </ul>
-                </div>
+            <div class="address">
+                <ul>
+                    <h4>Address:</h4>
+                    <li>Wohlmacher Kaiser Becker Mohr-Egger</li>
+                    <li>Altenbach 8</li>
+                    <li>P.O. Box 949</li>
+                    <li>9490 Vaduz</li>
+                    <li>Liechtenstein</li>
+                </ul>
+                <ul>
+                    <h4>Contact:</h4>
+                    <li>Tel: +423 233 44 44</li>
+                    <li>Fax: +423 233 45 04 </li>
+                    <li>Email: wh@whlaw.li</li>
+                </ul>
             </div>
         </div>
         <div class="container noDisplay" id="stmtContainer">
@@ -225,7 +207,16 @@
         </div>
     </main>
     <footer>
-        
+        <div class="footerContent">
+            <div class="footerLeft">
+                <a class="impButton">Impressum</a>
+                <a class="stmtButton">Data Security</a>
+            </div>
+            <div class="footerRight">
+                <p>Altenbach 8 | P.O. Box 949 | 9490 Vaduz | Principality of Liechtenstein | Tel: +423 233 44 44 | Fax:
+                    +423 233 45 04 | Email: wh@whlaw.li</p>
+            </div>
+        </div>
     </footer>
     <script src="app.js"> </script>
 </body>
