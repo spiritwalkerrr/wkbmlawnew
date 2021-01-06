@@ -43,7 +43,6 @@ table {
 
 html {
     background: white;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -61,6 +60,11 @@ body {
 
 a {
     color: inherit;
+    text-decoration: underline;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 button {
@@ -73,24 +77,6 @@ button:hover {
 
 .noDisplay {
     display: none !important;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1
-    }
-    to {
-        opacity: 0
-    }
 }
 
 .fullOpacity {
@@ -113,9 +99,31 @@ button, button:active {
     font-size: inherit;
 }
 
-h2, h3, h4 {
-    letter-spacing: 2px;
-    color: rgb(48, 48, 48);
+/* FADE ANIMATIONS FOR MAIN CONTENT */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+/* COLORS */
+
+:root {
+    /* COLOR FOR THE SIDEBAR AND SIDE BORDERS */
+    --menuColor: #423F4A;
 }
 
 /* HEADER */
@@ -217,13 +225,13 @@ header {
 
 :root {
     /* SETS THE WIDTH OF THE SIDEBAR MENU */
-    --menuWidth: 20%;
+    --menuWidth: 15%;
     /* NEGATIVE VALUE OF ABOVE */
-    --menuHidden: -20%;
+    --menuHidden: -15%;
 }
 
 .menu {
-    background: rgb(41, 41, 41);
+    background: var(--menuColor);
     width: var(--menuWidth);
     height: 100vh;
     z-index: 1;
@@ -324,7 +332,8 @@ main {
 /* INDIVIDUAL CONTAINERS */
 
 /* ABOUT */
-:root{
+
+:root {
     /* SETS THE DISTANCE FROM THE TEXT TO THE BORDER ON THE LEFT */
     --aboutPaddingToBorder: 34.5px;
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
@@ -332,8 +341,9 @@ main {
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
     --aboutPFont: normal normal 100 21px/25px "Helvetica";
 }
+
 #aboutContainer h2, #aboutContainer p {
-    border-left: #333333 3px solid;
+    border-left: var(--menuColor) 3px solid;
     padding-left: var(--aboutPaddingToBorder);
     padding-top: 0;
     padding-bottom: 0;
@@ -349,9 +359,11 @@ main {
     font: var(--aboutPFont);
     padding-bottom: 28px;
 }
-#aboutContainer div{
+
+#aboutContainer div {
     display: flex;
 }
+
 #aboutContainer button {
     background: #423F4A 0% 0% no-repeat padding-box;
     border-radius: 4px;
@@ -364,24 +376,48 @@ main {
     margin-top: 40px;
     transition: 250ms;
 }
+
 #aboutContainer button:hover {
     opacity: 0.7;
     transition: 250ms;
 }
-/* LAWYERS */
 
+/* LAWYERS */
+:root{
+    /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS */
+    --lawyerContainerHeight: 450px;
+    /* SETS THE FONT OF THE HEADERS IN THE INDIVIDUAL CONTAINERS */
+    --lawyerContainerFont: normal normal 600 35px/40px "Source Sans Pro";
+    /* SETS THE FONT OF THE LAWYER INFO LIST */
+    --lawyerInfoFont: normal normal 300 20px/26px Helvetica Neue;
+    /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
+    --lawyerWrapperWidth: 80%;
+
+}
 #teamContainer {
     width: 100%;
 }
 
 .lawyerContainer {
     width: 100%;
-    height: 350px;
+    height: var(--lawyerContainerHeight);
+    position: relative;
     display: flex;
+    background: #E8E8E8;
+    margin-bottom: 50px;
+    z-index: -1;
+}
+.lawyerWrapper:after{
+    content:"";
+    position: absolute;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    background: white;
 }
 
 .lawyerWrapper {
-    width: 60%;
+    width: var(--lawyerWrapperWidth);
     height: 100%;
     display: flex;
     margin: auto;
@@ -393,49 +429,33 @@ main {
 }
 
 .lawyerDescription {
-    width: 50%;
+    width: 60%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .lawyerDescription h3 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.lawyerDescription h4 {
-    font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font: var(--lawyerContainerFont);
+    margin: 10px 0;
 }
 
 .lawyerDescription li {
-    font-size: 1.1em;
-    line-height: 1.3em;
+    font: var(--lawyerInfoFont);
 }
 
 /* RIGHTALIGN */
-
-.rightAlign {
-    background: rgb(231, 231, 231);
+.rightAlign .lawyerWrapper:after{
+    left:90%;
 }
 
 .rightAlign .lawyerWrapper {
-    display: flex;
     flex-direction: row-reverse;
 }
 
-.rightAlign .lawyerDescription li {
-    padding-right: 10px;
-}
 
-.rightAlign .lawyerDescription {
-    width: auto;
-    margin-left: auto;
-}
 
 /* WOHLMACHER */
 

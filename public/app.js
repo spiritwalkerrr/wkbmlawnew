@@ -17,6 +17,8 @@ const impContainer = document.querySelector("#impContainer");
 const stmtContainer = document.querySelector("#stmtContainer");
 
 const teamButton = document.querySelector(".teamButton");
+const impButton = document.querySelector(".impButton");
+const stmtButton = document.querySelector(".stmtButton");
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
 let navExtended = false;
@@ -264,4 +266,20 @@ teamButton.addEventListener("click", () => {
     showTeam();
     footerToggle();
     currentPage = 3;
+})
+impButton.addEventListener("click", () => {
+    if (currentPage !== 5) {
+        window.scrollTo(0, 0);
+        showImp();
+        footerToggle();
+        currentPage = 5;
+    }
+})
+stmtButton.addEventListener("click", () => {
+    if (currentPage !== 6) {
+        window.scrollTo(0, 0);
+        showStmt();
+        footerToggle();
+        currentPage = 6;
+    }
 })
