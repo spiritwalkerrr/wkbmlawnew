@@ -464,6 +464,9 @@ main {
 
 .wohlmacherPicture {
     background: url("/images/wohlmacher.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
 }
 
 /* KAISER */
