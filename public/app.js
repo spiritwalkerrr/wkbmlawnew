@@ -77,7 +77,7 @@ const showHeader = () => {
 }
 // SHOW AND HIDE FOOTER FOOTER FUNCTIONS
 const footerToggle = () => {
-    if (currentPage == 3) {
+    if (currentPage == 3 || currentPage == 6) {
         setTimeout(() => {
             footer.classList.toggle("footerHidden");
         }, 250)

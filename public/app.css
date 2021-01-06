@@ -442,12 +442,16 @@ main {
 
 .lawyerDescription h3 {
     font: var(--lawyerContainerFont);
-    margin: 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .lawyerDescription li {
     font: var(--lawyerInfoFont);
     letter-spacing: 1px;
+}
+.lawyerDescription span{
+    border-left: var(--menuColor) 3px solid;
+    padding-left: var(--containerPaddingToBorder);
 }
 
 /* RIGHTALIGN */
