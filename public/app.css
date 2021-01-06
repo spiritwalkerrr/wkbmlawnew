@@ -285,7 +285,6 @@ header {
     width: 100%;
 }
 
-
 /* MAIN */
 
 /* GENERAL */
@@ -465,7 +464,6 @@ main {
 
 .wohlmacherPicture {
     background: url("/images/wohlmacher.png");
-    
 }
 
 /* KAISER */
@@ -496,44 +494,62 @@ main {
 }
 
 /* CONTACT */
-#contactContainer{
+
+#contactContainer {
     display: flex;
 }
-#contactContainer p{
+
+#contactContainer p {
     padding-bottom: 2px;
     border-left: none;
 }
-#contactContainer h2{
+
+#contactContainer h2 {
     border-left: none;
 }
-#contactContainer h2:nth-of-type(2){
+
+#contactContainer h2:nth-of-type(2) {
     padding-top: var(--h2Padding);
 }
-#contactContainer span{
+
+#contactContainer span {
     width: 40%;
     height: 220px;
     margin: auto;
     border-left: var(--menuColor) 3px solid;
 }
+
 /* PRIVACY POLICY */
 
-#stmtContainer h2, #stmtContainer p{
+#stmtContainer h2, #stmtContainer p {
     border-left: none;
     padding: 0;
 }
-#stmtContainer h2{
+
+#stmtContainer h2 {
     font-size: 20px;
 }
-#stmtContainer h3{
+
+#stmtContainer h3 {
     font-size: 17px;
     font-weight: 500;
     padding: 5px 0;
 }
-#stmtContainer p, #stmtContainer li{
+
+#stmtContainer p, #stmtContainer li {
     font-size: 14px;
     line-height: 15px;
-    font-family: "Source Sans Pro"
+    font-family: "Helvetica Neue";
+    font-weight: 200;
 }
+
+#stmtContainer li {
+    list-style-type: disc;
+}
+#stmtContainer ul {
+    margin-left: 20px;
+}
+
 /* FOOTER */
 
 :root {
@@ -575,7 +591,6 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
 }
 
 .footerLeft a {
@@ -593,6 +608,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
 }
-.footerRight div{
+
+.footerRight div {
     margin: 0 4px;
 }
