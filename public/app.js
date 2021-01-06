@@ -19,6 +19,7 @@ const stmtContainer = document.querySelector("#stmtContainer");
 const teamButton = document.querySelector(".teamButton");
 const impButton = document.querySelector(".impButton");
 const stmtButton = document.querySelector(".stmtButton");
+
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
 let navExtended = false;
@@ -39,6 +40,7 @@ const navToggle = () => {
         navExtended = false;
     }
 }
+
 // EVENTLISTENERS FOR NAV MENU TOGGLE WITH SPAM PROTECTION
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", "");
@@ -174,7 +176,6 @@ const showImp = () => {
 }
 const showStmt = () => {
     resetOpacity();
-    footerToggle();
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
@@ -192,6 +193,7 @@ const showStmt = () => {
     }, 250)
     setTimeout(() => {
         resetOpacity();
+        footerToggle();
     }, 500)
 }
 //RESET OPACITY CLASSES FUNCTION & REMOVE HEADER BAR

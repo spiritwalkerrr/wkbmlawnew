@@ -227,9 +227,9 @@ header {
 
 :root {
     /* SETS THE WIDTH OF THE SIDEBAR MENU */
-    --menuWidth: 15%;
+    --menuWidth: 16%;
     /* NEGATIVE VALUE OF ABOVE */
-    --menuHidden: -15%;
+    --menuHidden: -16%;
 }
 
 .menu {
@@ -261,7 +261,7 @@ header {
     font-size: 1.4em;
     line-height: 2em;
     margin: 130px 0 30px;
-    margin-left: 30px;
+    margin-left: 50px;
 }
 
 .menuNavButton {
@@ -284,6 +284,7 @@ header {
 .menuNavButton:hover::before {
     width: 100%;
 }
+
 
 /* MAIN */
 
@@ -312,7 +313,7 @@ main {
 }
 
 .homeLogo {
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
     height: 200px;
     background: url("/images/logo2.svg");
@@ -464,9 +465,7 @@ main {
 
 .wohlmacherPicture {
     background: url("/images/wohlmacher.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
+    
 }
 
 /* KAISER */
@@ -516,7 +515,25 @@ main {
     margin: auto;
     border-left: var(--menuColor) 3px solid;
 }
+/* PRIVACY POLICY */
 
+#stmtContainer h2, #stmtContainer p{
+    border-left: none;
+    padding: 0;
+}
+#stmtContainer h2{
+    font-size: 20px;
+}
+#stmtContainer h3{
+    font-size: 17px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+#stmtContainer p, #stmtContainer li{
+    font-size: 14px;
+    line-height: 15px;
+    font-family: "Source Sans Pro"
+}
 /* FOOTER */
 
 :root {
@@ -548,7 +565,7 @@ footer {
     width: 60%;
     margin: auto;
     display: flex;
-    line-height: 1.2em;
+    line-height: 1.4em;
     font-size: var(--footerFontSize);
 }
 
