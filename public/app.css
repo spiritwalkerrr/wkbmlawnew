@@ -261,7 +261,7 @@ header {
     font-size: 1.4em;
     line-height: 2em;
     margin: 130px 0 30px;
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 .menuNavButton {
@@ -330,7 +330,7 @@ main {
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
     --containerH2Font: normal normal 600 33px/36px "Source Sans Pro";
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
-    --containerPFont: normal normal 100 21px/25px "Helvetica";
+    --containerPFont: normal normal 100 21px/25px "Source Sans Pro";;
     /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
     --h2Padding: 25px;
 }
@@ -391,7 +391,7 @@ main {
     /* SETS THE FONT OF THE HEADERS IN THE INDIVIDUAL CONTAINERS */
     --lawyerContainerFont: normal normal 600 35px/40px "Source Sans Pro";
     /* SETS THE FONT OF THE LAWYER INFO LIST */
-    --lawyerInfoFont: normal normal 300 20px/26px Helvetica Neue;
+    --lawyerInfoFont: normal normal 300 20px/26px  "Source Sans Pro";
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
 }
@@ -549,7 +549,7 @@ main {
 #stmtContainer p, #stmtContainer li {
     font-size: 14px;
     line-height: 15px;
-    font-family: "Helvetica Neue";
+    font-family:  "Source Sans Pro";
     font-weight: 200;
 }
 
