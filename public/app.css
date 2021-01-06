@@ -124,6 +124,8 @@ button, button:active {
 :root {
     /* COLOR FOR THE SIDEBAR AND SIDE BORDERS */
     --menuColor: #423F4A;
+    /* PALE BACKGROUND COLOR */
+    --paleBackground: rgb(249, 249, 249);
 }
 
 /* HEADER */
@@ -323,42 +325,41 @@ main {
 :root {
     /* SETS THE WIDTH OF THE CONTAINER FOR THE MAIN CONTENT */
     --containerWidth: 60%;
+    /* SETS THE DISTANCE FROM THE TEXT TO THE BORDER ON THE LEFT */
+    --containerPaddingToBorder: 34.5px;
+    /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
+    --containerH2Font: normal normal 600 33px/36px "Source Sans Pro";
+    /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
+    --containerPFont: normal normal 100 21px/25px "Helvetica";
+    /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
+    --h2Padding: 25px;
 }
 
 .container {
     width: var(--containerWidth);
 }
 
-/* INDIVIDUAL CONTAINERS */
-
-/* ABOUT */
-
-:root {
-    /* SETS THE DISTANCE FROM THE TEXT TO THE BORDER ON THE LEFT */
-    --aboutPaddingToBorder: 34.5px;
-    /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
-    --aboutH2Font: normal normal 600 33px/36px "Source Sans Pro";
-    /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
-    --aboutPFont: normal normal 100 21px/25px "Helvetica";
-}
-
-#aboutContainer h2, #aboutContainer p {
+.container h2, .container p {
     border-left: var(--menuColor) 3px solid;
-    padding-left: var(--aboutPaddingToBorder);
+    padding-left: var(--containerPaddingToBorder);
     padding-top: 0;
     padding-bottom: 0;
 }
 
-#aboutContainer h2 {
+.container h2 {
     text-align: left;
-    font: var(--aboutH2Font);
+    font: var(--containerH2Font);
+    padding-bottom: var(--h2Padding);
+}
+
+.container p {
+    font: var(--containerPFont);
     padding-bottom: 25px;
 }
 
-#aboutContainer p {
-    font: var(--aboutPFont);
-    padding-bottom: 28px;
-}
+/* INDIVIDUAL CONTAINERS */
+
+/* ABOUT */
 
 #aboutContainer div {
     display: flex;
@@ -383,7 +384,8 @@ main {
 }
 
 /* LAWYERS */
-:root{
+
+:root {
     /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS */
     --lawyerContainerHeight: 450px;
     /* SETS THE FONT OF THE HEADERS IN THE INDIVIDUAL CONTAINERS */
@@ -392,8 +394,8 @@ main {
     --lawyerInfoFont: normal normal 300 20px/26px Helvetica Neue;
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
-
 }
+
 #teamContainer {
     width: 100%;
 }
@@ -403,14 +405,15 @@ main {
     height: var(--lawyerContainerHeight);
     position: relative;
     display: flex;
-    background: #E8E8E8;
+    background: var(--paleBackground);
     margin-bottom: 50px;
     z-index: -1;
 }
-.lawyerWrapper:after{
-    content:"";
+
+.lawyerWrapper:after {
+    content: "";
     position: absolute;
-    left: 0;
+    left: 90%;
     width: 10%;
     height: 100%;
     background: white;
@@ -444,18 +447,18 @@ main {
 
 .lawyerDescription li {
     font: var(--lawyerInfoFont);
+    letter-spacing: 1px;
 }
 
 /* RIGHTALIGN */
-.rightAlign .lawyerWrapper:after{
-    left:90%;
+
+.rightAlign .lawyerWrapper:after {
+    left: 0;
 }
 
 .rightAlign .lawyerWrapper {
     flex-direction: row-reverse;
 }
-
-
 
 /* WOHLMACHER */
 
@@ -494,39 +497,18 @@ main {
 }
 
 /* CONTACT */
-
-/* MAP & ADDRESS */
-
-.contactInfo {
-    width: 80%;
-    height: 300px;
+#contactContainer{
     display: flex;
+}
+#contactContainer p{
+    padding-bottom: 2px;
+}
+#contactContainer h2:nth-of-type(2){
+    padding-top: var(--h2Padding);
+}
+#contactContainer span{
+    width: 40%;
     margin: auto;
-    justify-content: center;
-}
-
-.address {
-    margin-left: 20px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.address h4 {
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-.address li {
-    font-size: 1.3em;
-    line-height: 1.2em;
-    padding-left: 10px;
-    border-left: 1px solid black;
-}
-
-.address ul:first-of-type {
-    margin-bottom: 15px;
 }
 
 /* FOOTER */
@@ -566,6 +548,11 @@ footer {
 
 .footerLeft {
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    
 }
 
 .footerLeft a {
@@ -580,4 +567,9 @@ footer {
     width: 50%;
     color: white;
     font-weight: 100;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footerRight div{
+    margin: 0 2px;
 }
