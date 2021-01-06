@@ -525,7 +525,7 @@ main {
     /* NEGATIVE VALUE OF ABOVE */
     --footerHidden: -70px;
     /* FONT SIZE FOR THE FOOTER CONTENT */
-    --footerFontSize: 18px;
+    --footerFontSize: 13px;
 }
 
 footer {
@@ -548,12 +548,12 @@ footer {
     width: 60%;
     margin: auto;
     display: flex;
-    line-height: 1.3em;
+    line-height: 1.2em;
     font-size: var(--footerFontSize);
 }
 
 .footerLeft {
-    margin-right: auto;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -577,5 +577,5 @@ footer {
     flex-wrap: wrap;
 }
 .footerRight div{
-    margin: 0 2px;
+    margin: 0 4px;
 }
