@@ -228,9 +228,9 @@ header {
 
 :root {
     /* SETS THE WIDTH OF THE SIDEBAR MENU */
-    --menuWidth: 16%;
+    --menuWidth: 18%;
     /* NEGATIVE VALUE OF ABOVE */
-    --menuHidden: -16%;
+    --menuHidden: -18%;
 }
 
 .menu {
@@ -241,6 +241,7 @@ header {
     position: fixed;
     left: var(--menuHidden);
     transition: 300ms;
+    display: flex;
 }
 
 .menuExtended {
@@ -261,8 +262,8 @@ header {
     color: white;
     font-size: 1.4em;
     line-height: 2em;
-    margin: 130px 0 30px;
-    margin-left: 30px;
+    margin: auto;
+    margin-top: 130px;
 }
 
 .menuNavButton {
@@ -365,6 +366,7 @@ main {
 
 #aboutContainer div {
     display: flex;
+    margin-bottom: 20px;
 }
 
 #aboutContainer button {
@@ -394,10 +396,14 @@ main {
     --lawyerContainerExtended: 600px;
     /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
     --lawyerNameExtended: 200px;
-    /* SETS THE FONT OF THE HEADERS IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerFont: normal normal 600 35px/40px "arial";
+    /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
+    --lawyerContainerH3Font: normal normal 500 32px/46px "arial";
+    /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
+    --lawyerContainerH4Font: normal normal 500 28px/30px "arial";
+    /* SETS THE FONT OF THE LAWYER NAME LIST */
+    --lawyerNameFont: normal normal 100 18px/25px "arial";
     /* SETS THE FONT OF THE LAWYER INFO LIST */
-    --lawyerInfoFont: normal normal 300 20px/26px "arial";
+    --lawyerInfoFont: normal normal 100 17px/23px "arial";
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
 }
@@ -450,11 +456,11 @@ main {
     z-index: 3;
 }
 .lawyerName h3 {
-    font: var(--lawyerContainerFont); 
+    font: var(--lawyerContainerH3Font); 
 }
 
 .lawyerName li {
-    font: var(--lawyerInfoFont);
+    font: var(--lawyerNameFont);
 }
 .lawyerNameExtended{
     height: var(--lawyerNameExtended);
@@ -467,20 +473,29 @@ main {
     background: var(--paleBackground);
     position: absolute;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     z-index: 2;
     transition: 250ms;
 }
-.lawyerInfo h3 {
-    font: var(--lawyerContainerFont); 
+.lawyerInfo h4 {
+    font: var(--lawyerContainerH4Font); 
 }
 
-.lawyerInfo li {
+.lawyerInfo li , .lawyerInfo a{
     font: var(--lawyerInfoFont);
 }
 .lawyerInfoExtended{
     bottom: 0;
     transition: 250ms;
+}
+.lawyerInfo span{
+    margin-bottom: 20px;
+}
+.lawyerInfo svg{
+    position: relative;
+    bottom: -8px;
+    padding-right: 5px;
 }
 .chevron{
     z-index: 3;
@@ -519,108 +534,6 @@ main {
     animation-duration: 300ms;
     animation-fill-mode: forwards;
 }
-/* 
-.lawyerMain {
-    width: 80%;
-    background: var(--paleBackground);
-    height: var(--lawyerContainerHeight);
-    z-index: 1;
-    display: flex;
-    transition: 250ms;
-}
-
-.lawyerContainerExtended {
-    height: 450px;
-    transition: 250ms;
-}
-
-.lawyerMainExtended {
-    transition: 250ms;
-}
-
-.lawyerPicture {
-    width: 30%;
-    height: 100%;
-    position: absolute;
-}
-
-.lawyerDescription {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    z-index: 1;
-    margin-left: auto;
-}
-
-.lawyerDescription h3 {
-    font: var(--lawyerContainerFont);
-    margin: 0 0 10px 0;
-}
-
-.lawyerDescription li {
-    font: var(--lawyerInfoFont);
-    letter-spacing: 1px;
-}
-
-.lawyerDescription span {
-    border-left: var(--menuColor) 3px solid;
-    padding-left: var(--containerPaddingToBorder);
-    width: 100%;
-    align-self: center;
-}
-
-.lawyerDescription button {
-    padding: 20px;
-    display: flex;
-    align-self: flex-end;
-}
-
-.lawyerInfo {
-    width: 80%;
-    background: var(--paleBackground);
-    height: 150px;
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    display: flex;
-}
-
-.lawyerChevron {
-    margin-right: 10px;
-    position: relative;
-    top: -5px;
-}
-
-@keyframes chevronRotateIn {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-180deg);
-    }
-}
-
-@keyframes chevronRotateOut {
-    from {
-        transform: rotate(-180deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
-}
-
-.chevronRotateIn {
-    animation-name: chevronRotateIn;
-    animation-duration: 300ms;
-    animation-fill-mode: forwards;
-}
-
-.chevronRotateOut {
-    animation-name: chevronRotateOut;
-    animation-duration: 300ms;
-    animation-fill-mode: forwards;
-} */
 
 /* WOHLMACHER */
 
@@ -634,7 +547,7 @@ main {
 /* KAISER */
 
 .kaiserPicture {
-    background: url("/images/kaiser.png");
+    /* background: url("/images/kaiser.png"); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -643,7 +556,7 @@ main {
 /* BECKER */
 
 .beckerPicture {
-    background: url("/images/becker.png");
+    /* background: url("/images/becker.png"); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -652,7 +565,7 @@ main {
 /* MOHR-EGGER */
 
 .mohrEggerPicture {
-    background: url("/images/mohr-egger.png");
+    /* background: url("/images/mohr-egger.png"); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;

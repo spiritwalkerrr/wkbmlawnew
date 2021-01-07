@@ -292,7 +292,7 @@ stmtButton.addEventListener("click", () => {
 })
 // EXTEND LAWYER DESCRIPTION SCRIPT
 chevronExtended = [false, false, false, false];
-lawyerContainer[0].addEventListener("click", () => {
+chevron[0].addEventListener("click", () => {
     lawyerContainer[0].classList.toggle("lawyerContainerExtended");
     lawyerName[0].classList.toggle("lawyerNameExtended");
     lawyerInfo[0].classList.toggle("lawyerInfoExtended");
@@ -308,7 +308,51 @@ lawyerContainer[0].addEventListener("click", () => {
     }
 
 })
-lawyerContainer[1].addEventListener("click", () => {
+chevron[1].addEventListener("click", () => {
     lawyerContainer[1].classList.toggle("lawyerContainerExtended");
+    lawyerName[1].classList.toggle("lawyerNameExtended");
+    lawyerInfo[1].classList.toggle("lawyerInfoExtended");
+    if (chevronExtended[1] == false) {
+        chevron[1].classList.toggle("chevronRotateIn");
+        chevronExtended[1] = true;
+    } else {
+        chevron[1].classList.add("chevronRotateOut");
+        chevronExtended[1] = false;
+        setTimeout(()=>{
+            chevron[1].classList.remove("chevronRotateIn", "chevronRotateOut")
+        }, 250)
+    }
+
+})
+chevron[2].addEventListener("click", () => {
+    lawyerContainer[2].classList.toggle("lawyerContainerExtended");
+    lawyerName[2].classList.toggle("lawyerNameExtended");
+    lawyerInfo[2].classList.toggle("lawyerInfoExtended");
+    if (chevronExtended[2] == false) {
+        chevron[2].classList.toggle("chevronRotateIn");
+        chevronExtended[2] = true;
+    } else {
+        chevron[2].classList.add("chevronRotateOut");
+        chevronExtended[2] = false;
+        setTimeout(()=>{
+            chevron[2].classList.remove("chevronRotateIn", "chevronRotateOut")
+        }, 250)
+    }
+
+})
+chevron[3].addEventListener("click", () => {
+    lawyerContainer[3].classList.toggle("lawyerContainerExtended");
+    lawyerName[3].classList.toggle("lawyerNameExtended");
+    lawyerInfo[3].classList.toggle("lawyerInfoExtended");
+    if (chevronExtended[3] == false) {
+        chevron[3].classList.toggle("chevronRotateIn");
+        chevronExtended[3] = true;
+    } else {
+        chevron[3].classList.add("chevronRotateOut");
+        chevronExtended[3] = false;
+        setTimeout(()=>{
+            chevron[3].classList.remove("chevronRotateIn", "chevronRotateOut")
+        }, 250)
+    }
 
 })
