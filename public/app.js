@@ -20,6 +20,11 @@ const teamButton = document.querySelector(".teamButton");
 const impButton = document.querySelector(".impButton");
 const stmtButton = document.querySelector(".stmtButton");
 
+const lawyerContainer = document.querySelectorAll(".lawyerContainer");
+const lawyerName = document.querySelectorAll(".lawyerName");
+const lawyerInfo = document.querySelectorAll(".lawyerInfo");
+const chevron = document.querySelectorAll(".chevron");
+
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
 let navExtended = false;
@@ -284,4 +289,26 @@ stmtButton.addEventListener("click", () => {
         footerToggle();
         currentPage = 6;
     }
+})
+// EXTEND LAWYER DESCRIPTION SCRIPT
+chevronExtended = [false, false, false, false];
+lawyerContainer[0].addEventListener("click", () => {
+    lawyerContainer[0].classList.toggle("lawyerContainerExtended");
+    lawyerName[0].classList.toggle("lawyerNameExtended");
+    lawyerInfo[0].classList.toggle("lawyerInfoExtended");
+    if (chevronExtended[0] == false) {
+        chevron[0].classList.toggle("chevronRotateIn");
+        chevronExtended[0] = true;
+    } else {
+        chevron[0].classList.add("chevronRotateOut");
+        chevronExtended[0] = false;
+        setTimeout(()=>{
+            chevron[0].classList.remove("chevronRotateIn", "chevronRotateOut")
+        }, 250)
+    }
+
+})
+lawyerContainer[1].addEventListener("click", () => {
+    lawyerContainer[1].classList.toggle("lawyerContainerExtended");
+
 })

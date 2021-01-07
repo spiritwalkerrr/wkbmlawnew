@@ -50,7 +50,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'arial', sans-serif;
     font-weight: 300;
     overflow-x: hidden;
     font-size: 1em;
@@ -150,6 +150,7 @@ header {
     top: 0;
     align-items: center;
     transition: 300ms;
+    z-index: 5;
 }
 
 .headerHidden {
@@ -177,7 +178,7 @@ header {
 
 .navButton {
     position: fixed;
-    z-index: 2;
+    z-index: 15;
     top: 28px;
     left: 50px;
 }
@@ -236,7 +237,7 @@ header {
     background: var(--menuColor);
     width: var(--menuWidth);
     height: 100vh;
-    z-index: 1;
+    z-index: 10;
     position: fixed;
     left: var(--menuHidden);
     transition: 300ms;
@@ -267,7 +268,7 @@ header {
 .menuNavButton {
     padding: 0;
     position: relative;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "arial", sans-serif;
 }
 
 .menuNavButton::before {
@@ -328,9 +329,10 @@ main {
     /* SETS THE DISTANCE FROM THE TEXT TO THE BORDER ON THE LEFT */
     --containerPaddingToBorder: 34.5px;
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
-    --containerH2Font: normal normal 600 33px/36px "Source Sans Pro";
+    --containerH2Font: normal normal 600 33px/36px "arial";
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
-    --containerPFont: normal normal 100 21px/25px "Source Sans Pro";;
+    --containerPFont: normal normal 100 21px/25px "arial";
+    ;
     /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
     --h2Padding: 25px;
 }
@@ -370,7 +372,7 @@ main {
     border-radius: 4px;
     padding: 10px 40px;
     text-align: left;
-    font: normal normal 300 21px/25px Source Sans Pro;
+    font: normal normal 300 21px/25px arial;
     letter-spacing: 0px;
     color: #FFFFFF;
     margin: auto;
@@ -386,12 +388,16 @@ main {
 /* LAWYERS */
 
 :root {
-    /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerHeight: 450px;
+    /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
+    --lawyerContainerBase: 350px;
+    /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
+    --lawyerContainerExtended: 600px;
+    /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
+    --lawyerNameExtended: 200px;
     /* SETS THE FONT OF THE HEADERS IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerFont: normal normal 600 35px/40px "Source Sans Pro";
+    --lawyerContainerFont: normal normal 600 35px/40px "arial";
     /* SETS THE FONT OF THE LAWYER INFO LIST */
-    --lawyerInfoFont: normal normal 300 20px/26px  "Source Sans Pro";
+    --lawyerInfoFont: normal normal 300 20px/26px "arial";
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
 }
@@ -401,79 +407,228 @@ main {
 }
 
 .lawyerContainer {
-    width: 100%;
-    height: var(--lawyerContainerHeight);
+    width: 80%;
+    height: var(--lawyerContainerBase);
+    display: flex;
     position: relative;
-    display: flex;
-    background: var(--paleBackground);
-    margin-bottom: 50px;
-    z-index: -1;
-}
-
-.lawyerWrapper:after {
-    content: "";
-    position: absolute;
-    left: 90%;
-    width: 10%;
-    height: 100%;
-    background: white;
-}
-
-.lawyerWrapper {
-    width: var(--lawyerWrapperWidth);
-    height: 100%;
-    display: flex;
+    align-items: center;
     margin: auto;
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: 250ms;
+    overflow-x: hidden;
+    background: var(--paleBackground);
+    z-index: 1;
+}
+
+.lawyerContainerExtended {
+    height:var(--lawyerContainerExtended);
+    transition: 250ms;
+}
+
+.lawyerDescription {
+    width: 65%;
+    height: 100%;
+    margin-left: auto;
 }
 
 .lawyerPicture {
-    width: 40%;
+    width: 30%;
+    height: var(--lawyerContainerExtended);
+    position: absolute;
+    top: 0;
+}
+.lawyerName{
+    height: var(--lawyerContainerBase);
+    width: 100%;
+    position: absolute;
+    transition: 250ms;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--paleBackground);
+    z-index: 3;
+}
+.lawyerName h3 {
+    font: var(--lawyerContainerFont); 
+}
+
+.lawyerName li {
+    font: var(--lawyerInfoFont);
+}
+.lawyerNameExtended{
+    height: var(--lawyerNameExtended);
+    transition: 250ms;
+}
+.lawyerInfo{
+    height: 400px;
+    bottom: -400px;
+    width: 100%;
+    background: var(--paleBackground);
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    z-index: 2;
+    transition: 250ms;
+}
+.lawyerInfo h3 {
+    font: var(--lawyerContainerFont); 
+}
+
+.lawyerInfo li {
+    font: var(--lawyerInfoFont);
+}
+.lawyerInfoExtended{
+    bottom: 0;
+    transition: 250ms;
+}
+.chevron{
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 30px;
+}
+
+@keyframes chevronRotateIn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes chevronRotateOut {
+    from {
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.chevronRotateIn {
+    animation-name: chevronRotateIn;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+.chevronRotateOut {
+    animation-name: chevronRotateOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+/* 
+.lawyerMain {
+    width: 80%;
+    background: var(--paleBackground);
+    height: var(--lawyerContainerHeight);
+    z-index: 1;
+    display: flex;
+    transition: 250ms;
+}
+
+.lawyerContainerExtended {
+    height: 450px;
+    transition: 250ms;
+}
+
+.lawyerMainExtended {
+    transition: 250ms;
+}
+
+.lawyerPicture {
+    width: 30%;
     height: 100%;
+    position: absolute;
 }
 
 .lawyerDescription {
     width: 60%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+    margin-left: auto;
 }
 
 .lawyerDescription h3 {
     font: var(--lawyerContainerFont);
     margin: 0 0 10px 0;
-}.lawyerDescription h3:nth-of-type(2) {
-    font: var(--lawyerContainerFont);
-    margin: 10px 0;
 }
 
 .lawyerDescription li {
     font: var(--lawyerInfoFont);
     letter-spacing: 1px;
 }
-.lawyerDescription span{
+
+.lawyerDescription span {
     border-left: var(--menuColor) 3px solid;
     padding-left: var(--containerPaddingToBorder);
+    width: 100%;
+    align-self: center;
 }
 
-/* RIGHTALIGN */
-
-.rightAlign .lawyerWrapper:after {
-    left: 0;
+.lawyerDescription button {
+    padding: 20px;
+    display: flex;
+    align-self: flex-end;
 }
 
-.rightAlign .lawyerWrapper {
-    flex-direction: row-reverse;
+.lawyerInfo {
+    width: 80%;
+    background: var(--paleBackground);
+    height: 150px;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    display: flex;
 }
+
+.lawyerChevron {
+    margin-right: 10px;
+    position: relative;
+    top: -5px;
+}
+
+@keyframes chevronRotateIn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes chevronRotateOut {
+    from {
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.chevronRotateIn {
+    animation-name: chevronRotateIn;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+.chevronRotateOut {
+    animation-name: chevronRotateOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+} */
 
 /* WOHLMACHER */
 
 .wohlmacherPicture {
-    background: url("/images/wohlmacher.png");
+    background: url("/images/dummy.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
+    background-size: cover;
+    background-position: top;
 }
 
 /* KAISER */
@@ -549,13 +704,14 @@ main {
 #stmtContainer p, #stmtContainer li {
     font-size: 14px;
     line-height: 15px;
-    font-family:  "Source Sans Pro";
+    font-family: "arial";
     font-weight: 200;
 }
 
 #stmtContainer li {
     list-style-type: disc;
 }
+
 #stmtContainer ul {
     margin-left: 20px;
 }
@@ -606,7 +762,7 @@ footer {
 .footerLeft a {
     display: block;
     color: white;
-    font-family: "Source Sans Pro";
+    font-family: "arial";
     font-weight: 100;
 }
 
