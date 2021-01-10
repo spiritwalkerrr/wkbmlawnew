@@ -146,8 +146,7 @@ header {
     height: var(--headerHeight);
     position: fixed;
     display: flex;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 1) 85%,  rgba(255, 255, 255, 0) 100%);
+    background: white;
     top: 0;
     align-items: center;
     transition: 250ms;
@@ -318,7 +317,6 @@ main {
 #homeContainer div:nth-of-type(2) {
     width: 50%;
     text-align: center;
-    border-top: 1px solid black;
     padding-top: 20px;
     font: var(--containerPFont)
 }
@@ -340,7 +338,7 @@ main {
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
     --containerH2Font: normal normal 600 33px/36px "arial";
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
-    --containerPFont: normal normal 100 21px/25px "arial";
+    --containerPFont: normal normal 100 18px/22px "arial";
     ;
     /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
     --h2Padding: 25px;
@@ -353,7 +351,7 @@ main {
 .container h2, .container p {
     padding-top: 0;
     padding-bottom: 0;
-    text-align: center;
+    text-align: justify;
 }
 
 .container h2 {
@@ -393,8 +391,9 @@ main {
     opacity: 0.7;
     transition: 250ms;
 }
-#aboutContainer h2{
-    text-align: center;
+
+#aboutContainer h2 {
+    text-align: left;
 }
 
 /* LAWYERS */
@@ -465,10 +464,6 @@ main {
     flex-wrap: wrap;
     background: var(--paleBackground);
     z-index: 3;
-}
-
-.spacing {
-    height: 25px;
 }
 
 .lawyerName h3 {
@@ -599,6 +594,7 @@ main {
 
 #contactContainer {
     display: flex;
+    flex-direction: column;
 }
 
 #contactContainer p {
@@ -608,26 +604,81 @@ main {
 }
 
 #contactContainer h2 {
+    padding-bottom: 10px;
     border-left: none;
+    font-weight: 400;
 }
 
 #contactContainer h2:nth-of-type(2) {
     padding-top: var(--h2Padding);
 }
 
-#contactContainer span:nth-of-type(1) {
+.addressWrapper {
     width: 60%;
-    height: 220px;
 }
 
-#contactContainer span:nth-of-type(2) {
+.contactWrapper {
     width: 40%;
     height: 220px;
 }
-/* LEGAL NOTICE */
-#impContainer h2{
-    text-align: center;
+
+.phoneAlign {
+    display: flex;
 }
+
+.phoneAlign p:nth-of-type(1) {
+    margin-right: 12px;
+}
+
+.contactInfo {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.map {
+    width: 400px;
+    height: 200px;
+    background: url("/images/map.png");
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.map::before {
+    content: "";
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--menuColor);
+    opacity: 0;
+    transition: 150ms;
+}
+
+.map::after {
+    content: "View on Google Maps";
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 100ms;
+}
+.map:hover::before{
+    opacity: 0.7;
+}
+.map:hover::after{
+    opacity: 1;
+}
+
 /* PRIVACY POLICY */
 
 #stmtContainer h2, #stmtContainer p {
@@ -636,25 +687,18 @@ main {
 }
 
 #stmtContainer h2 {
-    font-size: 20px;
+    padding-bottom: 20px;
 }
 
 #stmtContainer h3 {
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     padding: 5px 0;
-}
-
-#stmtContainer p, #stmtContainer li {
-    font-size: 14px;
-    line-height: 15px;
-    font-family: "arial";
-    font-weight: 200;
-    text-align: left;
 }
 
 #stmtContainer li {
     list-style-type: disc;
+    font: var(--containerPFont);
 }
 
 #stmtContainer ul {
