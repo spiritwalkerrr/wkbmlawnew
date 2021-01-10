@@ -53,10 +53,13 @@ navButton.addEventListener("click", () => {
     footerToggle();
     setTimeout(() => {
         navButton.removeAttribute("disabled", "");
-    }, 300)
+    }, 250)
 })
 for (let button of menuNavButton) {
     button.addEventListener("click", () => {
+        if (currentPage == 1){
+            footer.classList.remove("footerTransparent")
+        }
         navToggle();
     })
 }
@@ -221,7 +224,7 @@ const resetOpacity = () => {
 //NAVIGATION SCRIPT
 let currentPage = 1
 // 1 = HOME
-// 2 = ABOUT US
+// 2 = PORTRAIT
 // 3 = TEAM
 // 4 = CONTACT
 // 5 = LEGAL NOTICE
@@ -235,7 +238,7 @@ menuNavButton[0].addEventListener("click", () => {
         currentPage = 2;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "ABOUT US"
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "PORTRAIT"
 menuNavButton[1].addEventListener("click", () => {
     if (currentPage !== 3) {
         window.scrollTo(0, 0);
@@ -302,7 +305,7 @@ chevron[0].addEventListener("click", () => {
     } else {
         chevron[0].classList.add("chevronRotateOut");
         chevronExtended[0] = false;
-        setTimeout(()=>{
+        setTimeout(() => {
             chevron[0].classList.remove("chevronRotateIn", "chevronRotateOut")
         }, 250)
     }
@@ -318,7 +321,7 @@ chevron[1].addEventListener("click", () => {
     } else {
         chevron[1].classList.add("chevronRotateOut");
         chevronExtended[1] = false;
-        setTimeout(()=>{
+        setTimeout(() => {
             chevron[1].classList.remove("chevronRotateIn", "chevronRotateOut")
         }, 250)
     }
@@ -334,7 +337,7 @@ chevron[2].addEventListener("click", () => {
     } else {
         chevron[2].classList.add("chevronRotateOut");
         chevronExtended[2] = false;
-        setTimeout(()=>{
+        setTimeout(() => {
             chevron[2].classList.remove("chevronRotateIn", "chevronRotateOut")
         }, 250)
     }
@@ -350,7 +353,7 @@ chevron[3].addEventListener("click", () => {
     } else {
         chevron[3].classList.add("chevronRotateOut");
         chevronExtended[3] = false;
-        setTimeout(()=>{
+        setTimeout(() => {
             chevron[3].classList.remove("chevronRotateIn", "chevronRotateOut")
         }, 250)
     }

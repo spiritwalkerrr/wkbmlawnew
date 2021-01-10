@@ -52,10 +52,10 @@ body {
     justify-content: center;
     font-family: 'arial', sans-serif;
     font-weight: 300;
-    overflow-x: hidden;
     font-size: 1em;
     display: flex;
     flex-wrap: wrap;
+    overflow-x: hidden
 }
 
 a {
@@ -146,16 +146,17 @@ header {
     height: var(--headerHeight);
     position: fixed;
     display: flex;
-    background: white;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 1) 85%,  rgba(255, 255, 255, 0) 100%);
     top: 0;
     align-items: center;
-    transition: 300ms;
+    transition: 250ms;
     z-index: 5;
 }
 
 .headerHidden {
     top: var(--headerHidden);
-    transition: 300ms;
+    transition: 250ms;
 }
 
 .headerContainer {
@@ -212,13 +213,13 @@ header {
 
 .navButtonRotateIn {
     animation-name: navIconRotateIn;
-    animation-duration: 300ms;
+    animation-duration: 250ms;
     animation-fill-mode: forwards;
 }
 
 .navButtonRotateOut {
     animation-name: navIconRotateOut;
-    animation-duration: 300ms;
+    animation-duration: 250ms;
     animation-fill-mode: forwards;
 }
 
@@ -240,7 +241,7 @@ header {
     z-index: 10;
     position: fixed;
     left: var(--menuHidden);
-    transition: 300ms;
+    transition: 250ms;
     display: flex;
 }
 
@@ -311,12 +312,21 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+#homeContainer div:nth-of-type(2) {
+    width: 50%;
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 20px;
+    font: var(--containerPFont)
 }
 
 .homeLogo {
-    width: 90%;
+    width: 60%;
     max-width: 1200px;
-    height: 200px;
+    height: 100px;
     background: url("/images/logo2.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -327,8 +337,6 @@ main {
 :root {
     /* SETS THE WIDTH OF THE CONTAINER FOR THE MAIN CONTENT */
     --containerWidth: 60%;
-    /* SETS THE DISTANCE FROM THE TEXT TO THE BORDER ON THE LEFT */
-    --containerPaddingToBorder: 34.5px;
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
     --containerH2Font: normal normal 600 33px/36px "arial";
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
@@ -343,10 +351,9 @@ main {
 }
 
 .container h2, .container p {
-    border-left: var(--menuColor) 3px solid;
-    padding-left: var(--containerPaddingToBorder);
     padding-top: 0;
     padding-bottom: 0;
+    text-align: center;
 }
 
 .container h2 {
@@ -386,6 +393,9 @@ main {
     opacity: 0.7;
     transition: 250ms;
 }
+#aboutContainer h2{
+    text-align: center;
+}
 
 /* LAWYERS */
 
@@ -399,11 +409,11 @@ main {
     /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
     --lawyerContainerH3Font: normal normal 500 32px/46px "arial";
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH4Font: normal normal 500 28px/30px "arial";
+    --lawyerContainerH4Font: normal normal 500 21px/30px "arial";
     /* SETS THE FONT OF THE LAWYER NAME LIST */
-    --lawyerNameFont: normal normal 100 18px/25px "arial";
+    --lawyerNameFont: normal normal 100 18px/23px "arial";
     /* SETS THE FONT OF THE LAWYER INFO LIST */
-    --lawyerInfoFont: normal normal 100 17px/23px "arial";
+    --lawyerInfoFont: normal normal 100 17px/20px "arial";
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
 }
@@ -428,7 +438,7 @@ main {
 }
 
 .lawyerContainerExtended {
-    height:var(--lawyerContainerExtended);
+    height: var(--lawyerContainerExtended);
     transition: 250ms;
 }
 
@@ -444,7 +454,8 @@ main {
     position: absolute;
     top: 0;
 }
-.lawyerName{
+
+.lawyerName {
     height: var(--lawyerContainerBase);
     width: 100%;
     position: absolute;
@@ -455,18 +466,25 @@ main {
     background: var(--paleBackground);
     z-index: 3;
 }
+
+.spacing {
+    height: 25px;
+}
+
 .lawyerName h3 {
-    font: var(--lawyerContainerH3Font); 
+    font: var(--lawyerContainerH3Font);
 }
 
 .lawyerName li {
     font: var(--lawyerNameFont);
 }
-.lawyerNameExtended{
+
+.lawyerNameExtended {
     height: var(--lawyerNameExtended);
     transition: 250ms;
 }
-.lawyerInfo{
+
+.lawyerInfo {
     height: 400px;
     bottom: -400px;
     width: 100%;
@@ -478,26 +496,32 @@ main {
     z-index: 2;
     transition: 250ms;
 }
+
 .lawyerInfo h4 {
-    font: var(--lawyerContainerH4Font); 
+    font: var(--lawyerContainerH4Font);
+    text-decoration: underline;
 }
 
-.lawyerInfo li , .lawyerInfo a{
+.lawyerInfo li, .lawyerInfo a {
     font: var(--lawyerInfoFont);
 }
-.lawyerInfoExtended{
+
+.lawyerInfoExtended {
     bottom: 0;
     transition: 250ms;
 }
-.lawyerInfo span{
-    margin-bottom: 20px;
+
+.lawyerInfo span {
+    margin-bottom: 15px;
 }
-.lawyerInfo svg{
+
+.lawyerInfo svg {
     position: relative;
     bottom: -8px;
     padding-right: 5px;
 }
-.chevron{
+
+.chevron {
     z-index: 3;
     position: absolute;
     bottom: 0;
@@ -525,13 +549,13 @@ main {
 
 .chevronRotateIn {
     animation-name: chevronRotateIn;
-    animation-duration: 300ms;
+    animation-duration: 250ms;
     animation-fill-mode: forwards;
 }
 
 .chevronRotateOut {
     animation-name: chevronRotateOut;
-    animation-duration: 300ms;
+    animation-duration: 250ms;
     animation-fill-mode: forwards;
 }
 
@@ -580,6 +604,7 @@ main {
 #contactContainer p {
     padding-bottom: 2px;
     border-left: none;
+    text-align: left;
 }
 
 #contactContainer h2 {
@@ -590,13 +615,19 @@ main {
     padding-top: var(--h2Padding);
 }
 
-#contactContainer span {
-    width: 40%;
+#contactContainer span:nth-of-type(1) {
+    width: 60%;
     height: 220px;
-    margin: auto;
-    border-left: var(--menuColor) 3px solid;
 }
 
+#contactContainer span:nth-of-type(2) {
+    width: 40%;
+    height: 220px;
+}
+/* LEGAL NOTICE */
+#impContainer h2{
+    text-align: center;
+}
 /* PRIVACY POLICY */
 
 #stmtContainer h2, #stmtContainer p {
@@ -619,6 +650,7 @@ main {
     line-height: 15px;
     font-family: "arial";
     font-weight: 200;
+    text-align: left;
 }
 
 #stmtContainer li {
@@ -654,6 +686,10 @@ footer {
 
 .footerHidden {
     bottom: var(--footerHidden);
+}
+
+.footerTransparent {
+    opacity: 0;
 }
 
 .footerContent {
