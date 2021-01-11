@@ -617,10 +617,6 @@ main {
     width: 60%;
 }
 
-.contactWrapper {
-    width: 40%;
-    height: 220px;
-}
 
 .phoneAlign {
     display: flex;
@@ -640,8 +636,9 @@ main {
 
 .map {
     width: 400px;
-    height: 200px;
+    height: 400px;
     background: url("/images/map.png");
+    background-size: contain;
     margin-right: 20px;
     position: relative;
     cursor: pointer;
