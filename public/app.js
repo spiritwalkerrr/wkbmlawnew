@@ -32,47 +32,51 @@ let navExtended = false;
 // false = Menu Hidden
 // true = Menu Extended
 const navToggle = () => {
-    if (navExtended == false) {
+    if (navExtended == false) { //EXTENDS THE MENU AND CHANGES THE STYLING OF THE NAV BUTTON
         navButton.classList.remove("navButtonRotateOut")
         menu.classList.toggle("menuExtended");
         navButton.classList.add("navButtonRotateIn");
+        body.classList.toggle("hideOverflow"); //DISABLES SCROLL TO AVOID THE SCROLLBAR FROM SHOWING UP DUE TO THE FOOTER SCRIPT
         setTimeout(() => {
             navExtended = true;
         }, 200)
-    } else {
+    } else { //HIDES THE MENU AND CHANGES THE STYLE OF THE NAV BUTTON BACK TO DEFAULT
         navButton.classList.remove("navButtonRotateIn");
         menu.classList.toggle("menuExtended");
         navButton.classList.add("navButtonRotateOut");
+        body.classList.toggle("hideOverflow"); //ENABLES THE SCROLL AGAIN
         navExtended = false;
     }
 }
 
-// EVENTLISTENERS FOR NAV MENU TOGGLE WITH SPAM PROTECTION
-navButton.addEventListener("click", () => {
-    navButton.setAttribute("disabled", "");
-    navToggle();
-    footerToggle();
+// EVENTLISTENERS FOR NAV ICON WITH SPAM PROTECTION - OPENS/CLOSES NAVBAR BY PRESSING THE ICON
+navButton.addEventListener("click", () => { 
+    navButton.setAttribute("disabled", ""); //SPAM PROTECTION
+    navToggle(); //EXTENDS/HIDES NAV
+    footerToggle(); //HIDES/EXTENDS FOOTER
     setTimeout(() => {
         navButton.removeAttribute("disabled", "");
-    }, 250)
+    }, 250) //SPAM PROTECTION LASTS FOR 250MS
 })
-for (let button of menuNavButton) {
+// NAV MENU BUTTONS EVENTLISTENERS - CLOSES THE MENU WHEN MENU BUTTON IS PRESSED
+for (let button of menuNavButton) { //LOOPS OVER ALL THE BUTTONS
     button.addEventListener("click", () => {
         if (currentPage == 1) {
-            footer.classList.remove("footerTransparent")
+            footer.classList.remove("footerTransparent") //FOOTER DOESNT SHOW ON "HOME" DUE TO THIS SCRIPT
         }
         navToggle();
+        // NO FOOTER SCRIPT AS ITS HANDLED INDIVIDUALLY
     })
 }
 // TOGGLE SIDE BAR BY HOVERING OFF IT
 main.addEventListener("mouseenter", (event) => {
-    if (event.target == main && navExtended == true) {
+    if (event.target == main && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
         navToggle();
         footerToggle();
     }
 })
 header.addEventListener("mouseenter", (event) => {
-    if (event.target == header && navExtended == true) {
+    if (event.target == header && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> HEADER
         navToggle();
         footerToggle();
     }
@@ -80,33 +84,24 @@ header.addEventListener("mouseenter", (event) => {
 //MENU NAV BUTTON SPAM PROTECTION
 const menuLock = () => {
     for (let button of menuNavButton) {
-        button.setAttribute("disabled", "");
+        button.setAttribute("disabled", ""); //LOCKS THE MENU BUTTONS FOR WHEN THE PAGE IS TRANSFORMING
     }
 }
 const menuUnlock = () => {
     for (let button of menuNavButton){
-        button.removeAttribute("disabled", "");
+        button.removeAttribute("disabled", ""); //UNLOCKS THE MENU BUTTONS FOR WHEN TRANSFORMATION IS OVER
     }
 }
-//TOGGLE HEADER FUNCTION
-const hideHeader = () => {
-    header.classList.add("headerHidden");
-}
+//SHOW HEADER FUNCTION FOR WHEN THE USER SWITCHES OFF FROM THE LANDING PAGE
 const showHeader = () => {
     header.classList.remove("headerHidden");
 }
-// SHOW AND HIDE FOOTER FOOTER FUNCTIONS
+// SHOW AND HIDE FOOTER FOOTER FUNCTION
 const footerToggle = () => {
-    if (currentPage == 3 || currentPage == 6) {
-        setTimeout(() => {
-            footer.classList.toggle("footerHidden");
-        }, 250)
-    } else {
         footer.classList.toggle("footerHidden");
-    }
 }
 // LOAD IMAGES SCRIPT
-// LOAD MAP
+// LOAD MAP ONLY WHEN "CONTACT IS ACCESSED TO REDUCE LAG/STUTTER ON BAD HARDWARE"
 let mapLoaded = false;
 const loadMap = () => {
     if (mapLoaded == false) {
@@ -115,17 +110,19 @@ const loadMap = () => {
     }
 }
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
-const showAbout = () => {
-    menuLock();
-    resetOpacity();
-    footerToggle();
+const showAbout = () => { //SHOWS "PORTRAIT"
+    menuLock(); //LOCK MENU
+    resetOpacity(); //CLEARS THE CLASSES USED TO TRANSITION SMOOTHLY
+    footerToggle(); //TOGGLES FOOTER TO NOT BE HIDDEN ANYMORE
+    // FADES OUT THE CURRENT MAIN CONTENT
     homeContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
     impContainer.classList.add("nullOpacity");
     stmtContainer.classList.add("nullOpacity");
+    // SHOWS THE HEADER IN CASE USER NAVIGATED FROM LANDING PAGE
     showHeader();
-    setTimeout(() => {
+    setTimeout(() => { //WHEN MAIN CONTENT HAS FADED OUT, THIS DISABLES THE DISPLAY FOR THE NON-SELECTED MAIN SECTIONS, THEN ADDS DISPLAY FOR THE SELECTED ONE AND FADES IT IN
         contactContainer.classList.add("noDisplay");
         homeContainer.classList.add("noDisplay");
         teamContainer.classList.add("noDisplay");
@@ -158,7 +155,7 @@ const showTeam = () => {
         teamContainer.classList.add("fullOpacity");
     }, 250)
     setTimeout(() => {
-        footerToggle();
+        footerToggle(); // FOOTER TOGGLES LATER DUE TO UNWANTED PAGE BEHAVIOUR CAUSED BY DIFFERENT HEIGHTS OF THE SECTIONS
         resetOpacity();
         menuUnlock();
     }, 500)
