@@ -16,7 +16,6 @@ const contactContainer = document.querySelector("#contactContainer");
 const impContainer = document.querySelector("#impContainer");
 const stmtContainer = document.querySelector("#stmtContainer");
 
-const teamButton = document.querySelector(".teamButton");
 const impButton = document.querySelector(".impButton");
 const stmtButton = document.querySelector(".stmtButton");
 
@@ -24,6 +23,8 @@ const lawyerContainer = document.querySelectorAll(".lawyerContainer");
 const lawyerName = document.querySelectorAll(".lawyerName");
 const lawyerInfo = document.querySelectorAll(".lawyerInfo");
 const chevron = document.querySelectorAll(".chevron");
+
+const map = document.querySelector(".map");
 
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
@@ -93,6 +94,15 @@ const footerToggle = () => {
         footer.classList.toggle("footerHidden");
     }
 }
+// LOAD IMAGES SCRIPT
+// LOAD MAP
+let mapLoaded = false;
+const loadMap = () =>{
+    if (mapLoaded == false){
+        map.classList.add("mapLoaded");
+        mapLoaded = true;
+    }
+}
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showAbout = () => {
     resetOpacity();
@@ -139,6 +149,7 @@ const showTeam = () => {
     }, 500)
 }
 const showContact = () => {
+    loadMap();
     resetOpacity();
     footerToggle();
     homeContainer.classList.add("nullOpacity");
@@ -271,12 +282,6 @@ menuNavButton[4].addEventListener("click", () => {
     }
 })
 // OTHER "REDIRECT" SCRIPTS NOT RELATED TO THE SIDEBAR BUTTONS
-teamButton.addEventListener("click", () => {
-    window.scrollTo(0, 0);
-    showTeam();
-    footerToggle();
-    currentPage = 3;
-})
 impButton.addEventListener("click", () => {
     if (currentPage !== 5) {
         window.scrollTo(0, 0);
