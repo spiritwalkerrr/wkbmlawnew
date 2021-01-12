@@ -58,7 +58,7 @@ navButton.addEventListener("click", () => {
 })
 for (let button of menuNavButton) {
     button.addEventListener("click", () => {
-        if (currentPage == 1){
+        if (currentPage == 1) {
             footer.classList.remove("footerTransparent")
         }
         navToggle();
@@ -77,6 +77,17 @@ header.addEventListener("mouseenter", (event) => {
         footerToggle();
     }
 })
+//MENU NAV BUTTON SPAM PROTECTION
+const menuLock = () => {
+    for (let button of menuNavButton) {
+        button.setAttribute("disabled", "");
+    }
+}
+const menuUnlock = () => {
+    for (let button of menuNavButton){
+        button.removeAttribute("disabled", "");
+    }
+}
 //TOGGLE HEADER FUNCTION
 const hideHeader = () => {
     header.classList.add("headerHidden");
@@ -97,14 +108,15 @@ const footerToggle = () => {
 // LOAD IMAGES SCRIPT
 // LOAD MAP
 let mapLoaded = false;
-const loadMap = () =>{
-    if (mapLoaded == false){
+const loadMap = () => {
+    if (mapLoaded == false) {
         map.classList.add("mapLoaded");
         mapLoaded = true;
     }
 }
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showAbout = () => {
+    menuLock();
     resetOpacity();
     footerToggle();
     homeContainer.classList.add("nullOpacity");
@@ -124,9 +136,11 @@ const showAbout = () => {
     }, 250)
     setTimeout(() => {
         resetOpacity();
+        menuUnlock();
     }, 500)
 }
 const showTeam = () => {
+    menuLock();
     resetOpacity();
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
@@ -146,10 +160,12 @@ const showTeam = () => {
     setTimeout(() => {
         footerToggle();
         resetOpacity();
+        menuUnlock();
     }, 500)
 }
 const showContact = () => {
     loadMap();
+    menuLock();
     resetOpacity();
     footerToggle();
     homeContainer.classList.add("nullOpacity");
@@ -169,9 +185,11 @@ const showContact = () => {
     }, 250)
     setTimeout(() => {
         resetOpacity();
+        menuUnlock();
     }, 500)
 }
 const showImp = () => {
+    menuLock();
     resetOpacity();
     footerToggle();
     homeContainer.classList.add("nullOpacity");
@@ -191,9 +209,11 @@ const showImp = () => {
     }, 250)
     setTimeout(() => {
         resetOpacity();
+        menuUnlock();
     }, 500)
 }
 const showStmt = () => {
+    menuLock();
     resetOpacity();
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
@@ -213,6 +233,7 @@ const showStmt = () => {
     setTimeout(() => {
         resetOpacity();
         footerToggle();
+        menuUnlock();
     }, 500)
 }
 //RESET OPACITY CLASSES FUNCTION & REMOVE HEADER BAR
