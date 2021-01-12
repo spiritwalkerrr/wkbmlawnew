@@ -269,7 +269,7 @@ header {
 .menuNavButton {
     padding: 0;
     position: relative;
-    font-family: "arial", sans-serif;
+    font-family: "Helvetia Neue", "arial", sans-serif, sans-serif;
 }
 
 .menuNavButton::before {
@@ -336,9 +336,9 @@ main {
     /* SETS THE WIDTH OF THE CONTAINER FOR THE MAIN CONTENT */
     --containerWidth: 60%;
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
-    --containerH2Font: normal normal 600 33px/36px "arial";
+    --containerH2Font: normal normal 500 33px/36px "Helvetia Neue", "arial", sans-serif;
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
-    --containerPFont: normal normal 100 18px/22px "arial";
+    --containerPFont: normal normal 100 18px/22px "Helvetia Neue", "arial", sans-serif;
     ;
     /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
     --h2Padding: 25px;
@@ -406,13 +406,13 @@ main {
     /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
     --lawyerNameExtended: 200px;
     /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH3Font: normal normal 500 32px/46px "arial";
+    --lawyerContainerH3Font: normal normal 300 32px/46px "Helvetia Neue", "arial", sans-serif;
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH4Font: normal normal 500 21px/30px "arial";
+    --lawyerContainerH4Font: normal normal 500 21px/30px "Helvetia Neue", "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER NAME LIST */
-    --lawyerNameFont: normal normal 100 18px/23px "arial";
+    --lawyerNameFont: normal normal 100 19px/21px "Helvetia Neue", "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER INFO LIST */
-    --lawyerInfoFont: normal normal 100 17px/20px "arial";
+    --lawyerInfoFont: normal normal 100 17px/20px "Helvetia Neue", "arial", sans-serif;
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
 }
@@ -422,7 +422,7 @@ main {
 }
 
 .lawyerContainer {
-    width: 80%;
+    width: 90%;
     height: var(--lawyerContainerBase);
     display: flex;
     position: relative;
@@ -606,7 +606,7 @@ main {
 #contactContainer h2 {
     padding-bottom: 10px;
     border-left: none;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 #contactContainer h2:nth-of-type(2) {
@@ -684,7 +684,7 @@ main {
 
 #stmtContainer h3 {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 300;
     padding: 5px 0;
 }
 
@@ -747,7 +747,7 @@ footer {
 .footerLeft a {
     display: block;
     color: white;
-    font-family: "arial";
+    font-family: "Helvetia Neue", "arial", sans-serif;
     font-weight: 100;
 }
 
