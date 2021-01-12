@@ -380,7 +380,15 @@ main {
     display: flex;
     margin-bottom: 20px;
 }
-
+.centerAlign{
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    margin: auto;
+}
+.centerAlign h2{
+    width: 100%;
+}
 /* LAWYERS */
 
 :root {

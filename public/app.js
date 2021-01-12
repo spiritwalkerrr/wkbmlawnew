@@ -132,8 +132,8 @@ const showAbout = () => { //SHOWS "PORTRAIT"
         aboutContainer.classList.add("fullOpacity");
     }, 250)
     setTimeout(() => {
-        resetOpacity();
-        menuUnlock();
+        resetOpacity(); //AGAIN RESETS THE OPACITY CLASSES, AS ONLY "noDisplay" MATTERS ONCE PAGE HAS TRANSFORMED
+        menuUnlock(); //UNLOCKS MENU BUTTONS
     }, 500)
 }
 const showTeam = () => {
@@ -299,7 +299,7 @@ menuNavButton[4].addEventListener("click", () => {
         currentPage = 6;
     }
 })
-// OTHER "REDIRECT" SCRIPTS NOT RELATED TO THE SIDEBAR BUTTONS
+// OTHER "REDIRECT" SCRIPTS - USING THE FOOTER BUTTONS
 impButton.addEventListener("click", () => {
     if (currentPage !== 5) {
         window.scrollTo(0, 0);
