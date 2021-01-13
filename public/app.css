@@ -48,8 +48,8 @@ html {
 
 @font-face {
 	font-family: 'HelveticaKVAFont';
-	src: url('./HelveticaKVAFont.eot');
-	src: url('font/HelveticaKVAFont'), url('font/HelveticaKVAFont.woff') format('woff'), url('font/HelveticaKVAFont.ttf') format('truetype');
+	src: url('/HelveticaKVAFont/HelveticaKVAFont.eot');
+	src:  url('/HelveticaKVAFont/HelveticaKVAFont.woff') format('woff'), url('/HelveticaKVAFont/HelveticaKVAFont.ttf') format('truetype');
 }
 
 body {
@@ -57,7 +57,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    font-family: 'HelveticaKVAFont', "arial",sans-serif;
+    font-family: 'HelveticaKVAFont', "arial", sans-serif;
     font-weight: 200;
     font-size: 1em;
     display: flex;
@@ -328,8 +328,9 @@ main {
 #homeContainer div:nth-of-type(2) {
     width: 50%;
     text-align: center;
-    padding-top: 20px;
-    font: var(--containerPFont)
+    padding-top: 40px;
+    font: var(--containerPFont);
+    line-height: 30px;
 }
 
 .homeLogo {
@@ -389,7 +390,7 @@ main {
 .centerAlign{
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
+    width: 850px;
     margin: auto;
 }
 .centerAlign h2{
@@ -446,7 +447,7 @@ main {
 }
 
 .lawyerPicture {
-    width: 30%;
+    width: 33%;
     height: var(--lawyerContainerExtended);
     position: absolute;
     top: 0;
@@ -591,9 +592,11 @@ main {
 /* CONTACT */
 
 #contactContainer {
+    height: 90%;
+    width: 60%;
     display: flex;
-    margin-top: 40px;
     justify-content: center;
+    align-items: center;
 }
 
 #contactContainer p {
@@ -613,17 +616,19 @@ main {
 .phoneAlign p:nth-of-type(1) {
     margin-right: 12px;
 }
-
-.contactInfo {
+.contactInfo{
     width: 50%;
-    margin-left: 30px;
+    padding-left: 30px;
 }
-
 .map {
-    width: 350px;
+    width: 50%;
     height: 280px;
+    position: relative;
     background: none; 
     cursor: pointer;
+    transition: 300ms;
+    border: 1px solid var(--menuColor);
+    border-radius: 2px;
 }
 .mapLoaded{
     background: url("/images/map.jpg");
@@ -631,37 +636,21 @@ main {
     background-position: center;
     position: relative;
 }
-
-.map::before {
-    content: "";
-    width: 100%;
-    height: 70px;
+.map::after{
+    content: "Hover to Enlarge";
     position: absolute;
-    bottom: 0;
+    background: var(--paleBackground);
+    padding: 5px;
+    bottom: 0; 
     left: 0;
-    background: var(--menuColor);
-    opacity: 0;
-    transition: 250ms;
 }
 
-.map::after {
-    content: "View on Google Maps";
-    color: white;
-    font-size: 25px;
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transition: 250ms;
-}
-.map:hover::before{
-    opacity: 0.7;
+.map:hover{
+    transform: scale(2) translate(25%);
 }
 .map:hover::after{
-    opacity: 1;
+    opacity: 0;
+    transition: 300ms;
 }
 
 /* LEGAL NOTICE */
@@ -674,6 +663,7 @@ main {
 #stmtContainer h2, #stmtContainer p {
     border-left: none;
     padding: 0;
+    text-align: justify;
 }
 
 #stmtContainer h2 {
