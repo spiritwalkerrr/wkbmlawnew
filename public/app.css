@@ -47,9 +47,9 @@ html {
 }
 
 @font-face {
-	font-family: 'Helvetica Neue Roman';
-	src: url('./Helvetica Neue Roman.eot');
-	src: url('font/Helvetica Neue Roman'), url('font/Helvetica Neue Roman.woff') format('woff'), url('font/Helvetica Neue Roman.ttf') format('truetype');
+	font-family: 'HelveticaKVAFont';
+	src: url('./HelveticaKVAFont.eot');
+	src: url('font/HelveticaKVAFont'), url('font/HelveticaKVAFont.woff') format('woff'), url('font/HelveticaKVAFont.ttf') format('truetype');
 }
 
 body {
@@ -57,7 +57,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    font-family: 'Helvetica Neue Roman', "arial",sans-serif;
+    font-family: 'HelveticaKVAFont', "arial",sans-serif;
     font-weight: 200;
     font-size: 1em;
     display: flex;
@@ -279,7 +279,7 @@ header {
 .menuNavButton {
     padding: 0;
     position: relative;
-    font-family:  'Helvetica Neue Roman', "arial",sans-serif;
+    font-family:  'HelveticaKVAFont', "arial",sans-serif;
 }
 
 .menuNavButton::before {
@@ -347,9 +347,9 @@ main {
     /* SETS THE WIDTH OF THE CONTAINER FOR THE MAIN CONTENT */
     --containerWidth: 60%;
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
-    --containerH2Font: normal normal 500 33px/36px  'Helvetica Neue Roman', "arial", sans-serif;
+    --containerH2Font: normal normal 500 33px/36px  'HelveticaKVAFont', "arial",sans-serif;
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
-    --containerPFont: normal normal 100 18px/22px  'Helvetica Neue Roman', "arial", sans-serif;
+    --containerPFont: normal normal 100 18px/22px  'HelveticaKVAFont', "arial",sans-serif;
     ;
     /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
     --h2Padding: 25px;
@@ -405,13 +405,13 @@ main {
     /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
     --lawyerNameExtended: 220px;
     /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH3Font: normal normal 300 32px/46px  'Helvetica Neue Roman', "arial",s ans-serif;
+    --lawyerContainerH3Font: normal normal 300 32px/46px  'HelveticaKVAFont', "arial",sans-serif;
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH4Font: normal normal 300 21px/30px  'Helvetica Neue Roman', "arial", sans-serif;
+    --lawyerContainerH4Font: normal normal 300 21px/30px  'HelveticaKVAFont', "arial",sans-serif;
     /* SETS THE FONT OF THE LAWYER NAME LIST */
-    --lawyerNameFont: normal normal 200 19px/21px  'Helvetica Neue Roman', "arial", sans-serif;
+    --lawyerNameFont: normal normal 200 19px/21px  'HelveticaKVAFont', "arial",sans-serif;
     /* SETS THE FONT OF THE LAWYER INFO LIST */
-    --lawyerInfoFont: normal normal 200 17px/20px  'Helvetica Neue Roman', "arial", sans-serif;
+    --lawyerInfoFont: normal normal 200 17px/20px  'HelveticaKVAFont', "arial",sans-serif;
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
 }
@@ -746,7 +746,7 @@ footer {
 .footerLeft a {
     display: block;
     color: white;
-    font-family:  'Helvetica Neue Roman', "arial",sans-serif;
+    font-family:  'HelveticaKVAFont', "arial",sans-serif;
     font-weight: 200;
 }
 
