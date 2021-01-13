@@ -843,7 +843,7 @@ footer {
         /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
         --lawyerContainerBase: 300px;
         /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
-        --lawyerContainerExtended: 500px;
+        --lawyerContainerExtended: 450px;
         /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
         --lawyerNameExtended: 150px;
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
@@ -868,8 +868,8 @@ footer {
         width: 31%;
     }
     .lawyerInfo {
-        height: 350px;
-        bottom: -350px;
+        height: 300px;
+        bottom: -300px;
     }
     .lawyerInfoExtended {
         bottom: 0;
