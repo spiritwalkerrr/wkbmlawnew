@@ -58,14 +58,12 @@ navButton.addEventListener("click", () => {
         navButton.removeAttribute("disabled", "");
     }, 250) //SPAM PROTECTION LASTS FOR 250MS
 })
-// NAV MENU BUTTONS EVENTLISTENERS - CLOSES THE MENU WHEN MENU BUTTON IS PRESSED
+// FOOTER SHOULDNT BE VISIBLE UPON LANDING
 for (let button of menuNavButton) { //LOOPS OVER ALL THE BUTTONS
     button.addEventListener("click", () => {
         if (currentPage == 1) {
-            footer.classList.remove("footerTransparent") //FOOTER DOESNT SHOW ON "HOME" DUE TO THIS SCRIPT
+            footer.classList.remove("footerTransparent") //ONCE YOU NAVIGATED AWAY FROM THE LANDING PAGE FOOTER STAYS
         }
-        navToggle();
-        // NO FOOTER SCRIPT AS ITS HANDLED INDIVIDUALLY
     })
 }
 // TOGGLE SIDE BAR BY HOVERING OFF IT
@@ -96,6 +94,9 @@ const menuUnlock = () => {
 const showHeader = () => {
     header.classList.remove("headerHidden");
 }
+const hideHeader= () => {
+    header.classList.add("headerHidden");
+}
 // SHOW AND HIDE FOOTER FOOTER FUNCTION
 const footerToggle = () => {
         footer.classList.toggle("footerHidden");
@@ -110,10 +111,32 @@ const loadMap = () => {
     }
 }
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
+const showHome = () => {
+    menuLock();
+    hideHeader();
+    resetOpacity();
+    teamContainer.classList.add("nullOpacity");
+    aboutContainer.classList.add("nullOpacity");
+    contactContainer.classList.add("nullOpacity");
+    impContainer.classList.add("nullOpacity");
+    stmtContainer.classList.add("nullOpacity");
+    setTimeout(() => {
+        teamContainer.classList.add("noDisplay");
+        aboutContainer.classList.add("noDisplay");
+        contactContainer.classList.add("noDisplay");
+        impContainer.classList.add("noDisplay");
+        stmtContainer.classList.add("noDisplay");
+        homeContainer.classList.remove("noDisplay");
+        homeContainer.classList.add("fullOpacity");
+    }, 250)
+    setTimeout(() => {
+        resetOpacity();
+        menuUnlock();
+    }, 500)
+}
 const showAbout = () => { //SHOWS "PORTRAIT"
     menuLock(); //LOCK MENU
     resetOpacity(); //CLEARS THE CLASSES USED TO TRANSITION SMOOTHLY
-    footerToggle(); //TOGGLES FOOTER TO NOT BE HIDDEN ANYMORE
     // FADES OUT THE CURRENT MAIN CONTENT
     homeContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
@@ -155,7 +178,6 @@ const showTeam = () => {
         teamContainer.classList.add("fullOpacity");
     }, 250)
     setTimeout(() => {
-        footerToggle(); // FOOTER TOGGLES LATER DUE TO UNWANTED PAGE BEHAVIOUR CAUSED BY DIFFERENT HEIGHTS OF THE SECTIONS
         resetOpacity();
         menuUnlock();
     }, 500)
@@ -164,7 +186,7 @@ const showContact = () => {
     loadMap();
     menuLock();
     resetOpacity();
-    footerToggle();
+
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
@@ -188,7 +210,6 @@ const showContact = () => {
 const showImp = () => {
     menuLock();
     resetOpacity();
-    footerToggle();
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     contactContainer.classList.add("nullOpacity");
@@ -229,7 +250,6 @@ const showStmt = () => {
     }, 250)
     setTimeout(() => {
         resetOpacity();
-        footerToggle();
         menuUnlock();
     }, 500)
 }
@@ -259,44 +279,71 @@ let currentPage = 1
 // 5 = LEGAL NOTICE
 // 6 = PRIVACY STATEMENT
 
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "HOME"
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "PORTRAIT"
 menuNavButton[0].addEventListener("click", () => {
+    navToggle();
+    footerToggle();
+    if (currentPage !== 1) {
+        window.scrollTo(0, 0);
+        showHome();
+        currentPage = 1;
+    }
+})
+menuNavButton[1].addEventListener("click", () => {
+    navToggle();
+    footerToggle();
     if (currentPage !== 2) {
         window.scrollTo(0, 0);
         showAbout();
         currentPage = 2;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "PORTRAIT"
-menuNavButton[1].addEventListener("click", () => {
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
+menuNavButton[2].addEventListener("click", () => {
+    navToggle();
     if (currentPage !== 3) {
         window.scrollTo(0, 0);
         showTeam();
+        setTimeout(()=>{
+            footerToggle()
+        },250)
         currentPage = 3;
+    } else {
+        footerToggle();
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
-menuNavButton[2].addEventListener("click", () => {
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
+menuNavButton[3].addEventListener("click", () => {
+    navToggle();
+    footerToggle();
     if (currentPage !== 4) {
         window.scrollTo(0, 0);
         showContact();
         currentPage = 4;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
-menuNavButton[3].addEventListener("click", () => {
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
+menuNavButton[4].addEventListener("click", () => {
+    navToggle();
+    footerToggle();
     if (currentPage !== 5) {
         window.scrollTo(0, 0);
         showImp();
         currentPage = 5;
     }
 })
-//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
-menuNavButton[4].addEventListener("click", () => {
+//SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "DATA PROTECTION"
+menuNavButton[5].addEventListener("click", () => {
+    navToggle();
     if (currentPage !== 6) {
         window.scrollTo(0, 0);
         showStmt();
+        setTimeout(()=>{
+            footerToggle()
+        },250)
         currentPage = 6;
+    } else {
+        footerToggle();
     }
 })
 // OTHER "REDIRECT" SCRIPTS - USING THE FOOTER BUTTONS
