@@ -622,7 +622,7 @@ main {
 }
 .map {
     width: 50%;
-    height: 280px;
+    height: 300px;
     position: relative;
     background: none; 
     cursor: pointer;
