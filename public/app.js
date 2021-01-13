@@ -25,6 +25,8 @@ const lawyerInfo = document.querySelectorAll(".lawyerInfo");
 const chevron = document.querySelectorAll(".chevron");
 
 const map = document.querySelector(".map");
+const mapInfo = document.querySelector(".mapInfo")
+const contactInfo = document.querySelector(".contactInfo")
 
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
@@ -39,7 +41,7 @@ const navToggle = () => {
         body.classList.toggle("hideOverflow"); //DISABLES SCROLL TO AVOID THE SCROLLBAR FROM SHOWING UP DUE TO THE FOOTER SCRIPT
         setTimeout(() => {
             navExtended = true;
-        }, 200)
+        }, 250)
     } else { //HIDES THE MENU AND CHANGES THE STYLE OF THE NAV BUTTON BACK TO DEFAULT
         navButton.classList.remove("navButtonRotateIn");
         menu.classList.toggle("menuExtended");
@@ -50,7 +52,7 @@ const navToggle = () => {
 }
 
 // EVENTLISTENERS FOR NAV ICON WITH SPAM PROTECTION - OPENS/CLOSES NAVBAR BY PRESSING THE ICON
-navButton.addEventListener("click", () => { 
+navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", ""); //SPAM PROTECTION
     navToggle(); //EXTENDS/HIDES NAV
     footerToggle(); //HIDES/EXTENDS FOOTER
@@ -63,6 +65,9 @@ for (let button of menuNavButton) { //LOOPS OVER ALL THE BUTTONS
     button.addEventListener("click", () => {
         if (currentPage == 1) {
             footer.classList.remove("footerTransparent") //ONCE YOU NAVIGATED AWAY FROM THE LANDING PAGE FOOTER STAYS
+        }
+        if (mapExpanded == true) {
+            mapToggle();
         }
     })
 }
@@ -86,7 +91,7 @@ const menuLock = () => {
     }
 }
 const menuUnlock = () => {
-    for (let button of menuNavButton){
+    for (let button of menuNavButton) {
         button.removeAttribute("disabled", ""); //UNLOCKS THE MENU BUTTONS FOR WHEN TRANSFORMATION IS OVER
     }
 }
@@ -94,12 +99,24 @@ const menuUnlock = () => {
 const showHeader = () => {
     header.classList.remove("headerHidden");
 }
-const hideHeader= () => {
+const hideHeader = () => {
     header.classList.add("headerHidden");
 }
 // SHOW AND HIDE FOOTER FOOTER FUNCTION
 const footerToggle = () => {
+    if (currentPage == 1) {
+        footer.classList.add("footerTransparent");
+    } else {
+        footer.classList.remove("footerTransparent");
+    }
+    if (previousPage == 3 || previousPage == 6) { //THIS SCRIPT DELAYS THE FOOTER HIDING AWAY IN CASE THE PAGE HAS CHANGED SIZE (CAUSES CHOPPY VISUALS OTHERWISE)
+        setTimeout(() => {
+            footer.classList.toggle("footerHidden");
+            previousPage = 1; //NEEDED BECAUSE IT SHOULD ONLY BE SLOWED ONCE
+        }, 250)
+    } else {
         footer.classList.toggle("footerHidden");
+    }
 }
 // LOAD IMAGES SCRIPT
 // LOAD MAP ONLY WHEN "CONTACT IS ACCESSED TO REDUCE LAG/STUTTER ON BAD HARDWARE"
@@ -186,7 +203,6 @@ const showContact = () => {
     loadMap();
     menuLock();
     resetOpacity();
-
     homeContainer.classList.add("nullOpacity");
     aboutContainer.classList.add("nullOpacity");
     teamContainer.classList.add("nullOpacity");
@@ -272,6 +288,7 @@ const resetOpacity = () => {
 
 //NAVIGATION SCRIPT
 let currentPage = 1
+let previousPage = 1
 // 1 = HOME
 // 2 = PORTRAIT
 // 3 = TEAM
@@ -282,32 +299,35 @@ let currentPage = 1
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "PORTRAIT"
 menuNavButton[0].addEventListener("click", () => {
     navToggle();
-    footerToggle();
     if (currentPage !== 1) {
+        previousPage = currentPage;
+        currentPage = 1;
         window.scrollTo(0, 0);
         showHome();
-        currentPage = 1;
     }
+    footerToggle();
 })
 menuNavButton[1].addEventListener("click", () => {
     navToggle();
-    footerToggle();
     if (currentPage !== 2) {
+        previousPage = currentPage;
+        currentPage = 2;
         window.scrollTo(0, 0);
         showAbout();
-        currentPage = 2;
     }
+    footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
 menuNavButton[2].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 3) {
+        previousPage = currentPage;
+        currentPage = 3;
         window.scrollTo(0, 0);
         showTeam();
-        setTimeout(()=>{
+        setTimeout(() => {
             footerToggle()
-        },250)
-        currentPage = 3;
+        }, 250)
     } else {
         footerToggle();
     }
@@ -315,33 +335,36 @@ menuNavButton[2].addEventListener("click", () => {
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
 menuNavButton[3].addEventListener("click", () => {
     navToggle();
-    footerToggle();
     if (currentPage !== 4) {
+        previousPage = currentPage;
+        currentPage = 4;
         window.scrollTo(0, 0);
         showContact();
-        currentPage = 4;
     }
+    footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
 menuNavButton[4].addEventListener("click", () => {
     navToggle();
-    footerToggle();
     if (currentPage !== 5) {
+        previousPage = currentPage;
+        currentPage = 5;
         window.scrollTo(0, 0);
         showImp();
-        currentPage = 5;
     }
+    footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "DATA PROTECTION"
 menuNavButton[5].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 6) {
+        previousPage = currentPage;
+        currentPage = 6;
         window.scrollTo(0, 0);
         showStmt();
-        setTimeout(()=>{
+        setTimeout(() => {
             footerToggle()
-        },250)
-        currentPage = 6;
+        }, 250)
     } else {
         footerToggle();
     }
@@ -349,18 +372,16 @@ menuNavButton[5].addEventListener("click", () => {
 // OTHER "REDIRECT" SCRIPTS - USING THE FOOTER BUTTONS
 impButton.addEventListener("click", () => {
     if (currentPage !== 5) {
+        currentPage = 5;
         window.scrollTo(0, 0);
         showImp();
-        footerToggle();
-        currentPage = 5;
     }
 })
 stmtButton.addEventListener("click", () => {
     if (currentPage !== 6) {
+        currentPage = 6;
         window.scrollTo(0, 0);
         showStmt();
-        footerToggle();
-        currentPage = 6;
     }
 })
 // EXTEND LAWYER DESCRIPTION SCRIPT
@@ -428,4 +449,20 @@ chevron[3].addEventListener("click", () => {
         }, 250)
     }
 
+})
+// ENLARGE MAP SCRIPT
+let mapExpanded = false;
+const mapToggle = () => {
+    map.classList.toggle("mapEnlarged");
+    contactInfo.classList.toggle("contactInfoHidden");
+    if (mapExpanded == false) {
+        mapInfo.innerHTML = "Click to Hide";
+        mapExpanded = true;
+    } else {
+        mapInfo.innerHTML = "Click to Enlarge";
+        mapExpanded = false;
+    }
+}
+map.addEventListener("click", () => {
+    mapToggle();
 })

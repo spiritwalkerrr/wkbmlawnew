@@ -261,14 +261,6 @@ header {
     left: 0;
 }
 
-/* MENUHEADER */
-
-.menuButton {
-    margin-left: auto;
-    color: inherit;
-    padding: 10px;
-}
-
 /* MENU NAV */
 
 .menuNav {
@@ -628,6 +620,7 @@ main {
 .contactInfo {
     width: 50%;
     padding-left: 30px;
+    transition: 200ms;
 }
 
 .map {
@@ -637,7 +630,6 @@ main {
     background: none;
     cursor: pointer;
     transition: 300ms;
-    border: 1px solid var(--menuColor);
     border-radius: 2px;
 }
 
@@ -648,32 +640,38 @@ main {
     position: relative;
 }
 
-.map::after {
-    content: "Hover to Enlarge";
+.mapInfo {
     position: absolute;
-    background: var(--paleBackground);
-    padding: 5px;
+    color: white;
+    background: var(--menuColor);
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    height: 25px;
+    padding-top: 10px;
     bottom: 0;
     left: 0;
+    opacity: 0.7;
 }
 
-.map:hover {
-    transform: scale(2) translate(25%);
+.mapEnlarged {
+    transform: scale(1.5) translate(35%);
+}
+.contactInfoHidden{
+    color: white;
 }
 
-.map:hover::after {
-    opacity: 0;
-    transition: 300ms;
-}
 
 /* LEGAL NOTICE */
 
 #impContainer {
     margin-top: 40px;
 }
+
 #impContainer p {
     text-align: justify;
 }
+
 /* PRIVACY POLICY */
 
 #stmtContainer h2, #stmtContainer p {
@@ -731,6 +729,7 @@ footer {
 
 .footerTransparent {
     opacity: 0;
+    transition: 0ms;
 }
 
 .footerContent {
@@ -780,5 +779,119 @@ footer {
         --headerLogoWidth: 500px;
         /* SETS THE HEIGHT OF THE LOGO IN THE HEADER */
         --headerLogoHeight: 40px;
+    }
+    /* NAVICON */
+    .navButton {
+        top: 20px;
+        left: 30px;
+    }
+    /* GENERAL */
+    :root {
+        /* SETS THE MARGIN FROM THE TOP OF THE PAGE */
+        --mainMargin: 80px;
+    }
+    /* FONTS FOR THE CONTAINERS */
+    :root {
+        /* SETS THE WIDTH OF THE CONTAINER FOR THE MAIN CONTENT */
+        --containerWidth: 80%;
+        /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
+        --containerH2Font: normal normal 500 25px/30px 'HelveticaKVAFont', "arial", sans-serif;
+        /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
+        --containerPFont: normal normal 100 14px/18px 'HelveticaKVAFont', "arial", sans-serif;
+        ;
+        /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
+        --h2Padding: 20px;
+    }
+    /* MENU */
+    :root {
+        /* SETS THE WIDTH OF THE SIDEBAR MENU */
+        --menuWidth: 30%;
+        /* NEGATIVE VALUE OF ABOVE */
+        --menuHidden: -30%;
+    }
+    /* MENU NAV */
+    .menuNav {
+        font-size: 1.2em;
+        line-height: 1.8em;
+        margin-top: 100px;
+        margin-left: 30px;
+    }
+    /* LANDING PAGE */
+    #homeContainer div:nth-of-type(2) {
+        width: 70%;
+    }
+    .homeLogo {
+        width: 70%;
+    }
+    /* CONTAINER SETTINGS */
+    .container p {
+        padding-bottom: 20px;
+    }
+    /* INDIVIDUAL CONTAINERS */
+    /* ABOUT */
+    #aboutContainer {
+        margin-top: 50px;
+    }
+    #aboutContainer div {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .centerAlign {
+        width: auto;
+    }
+    :root {
+        /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
+        --lawyerContainerBase: 300px;
+        /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
+        --lawyerContainerExtended: 500px;
+        /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
+        --lawyerNameExtended: 150px;
+        /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
+        --lawyerContainerH3Font: normal normal 300 20px/25px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
+        --lawyerContainerH4Font: normal normal 300 16px/20px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE LAWYER NAME LIST */
+        --lawyerNameFont: normal normal 200 14px/16px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE LAWYER INFO LIST */
+        --lawyerInfoFont: normal normal 200 14px/16px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
+        --lawyerWrapperWidth: 80%;
+    }
+    /* TEAM */
+    .lawyerContainer {
+        width: 95%;
+    }
+    .lawyerDescription {
+        width: 66%;
+    }
+    .lawyerPicture {
+        width: 31%;
+    }
+    .lawyerInfo {
+        height: 350px;
+        bottom: -350px;
+    }
+    .lawyerInfoExtended {
+        bottom: 0;
+    }
+    /* CONTACT */
+    #contactContainer {
+        width: 80%;
+        margin-top: 35px;
+    }
+    .phoneAlign p:nth-of-type(1) {
+        margin-right: 10px;
+    }
+    /* FOOTER */
+    :root {
+        /* SETS THE HEIGHT OF THE FOOTER */
+        --footerHeight: 60px;
+        /* NEGATIVE VALUE OF ABOVE */
+        --footerHidden: -60px;
+        /* FONT SIZE FOR THE FOOTER CONTENT */
+        --footerFontSize: 12px;
+    }
+    .footerContent {
+        width: 80%;
     }
 }
