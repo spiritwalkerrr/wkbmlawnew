@@ -716,10 +716,12 @@ main {
 }
 
 footer {
-    align-self: flex-end;
+    /* align-self: flex-end; */
     width: 100%;
     background: #423F4A;
     position: relative;
+    bottom: 0;
+    right: 0;
     transition: 250ms;
     display: flex;
     height: var(--footerHeight);
