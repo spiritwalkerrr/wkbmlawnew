@@ -464,5 +464,7 @@ const mapToggle = () => {
     }
 }
 map.addEventListener("click", () => {
-    mapToggle();
+    if (window.innerWidth > 768) {
+        mapToggle();
+    }
 })

@@ -320,7 +320,7 @@ main {
     flex-direction: column;
 }
 
-#homeContainer div:nth-of-type(2) {
+.homeIntro {
     width: 50%;
     text-align: center;
     padding-top: 40px;
@@ -553,6 +553,10 @@ main {
     animation-fill-mode: forwards;
 }
 
+.mobileWrapper {
+    display: none;
+}
+
 /* WOHLMACHER */
 
 .wohlmacherPicture {
@@ -657,10 +661,10 @@ main {
 .mapEnlarged {
     transform: scale(1.5) translate(35%);
 }
-.contactInfoHidden{
+
+.contactInfoHidden {
     color: white;
 }
-
 
 /* LEGAL NOTICE */
 
@@ -768,7 +772,7 @@ footer {
     margin: 0 4px;
 }
 
-@media only screen and (max-width: 1199px) and (min-width: 768px) {
+@media only screen and (max-width: 1199px) {
     /* HEADER */
     :root {
         /* SETS THE HEIGHT OF THE HEADER */
@@ -817,10 +821,11 @@ footer {
         margin-left: 30px;
     }
     /* LANDING PAGE */
-    #homeContainer div:nth-of-type(2) {
+    .homeLogo {
         width: 70%;
     }
-    .homeLogo {
+    .homeIntro {
+        padding-top: 0;
         width: 70%;
     }
     /* CONTAINER SETTINGS */
@@ -854,8 +859,6 @@ footer {
         --lawyerNameFont: normal normal 200 14px/16px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
         --lawyerInfoFont: normal normal 200 14px/16px 'HelveticaKVAFont', "arial", sans-serif;
-        /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
-        --lawyerWrapperWidth: 80%;
     }
     /* TEAM */
     .lawyerContainer {
@@ -893,5 +896,174 @@ footer {
     }
     .footerContent {
         width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* HEADER */
+    :root {
+        /* SETS THE HEIGHT OF THE HEADER */
+        --headerHeight: 70px;
+        /* NEGATIVE VALUE OF WHAT IS ABOVE + BUFFER */
+        --headerHidden: -75px;
+        /* SETS THE WIDTH OF THE LOGO IN THE HEADER */
+        --headerLogoWidth: 70%;
+        /* SETS THE HEIGHT OF THE LOGO IN THE HEADER */
+        --headerLogoHeight: 50px;
+    }
+    /* GENERAL */
+    :root {
+        /* SETS THE MARGIN FROM THE TOP OF THE PAGE */
+        --mainMargin: 40px;
+    }
+    /* FONTS FOR THE CONTAINERS */
+    :root {
+        /* SETS THE WIDTH OF THE CONTAINER FOR THE MAIN CONTENT */
+        --containerWidth: 90%;
+    }
+    /* MENU */
+    :root {
+        /* SETS THE WIDTH OF THE SIDEBAR MENU */
+        --menuWidth: 50%;
+        /* NEGATIVE VALUE OF ABOVE */
+        --menuHidden: -50%;
+    }
+    /* MENU NAV */
+    .menuNav {
+        font-size: 1.1em;
+        line-height: 1.8em;
+        margin-top: 100px;
+        margin-left: 10px;
+    }
+    /* NAVICON */
+    .navButton {
+        top: 13px;
+        left: 5px;
+        transform: scale(0.8);
+    }
+    @keyframes navIconRotateIn {
+        from {
+            transform: rotate(0deg) scale(0.8);
+            color: black
+        }
+        to {
+            transform: rotate(90deg) scale(0.8);
+            color: white
+        }
+    }
+    @keyframes navIconRotateOut {
+        from {
+            transform: rotate(90deg) scale(0.8);
+            color: white
+        }
+        to {
+            transform: rotate(0deg) scale(0.8);
+            color: black
+        }
+    }
+    .footerContent {
+        width: 90%;
+        flex-direction: column-reverse;
+    }
+    /* LANDING PAGE */
+    .homeIntro {
+        padding-top: 0;
+        width: 90%;
+    }
+    .homeIntro br {
+        display: none;
+    }
+    .homeLogo {
+        width: 90%;
+    }
+    /* TEAM */
+    :root {
+        /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
+        --lawyerContainerBase: 170px;
+        /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
+        --lawyerContainerExtended: 470px;
+        /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
+        --lawyerNameExtended: 170px;
+        /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
+        --lawyerContainerH3Font: normal normal 300 17px/22px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
+        --lawyerContainerH4Font: normal normal 300 15px/17px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE LAWYER NAME LIST */
+        --lawyerNameFont: normal normal 200 11px/13px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE LAWYER INFO LIST */
+        --lawyerInfoFont: normal normal 200 11px/13px 'HelveticaKVAFont', "arial", sans-serif;
+    }
+    #teamContainer {
+        margin-top: 30px;
+    }
+    .lawyerContainer {
+        flex-direction: column;
+        width: 100%;
+    }
+    .lawyerDescription {
+        width: 95%;
+        margin: auto;
+    }
+    .lawyerPicture {
+        display: none;
+    }
+    .mobileWrapper {
+        display: block;
+        width: 100%;
+        padding-top: 10px;
+        background: var(--paleBackground);
+    }
+    .mobilePicture {
+        width: 95%;
+        height: 300px;
+        border: 1px solid black;
+        margin: auto;
+    }
+    .chevron {
+        z-index: 3;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        padding: 0;
+    }
+    /* CONTACT */
+    #contactContainer {
+        flex-direction: column;
+        width: 90%;
+    }
+    .contactInfo {
+        width: 100%;
+        max-width: 300px;
+        padding-left: 0;
+    }
+    .map {
+        width: 100%;
+        max-width: 300px;
+        height: 250px;
+        margin-bottom: 10px;
+    }
+    .mapInfo {
+        display: none;
+    }
+    .addressWrapper br, .addressWrapper h2 {
+        display: none;
+    }
+    /* FOOTER */
+    :root {
+        /* SETS THE HEIGHT OF THE FOOTER */
+        --footerHeight: 80px;
+        /* NEGATIVE VALUE OF ABOVE */
+        --footerHidden: -80px;
+        /* FONT SIZE FOR THE FOOTER CONTENT */
+        --footerFontSize: 11px;
+    }
+    .footerRight {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .footerLeft {
+        display: none;
     }
 }
