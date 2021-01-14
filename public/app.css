@@ -56,7 +56,6 @@ html {
 
 body {
     width: 100vw;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     font-family: 'HelveticaKVAFont', "arial", sans-serif;
@@ -65,6 +64,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     overflow-x: hidden
+}
+.bodyHeight{
+    min-height: 100vh;
 }
 
 .hideOverflow {

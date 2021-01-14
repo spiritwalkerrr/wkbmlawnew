@@ -27,6 +27,17 @@ const chevron = document.querySelectorAll(".chevron");
 const map = document.querySelector(".map");
 const mapInfo = document.querySelector(".mapInfo")
 const contactInfo = document.querySelector(".contactInfo")
+// BODY HEIGHT CALCULATOR
+const bodyHeight = () => {
+    if (body.clientHeight < window.innerHeight) {
+        body.classList.add("bodyHeight");
+    } else {
+        body.classList.remove("bodyHeight");
+    }
+}
+bodyHeight();
+
+
 
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
@@ -124,8 +135,8 @@ const footerRelative = () => {
         footer.classList.add("footerRelative");
     }
 }
-const footerFixed = () =>{
-    if (window.innerWidth < 768){
+const footerFixed = () => {
+    if (window.innerWidth < 768) {
         footer.classList.remove("footerRelative");
     }
 }
