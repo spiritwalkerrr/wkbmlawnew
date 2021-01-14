@@ -717,6 +717,9 @@ main {
 
 footer {
     align-self: flex-end;
+    position: relative;
+    bottom: 0;
+    left: 0;
     width: 100%;
     background: #423F4A;
     transition: 250ms;
@@ -1060,6 +1063,9 @@ footer {
         position: fixed;
         bottom: 0;
         right: 0;
+    }
+    .footerRelative{
+        position: relative;
     }
     .footerRight {
         margin: auto;

@@ -118,6 +118,17 @@ const footerToggle = () => {
         footer.classList.toggle("footerHidden");
     }
 }
+// FOOTER RELATIVE/FIXED SWITCHING SCRIPTS FOR WORKING MOBILE VIEW
+const footerRelative = () => {
+    if (window.innerWidth < 768) {
+        footer.classList.add("footerRelative");
+    }
+}
+const footerFixed = () =>{
+    if (window.innerWidth < 768){
+        footer.classList.remove("footerRelative");
+    }
+}
 // LOAD IMAGES SCRIPT
 // LOAD MAP ONLY WHEN "CONTACT IS ACCESSED TO REDUCE LAG/STUTTER ON BAD HARDWARE"
 let mapLoaded = false;
@@ -305,6 +316,7 @@ menuNavButton[0].addEventListener("click", () => {
         window.scrollTo(0, 0);
         showHome();
     }
+    footerFixed();
     footerToggle();
 })
 menuNavButton[1].addEventListener("click", () => {
@@ -315,6 +327,7 @@ menuNavButton[1].addEventListener("click", () => {
         window.scrollTo(0, 0);
         showAbout();
     }
+    footerFixed();
     footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
@@ -326,9 +339,11 @@ menuNavButton[2].addEventListener("click", () => {
         window.scrollTo(0, 0);
         showTeam();
         setTimeout(() => {
+            footerRelative();
             footerToggle()
         }, 250)
     } else {
+        footerRelative();
         footerToggle();
     }
 })
@@ -341,6 +356,7 @@ menuNavButton[3].addEventListener("click", () => {
         window.scrollTo(0, 0);
         showContact();
     }
+    footerFixed();
     footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
@@ -352,6 +368,7 @@ menuNavButton[4].addEventListener("click", () => {
         window.scrollTo(0, 0);
         showImp();
     }
+    footerFixed();
     footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "DATA PROTECTION"
@@ -363,9 +380,11 @@ menuNavButton[5].addEventListener("click", () => {
         window.scrollTo(0, 0);
         showStmt();
         setTimeout(() => {
+            footerRelative();
             footerToggle()
         }, 250)
     } else {
+        footerRelative();
         footerToggle();
     }
 })
