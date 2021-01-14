@@ -28,14 +28,14 @@ const map = document.querySelector(".map");
 const mapInfo = document.querySelector(".mapInfo")
 const contactInfo = document.querySelector(".contactInfo")
 // BODY HEIGHT CALCULATOR
-const bodyHeight = () => {
-    if (body.clientHeight < window.innerHeight) {
-        body.classList.add("bodyHeight");
-    } else {
-        body.classList.remove("bodyHeight");
-    }
-}
-bodyHeight();
+// const bodyHeight = () => {
+//     if (body.clientHeight < window.innerHeight) {
+//         body.classList.add("bodyHeight");
+//     } else {
+//         body.classList.remove("bodyHeight");
+//     }
+// }
+// bodyHeight();
 
 
 
