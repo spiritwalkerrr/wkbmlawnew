@@ -624,12 +624,14 @@ main {
 
 .contactInfo {
     width: 50%;
+    max-width: 400px;
     padding-left: 30px;
     transition: 200ms;
 }
 
 .map {
     width: 50%;
+    max-width: 400px;
     height: 300px;
     position: relative;
     background: none;
@@ -660,7 +662,7 @@ main {
 }
 
 .mapEnlarged {
-    transform: scale(1.5) translate(35%);
+    transform: scale(1.7) translate(32%);
 }
 
 .contactInfoHidden {
@@ -937,7 +939,7 @@ footer {
         font-size: 1.1em;
         line-height: 1.8em;
         margin-top: 100px;
-        margin-left: 10px;
+        margin-left: 20px;
     }
     .menuNavButton {
         padding: 10px 0;
@@ -1110,6 +1112,12 @@ footer {
 }
 
 @media only screen and (max-width: 768px) and (min-width: 560px) {
+    .menuNav {
+        font-size: 1.1em;
+        line-height: 1.8em;
+        margin-top: 100px;
+        margin-left: 35px;
+    }
     :root {
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH3Font: normal normal 300 23px/25px 'HelveticaKVAFont', "arial", sans-serif;

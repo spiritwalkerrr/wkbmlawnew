@@ -66,7 +66,7 @@ for (let button of menuNavButton) { //LOOPS OVER ALL THE BUTTONS
         if (currentPage == 1) {
             footer.classList.remove("footerTransparent") //ONCE YOU NAVIGATED AWAY FROM THE LANDING PAGE FOOTER STAYS
         }
-        if (mapExpanded == true) {
+        if (mapExpanded == true) { //RESETS THE MAP IF IT WAS ZOOMED
             mapToggle();
         }
     })
@@ -113,6 +113,7 @@ const footerToggle = () => {
         setTimeout(() => {
             footer.classList.toggle("footerHidden");
             previousPage = 1; //NEEDED BECAUSE IT SHOULD ONLY BE SLOWED ONCE
+            footerButtonUsed = true;
         }, 250)
     } else {
         footer.classList.toggle("footerHidden");
@@ -391,16 +392,32 @@ menuNavButton[5].addEventListener("click", () => {
 // OTHER "REDIRECT" SCRIPTS - USING THE FOOTER BUTTONS
 impButton.addEventListener("click", () => {
     if (currentPage !== 5) {
+        previousPage = currentPage; // REQUIRED TO FIX THE FOOTER TWITCHING OUT WHEN COMING FROM SCROLLABLE PAGE, NOT PERFECT BUT IT WORKS
+        if (previousPage == 3 || previousPage == 6) {
+            footer.classList.toggle("footerTransparent");
+            setTimeout(() => {
+                footer.classList.toggle("footerTransparent"); 
+            }, 250);
+        } 
+        previousPage = 1;// NOT TRUE, BUT NEEDED TO MAKE SURE NAVTOGGLE WORKS AS INTENDED
         currentPage = 5;
         window.scrollTo(0, 0);
         showImp();
+        footerFixed();
     }
+
 })
 stmtButton.addEventListener("click", () => {
     if (currentPage !== 6) {
+        previousPage = 1; // NOT TRUE, BUT NEEDED TO MAKE SURE NAVTOGGLE WORKS AS INTENDED
         currentPage = 6;
+        footer.classList.toggle("footerHidden") // NEEDED WHEN YOU COME FROM A NON-SCROLLABLE PAGE TO A SCROLLABLE ONE (LIKE THIS ONE LEADS TO)
+        setTimeout(() => {
+            footer.classList.toggle("footerHidden")
+        }, 250);
         window.scrollTo(0, 0);
         showStmt();
+        footerRelative();
     }
 })
 // EXTEND LAWYER DESCRIPTION SCRIPT
@@ -438,7 +455,7 @@ const mapToggle = () => {
     }
 }
 map.addEventListener("click", () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
         mapToggle();
     }
 })
