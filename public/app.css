@@ -303,7 +303,7 @@ header {
 
 main {
     width: 100%;
-    min-height: 60vh;
+    /* min-height: 60vh; */
     margin-top: var(--mainMargin);
     display: flex;
     justify-content: center;
@@ -1029,7 +1029,9 @@ footer {
     }
     /* CONTACT */
     #contactContainer {
+        margin-top: 0;
         flex-direction: column;
+        justify-content: flex-start;
         width: 90%;
     }
     .contactInfo {
@@ -1040,7 +1042,7 @@ footer {
     .map {
         width: 100%;
         max-width: 300px;
-        height: 250px;
+        height: 240px;
         margin-bottom: 10px;
     }
     .mapInfo {
@@ -1048,6 +1050,10 @@ footer {
     }
     .addressWrapper br, .addressWrapper h2 {
         display: none;
+    }
+    /* LEGAL NOTICE */
+    #impContainer{
+        margin-top: 0;
     }
     /* FOOTER */
     :root {
@@ -1058,13 +1064,13 @@ footer {
         /* FONT SIZE FOR THE FOOTER CONTENT */
         --footerFontSize: 11px;
     }
-    footer{
+    footer {
         align-self: auto;
         position: fixed;
         bottom: 0;
         right: 0;
     }
-    .footerRelative{
+    .footerRelative {
         position: relative;
     }
     .footerRight {
