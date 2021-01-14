@@ -1057,7 +1057,7 @@ footer {
     }
     footer{
         align-self: auto;
-        position: relative;
+        position: fixed;
         bottom: 0;
         right: 0;
     }
