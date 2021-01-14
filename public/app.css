@@ -404,7 +404,7 @@ main {
     /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
     --lawyerContainerExtended: 620px;
     /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
-    --lawyerNameExtended: 220px;
+    --lawyerNameExtended: 230px;
     /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
     --lawyerContainerH3Font: normal normal 300 32px/46px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
@@ -481,8 +481,8 @@ main {
 }
 
 .lawyerInfo {
-    height: 400px;
-    bottom: -400px;
+    height: 390px;
+    bottom: -390px;
     width: 100%;
     background: var(--paleBackground);
     position: absolute;
@@ -495,7 +495,6 @@ main {
 
 .lawyerInfo h4 {
     font: var(--lawyerContainerH4Font);
-    text-decoration: underline;
 }
 
 .lawyerInfo li, .lawyerInfo a {
@@ -852,7 +851,7 @@ footer {
         /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
         --lawyerContainerExtended: 450px;
         /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
-        --lawyerNameExtended: 150px;
+        --lawyerNameExtended: 160px;
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH3Font: normal normal 300 20px/25px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
@@ -876,8 +875,8 @@ footer {
         margin-bottom: 4px;
     }
     .lawyerInfo {
-        height: 300px;
-        bottom: -300px;
+        height: 290px;
+        bottom: -290px;
     }
     .lawyerInfoExtended {
         bottom: 0;
@@ -997,9 +996,9 @@ footer {
         /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
         --lawyerNameExtended: 170px;
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
-        --lawyerContainerH3Font: normal normal 300 17px/22px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerContainerH3Font: normal normal 300 18px/22px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-        --lawyerContainerH4Font: normal normal 300 15px/17px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerContainerH4Font: normal normal 300 16px/17px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER NAME LIST */
         --lawyerNameFont: normal normal 200 11px/13px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
