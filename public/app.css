@@ -914,7 +914,7 @@ footer {
     /* GENERAL */
     :root {
         /* SETS THE MARGIN FROM THE TOP OF THE PAGE */
-        --mainMargin: 40px;
+        --mainMargin: 80px;
     }
     /* FONTS FOR THE CONTAINERS */
     :root {
@@ -961,20 +961,24 @@ footer {
             color: black
         }
     }
-    .footerContent {
-        width: 90%;
-        flex-direction: column-reverse;
+    /* CONTAINER GENERAL */
+    .container{
+        height: auto;
     }
-    /* LANDING PAGE */
+    /* HOME */
+    .homeLogo {
+        width: 90%;
+    }
     .homeIntro {
         padding-top: 0;
         width: 90%;
     }
-    .homeIntro br {
+    .homeIntro br{
         display: none;
     }
-    .homeLogo {
-        width: 90%;
+    /* ABOUT */
+    #aboutContainer{
+        margin-top: 0px;
     }
     /* TEAM */
     :root {
@@ -992,9 +996,6 @@ footer {
         --lawyerNameFont: normal normal 200 11px/13px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
         --lawyerInfoFont: normal normal 200 11px/13px 'HelveticaKVAFont', "arial", sans-serif;
-    }
-    #teamContainer {
-        margin-top: 30px;
     }
     .lawyerContainer {
         flex-direction: column;
