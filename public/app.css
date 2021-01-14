@@ -408,7 +408,7 @@ main {
     /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
     --lawyerContainerH3Font: normal normal 300 32px/46px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH4Font: normal normal 300 21px/30px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerContainerH4Font: normal normal 300 25px/30px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER NAME LIST */
     --lawyerNameFont: normal normal 200 20px/20px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER INFO LIST */
@@ -855,7 +855,7 @@ footer {
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH3Font: normal normal 300 20px/25px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-        --lawyerContainerH4Font: normal normal 300 16px/20px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerContainerH4Font: normal normal 300 18px/20px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER NAME LIST */
         --lawyerNameFont: normal normal 200 14px/14px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
@@ -1026,10 +1026,16 @@ footer {
         border: 1px solid black;
         margin: auto;
     }
+    .lawyerInfo svg {
+        transform: scale(0.7);
+        padding-right: 0;
+        bottom: -10px;
+    }
+   
     .chevron {
         z-index: 3;
         position: absolute;
-        bottom: 0;
+        bottom: -5px;
         right: 10px;
         padding: 0;
     }
@@ -1110,11 +1116,14 @@ footer {
         /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH4Font: normal normal 300 20px/20px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER NAME LIST */
-        --lawyerNameFont: normal normal 200 15px/15px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerNameFont: normal normal 200 14px/15px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
-        --lawyerInfoFont: normal normal 200 15px/15px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerInfoFont: normal normal 200 14px/15px 'HelveticaKVAFont', "arial", sans-serif;
     }
     .lawyerContainer{
-        width: 95%;
+        width: 85%;
+    }
+    .mobilePicture{
+        width: 85%;
     }
 }
