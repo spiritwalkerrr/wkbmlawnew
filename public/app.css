@@ -716,12 +716,9 @@ main {
 }
 
 footer {
-    /* align-self: flex-end; */
+    align-self: flex-end;
     width: 100%;
     background: #423F4A;
-    position: relative;
-    bottom: 0;
-    right: 0;
     transition: 250ms;
     display: flex;
     height: var(--footerHeight);
@@ -899,7 +896,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     /* HEADER */
     :root {
         /* SETS THE HEIGHT OF THE HEADER */
@@ -1052,11 +1049,17 @@ footer {
     /* FOOTER */
     :root {
         /* SETS THE HEIGHT OF THE FOOTER */
-        --footerHeight: 100px;
+        --footerHeight: 80px;
         /* NEGATIVE VALUE OF ABOVE */
-        --footerHidden: -100px;
+        --footerHidden: -80px;
         /* FONT SIZE FOR THE FOOTER CONTENT */
         --footerFontSize: 11px;
+    }
+    footer{
+        align-self: auto;
+        position: relative;
+        bottom: 0;
+        right: 0;
     }
     .footerRight {
         margin: auto;
