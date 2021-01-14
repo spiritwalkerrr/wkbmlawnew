@@ -321,7 +321,7 @@ main {
 }
 
 .homeIntro {
-    width: 50%;
+    width: 55%;
     text-align: center;
     padding-top: 40px;
     font: var(--containerPFont);
@@ -859,7 +859,7 @@ footer {
         /* SETS THE FONT OF THE LAWYER NAME LIST */
         --lawyerNameFont: normal normal 200 14px/14px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
-        --lawyerInfoFont: normal normal 200 14px/16px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerInfoFont: normal normal 200 13px/16px 'HelveticaKVAFont', "arial", sans-serif;
     }
     /* TEAM */
     .lawyerContainer {
