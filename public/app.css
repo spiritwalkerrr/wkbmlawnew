@@ -410,7 +410,7 @@ main {
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
     --lawyerContainerH4Font: normal normal 300 21px/30px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER NAME LIST */
-    --lawyerNameFont: normal normal 200 19px/21px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerNameFont: normal normal 200 20px/20px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER INFO LIST */
     --lawyerInfoFont: normal normal 200 17px/20px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
@@ -422,7 +422,8 @@ main {
 }
 
 .lawyerContainer {
-    width: 80%;
+    width: 85%;
+    max-width: 1200px;
     height: var(--lawyerContainerBase);
     display: flex;
     position: relative;
@@ -471,6 +472,7 @@ main {
 
 .lawyerName li {
     font: var(--lawyerNameFont);
+    margin-bottom: 8px;
 }
 
 .lawyerNameExtended {
@@ -856,7 +858,7 @@ footer {
         /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH4Font: normal normal 300 16px/20px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER NAME LIST */
-        --lawyerNameFont: normal normal 200 14px/16px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerNameFont: normal normal 200 14px/14px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
         --lawyerInfoFont: normal normal 200 14px/16px 'HelveticaKVAFont', "arial", sans-serif;
     }
@@ -869,6 +871,9 @@ footer {
     }
     .lawyerPicture {
         width: 31%;
+    }
+    .lawyerName li {
+        margin-bottom: 4px;
     }
     .lawyerInfo {
         height: 300px;
@@ -935,7 +940,7 @@ footer {
         margin-top: 100px;
         margin-left: 10px;
     }
-    .menuNavButton{
+    .menuNavButton {
         padding: 10px 0;
     }
     /* NAVICON */
@@ -1054,7 +1059,7 @@ footer {
         display: none;
     }
     /* LEGAL NOTICE */
-    #impContainer{
+    #impContainer {
         margin-top: 0;
     }
     /* FOOTER */
@@ -1096,5 +1101,21 @@ footer {
         --lawyerNameFont: normal normal 200 12px/13px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
         --lawyerInfoFont: normal normal 200 12px/13px 'HelveticaKVAFont', "arial", sans-serif;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 560px) {
+    :root {
+        /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
+        --lawyerContainerH3Font: normal normal 300 23px/25px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
+        --lawyerContainerH4Font: normal normal 300 20px/20px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE LAWYER NAME LIST */
+        --lawyerNameFont: normal normal 200 15px/15px 'HelveticaKVAFont', "arial", sans-serif;
+        /* SETS THE FONT OF THE LAWYER INFO LIST */
+        --lawyerInfoFont: normal normal 200 15px/15px 'HelveticaKVAFont', "arial", sans-serif;
+    }
+    .lawyerContainer{
+        width: 95%;
     }
 }
