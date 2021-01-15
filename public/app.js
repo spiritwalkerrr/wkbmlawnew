@@ -396,7 +396,7 @@ impButton.addEventListener("click", () => {
         if (previousPage == 3 || previousPage == 6) {
             footer.classList.toggle("footerTransparent");
             setTimeout(() => {
-                footer.classList.toggle("footerTransparent"); 
+                footer.classList.toggle("footerTransparent");
             }, 250);
         } 
         previousPage = 1;// NOT TRUE, BUT NEEDED TO MAKE SURE NAVTOGGLE WORKS AS INTENDED
