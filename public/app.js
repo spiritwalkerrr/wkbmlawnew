@@ -68,9 +68,9 @@ for (let button of menuNavButton) { //LOOPS OVER ALL THE BUTTONS
         if (currentPage == 1) {
             footer.classList.remove("footerTransparent") //ONCE YOU NAVIGATED AWAY FROM THE LANDING PAGE FOOTER STAYS
         }
-        if (mapExpanded == true) { //RESETS THE MAP IF IT WAS ZOOMED
-            mapToggle();
-        }
+        // if (mapExpanded == true) { //RESETS THE MAP IF IT WAS ZOOMED
+        //     mapToggle();
+        // }
     })
 }
 // TOGGLE SIDE BAR BY HOVERING OFF IT
@@ -368,7 +368,9 @@ impButton.addEventListener("click", () => {
     if (currentPage !== 5) {
         if (bodyLargerThanWindow()) {
             footerHide();
-            footerShow();
+            setTimeout(()=>{
+                footerShow();
+            },250)
         }
         currentPage = 5;
         window.scrollTo(0, 0);
@@ -378,7 +380,7 @@ impButton.addEventListener("click", () => {
 })
 stmtButton.addEventListener("click", () => {
     if (currentPage !== 6) {
-        if (bodyLargerThanWindow()) {
+        if (!bodyLargerThanWindow()) {
             footerHide();
             footerShow();
         }

@@ -21,8 +21,8 @@ app.engine("ejs", ejsMate)
 app.get("/", (req,res)=>{
     res.render("index.ejs")
 });
-app.post("/home", (req,res)=>{
-    //WORK IN PROGRESS
+app.get("/de", (req,res)=>{
+    res.render("indexDE.ejs")
 })
 //RUNNING THE SERVER ON PORT 3K
 const port = process.env.PORT || 3000;
