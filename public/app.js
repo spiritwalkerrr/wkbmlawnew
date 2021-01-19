@@ -410,20 +410,20 @@ for (let i = 0; i <= 3; i++) {
 }
 
 // ENLARGE MAP SCRIPT
-let mapExpanded = false;
-const mapToggle = () => {
-    map.classList.toggle("mapEnlarged");
-    contactInfo.classList.toggle("contactInfoHidden");
-    if (mapExpanded == false) {
-        mapInfo.innerHTML = "Click to Hide";
-        mapExpanded = true;
-    } else {
-        mapInfo.innerHTML = "Click to Enlarge";
-        mapExpanded = false;
-    }
-}
-map.addEventListener("click", () => {
-    if (window.innerWidth >= 768) {
-        mapToggle();
-    }
-})
+// let mapExpanded = false;
+// const mapToggle = () => {
+//     map.classList.toggle("mapEnlarged");
+//     contactInfo.classList.toggle("contactInfoHidden");
+//     if (mapExpanded == false) {
+//         mapInfo.innerHTML = "Click to Hide";
+//         mapExpanded = true;
+//     } else {
+//         mapInfo.innerHTML = "Click to Enlarge";
+//         mapExpanded = false;
+//     }
+// }
+// map.addEventListener("click", () => {
+//     if (window.innerWidth >= 768) {
+//         mapToggle();
+//     }
+// })
