@@ -330,7 +330,7 @@ main {
 
 .homeLogo {
     width: 60%;
-    max-width: 1200px;
+    max-width: 800px;
     height: 100px;
     background: url("/images/logo2.svg");
     background-repeat: no-repeat;
@@ -845,7 +845,8 @@ footer {
         margin-bottom: 20px;
     }
     .centerAlign {
-        width: auto;
+        width: 600px;
+        margin: auto;
     }
     :root {
         /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
@@ -1109,6 +1110,14 @@ footer {
         /* SETS THE FONT OF THE LAWYER INFO LIST */
         --lawyerInfoFont: normal normal 200 12px/13px 'HelveticaKVAFont', "arial", sans-serif;
     }
+    .lawyerContainer{
+        width: 85%;
+        max-width: 420px;
+    }
+    .mobilePicture{
+        width: 85%;
+        max-width: 420px;
+    }
 }
 
 @media only screen and (max-width: 768px) and (min-width: 560px) {
@@ -1127,11 +1136,5 @@ footer {
         --lawyerNameFont: normal normal 200 14px/15px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
         --lawyerInfoFont: normal normal 200 14px/15px 'HelveticaKVAFont', "arial", sans-serif;
-    }
-    .lawyerContainer{
-        width: 85%;
-    }
-    .mobilePicture{
-        width: 85%;
     }
 }
