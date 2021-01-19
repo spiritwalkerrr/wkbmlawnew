@@ -3,7 +3,7 @@ const body = document.querySelector("body");
 const menu = document.querySelector(".menu");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
-const footer = document.querySelector("footer");
+const footer = document.querySelector(".footerWrapper");
 
 const navButton = document.querySelector(".navButton");
 const menuNavButton = document.querySelectorAll(".menuNavButton");
@@ -38,7 +38,6 @@ const navToggle = () => {
         navButton.classList.remove("navButtonRotateOut")
         menu.classList.toggle("menuExtended");
         navButton.classList.add("navButtonRotateIn");
-        body.classList.toggle("hideOverflow"); //DISABLES SCROLL TO AVOID THE SCROLLBAR FROM SHOWING UP DUE TO THE FOOTER SCRIPT
         setTimeout(() => {
             navExtended = true;
         }, 250)
@@ -46,7 +45,6 @@ const navToggle = () => {
         navButton.classList.remove("navButtonRotateIn");
         menu.classList.toggle("menuExtended");
         navButton.classList.add("navButtonRotateOut");
-        body.classList.toggle("hideOverflow"); //ENABLES THE SCROLL AGAIN
         navExtended = false;
     }
 }
@@ -55,7 +53,11 @@ const navToggle = () => {
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", ""); //SPAM PROTECTION
     navToggle(); //EXTENDS/HIDES NAV
-    footerToggle(); //HIDES/EXTENDS FOOTER
+    if (footer.classList.length == 1 && currentPage !== 1) {// length 1 means footer is shown
+        footer.classList.add("footerHidden");
+    } else if (currentPage !== 1) {
+        footer.classList.remove("footerHidden")
+    }
     setTimeout(() => {
         navButton.removeAttribute("disabled", "");
     }, 250) //SPAM PROTECTION LASTS FOR 250MS
@@ -75,13 +77,13 @@ for (let button of menuNavButton) { //LOOPS OVER ALL THE BUTTONS
 main.addEventListener("mouseenter", (event) => {
     if (event.target == main && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
         navToggle();
-        footerToggle();
+        footerShow();
     }
 })
 header.addEventListener("mouseenter", (event) => {
     if (event.target == header && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> HEADER
         navToggle();
-        footerToggle();
+        footerShow();
     }
 })
 //MENU NAV BUTTON SPAM PROTECTION
@@ -102,33 +104,26 @@ const showHeader = () => {
 const hideHeader = () => {
     header.classList.add("headerHidden");
 }
-// SHOW AND HIDE FOOTER FOOTER FUNCTION
-const footerToggle = () => {
-    if (currentPage == 1) {
-        footer.classList.add("footerTransparent");
+// CHECK PAGE HEIGHT SCRIPT FOR SMOOTH FOOTER BEHAVIOUR
+const bodyLargerThanWindow = () => {
+    if (body.clientHeight > innerHeight) {
+        return true;
     } else {
-        footer.classList.remove("footerTransparent");
+        return false;
     }
-    if (previousPage == 3 || previousPage == 6) { //THIS SCRIPT DELAYS THE FOOTER HIDING AWAY IN CASE THE PAGE HAS CHANGED SIZE (CAUSES CHOPPY VISUALS OTHERWISE)
+}
+// SHOW AND HIDE FOOTER FOOTER FUNCTION
+const footerShow = () => {
+    if (bodyLargerThanWindow() && currentPage !== 1) {
         setTimeout(() => {
-            footer.classList.toggle("footerHidden");
-            previousPage = 1; //NEEDED BECAUSE IT SHOULD ONLY BE SLOWED ONCE
-            footerButtonUsed = true;
+            footer.classList.remove("footerHidden")
         }, 250)
     } else {
-        footer.classList.toggle("footerHidden");
+        footer.classList.remove("footerHidden")
     }
 }
-// FOOTER RELATIVE/FIXED SWITCHING SCRIPTS FOR WORKING MOBILE VIEW
-const footerRelative = () => {
-    if (window.innerWidth < 768) {
-        footer.classList.add("footerRelative");
-    }
-}
-const footerFixed = () => {
-    if (window.innerWidth < 768) {
-        footer.classList.remove("footerRelative");
-    }
+const footerHide = () => {
+    footer.classList.add("footerHidden")
 }
 // LOAD IMAGES SCRIPT
 // LOAD MAP ONLY WHEN "CONTACT IS ACCESSED TO REDUCE LAG/STUTTER ON BAD HARDWARE"
@@ -295,12 +290,9 @@ const resetOpacity = () => {
     impContainer.classList.remove("nullOpacity");
     stmtContainer.classList.remove("fullOpacity");
     stmtContainer.classList.remove("nullOpacity");
-    header.classList.remove("headerScrolled")
 }
-
 //NAVIGATION SCRIPT
 let currentPage = 1
-let previousPage = 1
 // 1 = HOME
 // 2 = PORTRAIT
 // 3 = TEAM
@@ -309,115 +301,91 @@ let previousPage = 1
 // 6 = PRIVACY STATEMENT
 
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "PORTRAIT"
+let delay;
 menuNavButton[0].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 1) {
-        previousPage = currentPage;
         currentPage = 1;
         window.scrollTo(0, 0);
         showHome();
     }
-    footerFixed();
-    footerToggle();
 })
 menuNavButton[1].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 2) {
-        previousPage = currentPage;
         currentPage = 2;
         window.scrollTo(0, 0);
         showAbout();
+        footerShow();
     }
-    footerFixed();
-    footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
 menuNavButton[2].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 3) {
-        previousPage = currentPage;
+        setTimeout(() => {
+            footerShow();
+        }, 250)
         currentPage = 3;
         window.scrollTo(0, 0);
         showTeam();
-        setTimeout(() => {
-            footerRelative();
-            footerToggle()
-        }, 250)
-    } else {
-        footerRelative();
-        footerToggle();
     }
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
 menuNavButton[3].addEventListener("click", () => {
     navToggle();
+    footerShow();
     if (currentPage !== 4) {
-        previousPage = currentPage;
         currentPage = 4;
         window.scrollTo(0, 0);
         showContact();
     }
-    footerFixed();
-    footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
 menuNavButton[4].addEventListener("click", () => {
     navToggle();
+    footerShow();
     if (currentPage !== 5) {
-        previousPage = currentPage;
         currentPage = 5;
         window.scrollTo(0, 0);
         showImp();
     }
-    footerFixed();
-    footerToggle();
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "DATA PROTECTION"
 menuNavButton[5].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 6) {
-        previousPage = currentPage;
+        setTimeout(() => {
+            footerShow();
+        }, 250)
         currentPage = 6;
         window.scrollTo(0, 0);
         showStmt();
-        setTimeout(() => {
-            footerRelative();
-            footerToggle()
-        }, 250)
-    } else {
-        footerRelative();
-        footerToggle();
     }
 })
 // OTHER "REDIRECT" SCRIPTS - USING THE FOOTER BUTTONS
 impButton.addEventListener("click", () => {
     if (currentPage !== 5) {
-        previousPage = currentPage; // REQUIRED TO FIX THE FOOTER TWITCHING OUT WHEN COMING FROM SCROLLABLE PAGE, NOT PERFECT BUT IT WORKS
-        if (previousPage == 3 || previousPage == 6) {
-            footer.classList.toggle("footerTransparent");
-            setTimeout(() => {
-                footer.classList.toggle("footerTransparent");
-            }, 250);
-        } 
-        previousPage = 1;// NOT TRUE, BUT NEEDED TO MAKE SURE NAVTOGGLE WORKS AS INTENDED
+        if (bodyLargerThanWindow()) {
+            footerHide();
+            footerShow();
+        }
         currentPage = 5;
         window.scrollTo(0, 0);
         showImp();
-        footerFixed();
     }
 
 })
 stmtButton.addEventListener("click", () => {
     if (currentPage !== 6) {
-        previousPage = 1; // NOT TRUE, BUT NEEDED TO MAKE SURE NAVTOGGLE WORKS AS INTENDED
+        if (bodyLargerThanWindow()) {
+            footerHide();
+            footerShow();
+        }
         currentPage = 6;
-        footer.classList.toggle("footerHidden") // NEEDED WHEN YOU COME FROM A NON-SCROLLABLE PAGE TO A SCROLLABLE ONE (LIKE THIS ONE LEADS TO)
-        setTimeout(() => {
-            footer.classList.toggle("footerHidden")
-        }, 250);
         window.scrollTo(0, 0);
         showStmt();
-        footerRelative();
+        ;
     }
 })
 // EXTEND LAWYER DESCRIPTION SCRIPT
