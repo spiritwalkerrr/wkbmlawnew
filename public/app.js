@@ -62,17 +62,6 @@ navButton.addEventListener("click", () => {
         navButton.removeAttribute("disabled", "");
     }, 250) //SPAM PROTECTION LASTS FOR 250MS
 })
-// FOOTER SHOULDNT BE VISIBLE UPON LANDING
-for (let button of menuNavButton) { //LOOPS OVER ALL THE BUTTONS
-    button.addEventListener("click", () => {
-        if (currentPage == 1) {
-            footer.classList.remove("footerTransparent") //ONCE YOU NAVIGATED AWAY FROM THE LANDING PAGE FOOTER STAYS
-        }
-        // if (mapExpanded == true) { //RESETS THE MAP IF IT WAS ZOOMED
-        //     mapToggle();
-        // }
-    })
-}
 // TOGGLE SIDE BAR BY HOVERING OFF IT
 main.addEventListener("mouseenter", (event) => {
     if (event.target == main && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
@@ -110,6 +99,14 @@ const bodyLargerThanWindow = () => {
         return true;
     } else {
         return false;
+    }
+}
+// FIXES FOOTER FOR MOBILE
+const fixFooter = () => {
+    if (!bodyLargerThanWindow() && window.innerWidth < 768) {
+        footerFix.classList.add("footerFixed")
+    } else {
+        footerFix.classList.remove("footerFixed")
     }
 }
 // SHOW AND HIDE FOOTER FOOTER FUNCTION
@@ -368,9 +365,9 @@ impButton.addEventListener("click", () => {
     if (currentPage !== 5) {
         if (bodyLargerThanWindow()) {
             footerHide();
-            setTimeout(()=>{
+            setTimeout(() => {
                 footerShow();
-            },250)
+            }, 250)
         }
         currentPage = 5;
         window.scrollTo(0, 0);
@@ -428,4 +425,3 @@ for (let i = 0; i <= 3; i++) {
 //     if (window.innerWidth >= 768) {
 //         mapToggle();
 //     }
-// })

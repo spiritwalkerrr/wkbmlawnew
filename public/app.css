@@ -1030,6 +1030,7 @@ footer {
     /* CONTAINER GENERAL */
     .container {
         height: auto;
+        margin-bottom: 100px;
     }
     /* HOME */
     .homeLogo {
@@ -1142,9 +1143,10 @@ footer {
         --footerFontSize: 11px;
     }
     footer {
-        align-self: flex-end;
+        position: fixed;
         bottom: 0;
         right: 0;
+        z-index: 20;
     }
     .footerRelative {
         position: relative;
