@@ -664,7 +664,6 @@ main {
     background: none;
     /* cursor: pointer */
     transition: 300ms;
-    border-bottom: 3px solid var(--menuColor);
 }
 
 .mapLoaded {
@@ -1143,7 +1142,7 @@ footer {
         --footerFontSize: 11px;
     }
     footer {
-        align-self: auto;
+        align-self: flex-end;
         bottom: 0;
         right: 0;
     }
