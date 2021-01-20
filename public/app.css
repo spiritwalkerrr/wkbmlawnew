@@ -231,13 +231,14 @@ header {
     animation-fill-mode: forwards;
 }
 
-.languages{
+.languages {
     position: fixed;
     top: 20px;
     right: 20px;
     margin: 15px;
     z-index: 15;
 }
+
 .languages a {
     text-decoration: none;
     transition: 250ms;
@@ -245,15 +246,16 @@ header {
     padding-top: 7px;
     border-radius: 3px;
 }
-.languages a:hover{
-    background: var(--menuColor);
-    color: white;
-}
-.languagesActive{
+
+.languages a:hover {
     background: var(--menuColor);
     color: white;
 }
 
+.languagesActive {
+    background: var(--menuColor);
+    color: white;
+}
 
 /* MENU */
 
@@ -653,7 +655,8 @@ main {
     transition: 200ms;
     display: flex;
 }
-.address{
+
+.address {
     width: 70%;
 }
 
@@ -699,7 +702,7 @@ main {
 /* LEGAL NOTICE */
 
 #impContainer {
-    margin-top:90px;
+    margin-top: 90px;
 }
 
 #impContainer p {
@@ -808,6 +811,10 @@ footer {
     margin: 0 4px;
 }
 
+.phoneLanguages {
+    display: none;
+}
+
 @media only screen and (max-width: 1199px) {
     /* HEADER */
     :root {
@@ -850,19 +857,18 @@ footer {
         --menuHidden: -30%;
     }
     /* LANGUAGES BUTTONS */
-    .languages{
+    .languages {
         font-size: 13px;
         display: flex;
         flex-direction: column;
         padding: 5px;
-        top: 5px;
+        top: 15px;
         right: 10px;
         margin: 0;
     }
-    .languages span{
+    .languages span {
         display: none;
     }
-
     /* MENU NAV */
     .menuNav {
         font-size: 1.2em;
@@ -935,10 +941,10 @@ footer {
     #contactContainer {
         width: 80%;
     }
-    .map{
+    .map {
         height: 300px;
     }
-    #contactContainer h2{
+    #contactContainer h2 {
         margin: 10px 0 10px;
     }
     .phoneAlign p:nth-of-type(1) {
@@ -1024,7 +1030,7 @@ footer {
         }
     }
     /* LANGUAGES */
-    .languages{
+    .languages {
         right: 10px;
     }
     /* CONTAINER GENERAL */
@@ -1047,7 +1053,7 @@ footer {
     #aboutContainer {
         margin-top: 0px;
     }
-    .centerAlign{
+    .centerAlign {
         width: auto;
     }
     /* TEAM */
@@ -1108,7 +1114,7 @@ footer {
         justify-content: flex-start;
         width: 90%;
     }
-    #contactContainer h2{
+    #contactContainer h2 {
         margin-top: 0px;
     }
     .contactInfo {
@@ -1123,7 +1129,7 @@ footer {
         height: 200px;
         margin-bottom: 10px;
     }
-    .address{
+    .address {
         width: 100%;
     }
     .mapInfo {
@@ -1162,28 +1168,28 @@ footer {
     }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 425px) {
+@media only screen and (max-width: 767px) and (min-width: 425px) {
     :root {
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH3Font: normal normal 300 18px/22px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH4Font: normal normal 300 16px/17px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER NAME LIST */
-        --lawyerNameFont: normal normal 200 12px/13px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerNameFont: normal normal 200 11.5px/13px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
-        --lawyerInfoFont: normal normal 200 12px/13px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerInfoFont: normal normal 200 11.5px/13px 'HelveticaKVAFont', "arial", sans-serif;
     }
     .lawyerContainer {
-        width: 85%;
-        max-width: 420px;
+        width: 90%;
+        max-width: 430px;
     }
     .mobilePicture {
-        width: 85%;
-        max-width: 420px;
+        width: 90%;
+        max-width: 430px;
     }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 560px) {
+@media only screen and (max-width: 767px) and (min-width: 560px) {
     .menuNav {
         font-size: 1.1em;
         line-height: 1.8em;
@@ -1196,8 +1202,29 @@ footer {
         /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
         --lawyerContainerH4Font: normal normal 300 20px/20px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER NAME LIST */
-        --lawyerNameFont: normal normal 200 14px/15px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerNameFont: normal normal 200 13px/15px 'HelveticaKVAFont', "arial", sans-serif;
         /* SETS THE FONT OF THE LAWYER INFO LIST */
-        --lawyerInfoFont: normal normal 200 14px/15px 'HelveticaKVAFont', "arial", sans-serif;
+        --lawyerInfoFont: normal normal 200 13px/15px 'HelveticaKVAFont', "arial", sans-serif;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .phoneLanguages {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 5px !important;
+    }
+    .phoneLanguagesActive {
+        background: white;
+        color: black;
+    }
+    .phoneLanguages a {
+        padding: 5px 4px 4px;
+        border-radius: 2px;
+        text-decoration: none;
+    }
+    .phoneLanguages span{
+        margin: 0px 5px;
     }
 }

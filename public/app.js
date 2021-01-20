@@ -7,6 +7,7 @@ const footer = document.querySelector(".footerWrapper");
 
 const navButton = document.querySelector(".navButton");
 const menuNavButton = document.querySelectorAll(".menuNavButton");
+const languages = document.querySelector(".languages");
 
 
 const homeContainer = document.querySelector("#homeContainer");
@@ -48,7 +49,14 @@ const navToggle = () => {
         navExtended = false;
     }
 }
-
+// SCRIPT TO HIDE THE TOP LEFT LANGUAGE BUTTONS ON PHONE UNLESS ON THE LANDING PAGE
+const languageToggle = () => {
+    if (window.innerWidth < 768 && currentPage !== 1){
+        languages.classList.add("noDisplay");
+    } else if (window.innerWidth < 768){
+        languages.classList.remove("noDisplay");
+    }
+}
 // EVENTLISTENERS FOR NAV ICON WITH SPAM PROTECTION - OPENS/CLOSES NAVBAR BY PRESSING THE ICON
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", ""); //SPAM PROTECTION
@@ -111,7 +119,7 @@ const fixFooter = () => {
 }
 // SHOW AND HIDE FOOTER FOOTER FUNCTION
 const footerShow = () => {
-    if (bodyLargerThanWindow() && currentPage !== 1) {
+    if (bodyLargerThanWindow() && currentPage !== 1 && window.innerHeight >= 768) { // THIS RUNS WHEN COMING FROM A SCROLLABLE TO A NON SCROLLABLE PAGE
         setTimeout(() => {
             footer.classList.remove("footerHidden")
         }, 250)
@@ -303,6 +311,7 @@ menuNavButton[0].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 1) {
         currentPage = 1;
+        languageToggle();
         window.scrollTo(0, 0);
         showHome();
     }
@@ -311,6 +320,7 @@ menuNavButton[1].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 2) {
         currentPage = 2;
+        languageToggle();
         window.scrollTo(0, 0);
         showAbout();
         footerShow();
@@ -320,12 +330,13 @@ menuNavButton[1].addEventListener("click", () => {
 menuNavButton[2].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 3) {
+        currentPage = 3;
+        languageToggle();
+        window.scrollTo(0, 0);
+        showTeam();
         setTimeout(() => {
             footerShow();
         }, 250)
-        currentPage = 3;
-        window.scrollTo(0, 0);
-        showTeam();
     }
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
@@ -334,6 +345,7 @@ menuNavButton[3].addEventListener("click", () => {
     footerShow();
     if (currentPage !== 4) {
         currentPage = 4;
+        languageToggle();
         window.scrollTo(0, 0);
         showContact();
     }
@@ -344,6 +356,7 @@ menuNavButton[4].addEventListener("click", () => {
     footerShow();
     if (currentPage !== 5) {
         currentPage = 5;
+        languageToggle();
         window.scrollTo(0, 0);
         showImp();
     }
@@ -352,12 +365,13 @@ menuNavButton[4].addEventListener("click", () => {
 menuNavButton[5].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 6) {
+        currentPage = 6;
+        languageToggle();
+        window.scrollTo(0, 0);
+        showStmt();
         setTimeout(() => {
             footerShow();
         }, 250)
-        currentPage = 6;
-        window.scrollTo(0, 0);
-        showStmt();
     }
 })
 // OTHER "REDIRECT" SCRIPTS - USING THE FOOTER BUTTONS
