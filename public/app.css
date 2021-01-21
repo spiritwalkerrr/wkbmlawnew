@@ -425,7 +425,7 @@ main {
 
 :root {
     /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
-    --lawyerContainerBase: 370px;
+    --lawyerContainerBase: 320px;
     /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
     --lawyerContainerExtended: 620px;
     /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
@@ -452,7 +452,6 @@ main {
     height: var(--lawyerContainerBase);
     display: flex;
     position: relative;
-    align-items: center;
     margin: auto;
     margin-bottom: 30px;
     overflow: hidden;
@@ -614,6 +613,7 @@ main {
 
 .mohrEggerPicture {
     background: url("/images/sabine.png");
+    margin-top: 35px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
