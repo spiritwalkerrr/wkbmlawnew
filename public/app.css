@@ -605,7 +605,6 @@ main {
 
 .beckerPicture {
     background: url("/images/stefan.png");
-    padding-top: 20px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -614,7 +613,7 @@ main {
 /* MOHR-EGGER */
 
 .mohrEggerPicture {
-    /* background: url("/images/mohr-egger.png"); */
+    background: url("/images/sabine.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
