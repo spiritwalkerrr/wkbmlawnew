@@ -257,6 +257,7 @@ header {
     color: white;
 }
 
+
 /* MENU */
 
 /* MENU GENERAL */
@@ -294,7 +295,7 @@ header {
 }
 
 .menuNavButton {
-    padding: 0;
+    padding: 0px;
     position: relative;
     font-family: 'HelveticaKVAFont', "arial", sans-serif;
 }
@@ -447,8 +448,7 @@ main {
 }
 
 .lawyerContainer {
-    width: 85%;
-    max-width: 1200px;
+    width: 1000px;
     height: var(--lawyerContainerBase);
     display: flex;
     position: relative;
@@ -467,13 +467,13 @@ main {
 }
 
 .lawyerDescription {
-    width: 65%;
+    width: 630px;
     height: 100%;
     margin-left: auto;
 }
 
 .lawyerPicture {
-    width: 33%;
+    width: 350px;
     height: var(--lawyerContainerExtended);
     position: absolute;
     top: 0;
@@ -481,7 +481,7 @@ main {
 
 .lawyerName {
     height: var(--lawyerContainerBase);
-    width: 100%;
+    width: auto;
     position: absolute;
     transition: 250ms;
     display: flex;
@@ -586,7 +586,7 @@ main {
 /* WOHLMACHER */
 
 .wohlmacherPicture {
-    background: url("/images/dummy.png");
+    /* background: url("/images/dummy.png"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -604,7 +604,8 @@ main {
 /* BECKER */
 
 .beckerPicture {
-    /* background: url("/images/becker.png"); */
+    background: url("/images/stefan.png");
+    padding-top: 20px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -905,7 +906,7 @@ footer {
         /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
         --lawyerContainerBase: 300px;
         /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
-        --lawyerContainerExtended: 450px;
+        --lawyerContainerExtended: 480px;
         /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
         --lawyerNameExtended: 160px;
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
@@ -931,8 +932,8 @@ footer {
         margin-bottom: 4px;
     }
     .lawyerInfo {
-        height: 290px;
-        bottom: -290px;
+        height: 310px;
+        bottom: -310px;
     }
     .lawyerInfoExtended {
         bottom: 0;
@@ -1001,7 +1002,7 @@ footer {
         margin-left: 20px;
     }
     .menuNavButton {
-        padding: 10px 0;
+        margin: 10px 0;
     }
     /* NAVICON */
     .navButton {
@@ -1118,7 +1119,6 @@ footer {
         margin-top: 0px;
     }
     .contactInfo {
-        width: 90%;
         padding-left: 0;
         flex-direction: column;
         margin-top: 15px;
@@ -1209,6 +1209,9 @@ footer {
 }
 
 @media only screen and (max-width: 425px) {
+    .languages{
+        top: 0px;
+    }
     .phoneLanguages {
         display: block;
         width: 100%;
@@ -1220,7 +1223,7 @@ footer {
         color: black;
     }
     .phoneLanguages a {
-        padding: 5px 4px 4px;
+        padding: 5px 4px 4px 3px;
         border-radius: 2px;
         text-decoration: none;
     }

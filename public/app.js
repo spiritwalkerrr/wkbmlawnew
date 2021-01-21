@@ -24,6 +24,7 @@ const lawyerContainer = document.querySelectorAll(".lawyerContainer");
 const lawyerName = document.querySelectorAll(".lawyerName");
 const lawyerInfo = document.querySelectorAll(".lawyerInfo");
 const chevron = document.querySelectorAll(".chevron");
+const lawyerImages = document.querySelectorAll(".lawyerPicture");
 
 const map = document.querySelector(".map");
 const mapInfo = document.querySelector(".mapInfo")
@@ -131,6 +132,15 @@ const footerHide = () => {
     footer.classList.add("footerHidden")
 }
 // LOAD IMAGES SCRIPT
+let imagesLoaded = false;
+const loadImages = () => {
+    if (!imagesLoaded){
+        lawyerImages[0].classList.add("wohlmacherPicture")
+        lawyerImages[1].classList.add("kaiserPicture")
+        lawyerImages[2].classList.add("beckerPicture");
+        lawyerImages[3].classList.add("mohrEggerPicture")
+    }
+}
 // LOAD MAP ONLY WHEN "CONTACT IS ACCESSED TO REDUCE LAG/STUTTER ON BAD HARDWARE"
 let mapLoaded = false;
 const loadMap = () => {
@@ -189,6 +199,7 @@ const showAbout = () => { //SHOWS "PORTRAIT"
     }, 500)
 }
 const showTeam = () => {
+    loadImages();
     menuLock();
     resetOpacity();
     homeContainer.classList.add("nullOpacity");
