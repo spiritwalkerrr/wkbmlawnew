@@ -377,7 +377,6 @@ main {
 
 .container {
     width: var(--containerWidth);
-    max-width: 1000px;
 }
 
 .container h2, .container p {
@@ -403,6 +402,7 @@ main {
 
 #aboutContainer {
     margin-top: 90px;
+    width: 1000px;
 }
 
 #aboutContainer div {
@@ -443,12 +443,12 @@ main {
 }
 
 #teamContainer {
-    width: 100%;
+    width: 1150px !important;
     margin-top: 50px;
 }
 
 .lawyerContainer {
-    width: 1000px;
+    width: 1150px;
     height: var(--lawyerContainerBase);
     display: flex;
     position: relative;
@@ -467,13 +467,13 @@ main {
 }
 
 .lawyerDescription {
-    width: 630px;
+    width: 730px;
     height: 100%;
     margin-left: auto;
 }
 
 .lawyerPicture {
-    width: 350px;
+    width: 400px;
     height: var(--lawyerContainerExtended);
     position: absolute;
     top: 0;
@@ -623,7 +623,7 @@ main {
 
 #contactContainer {
     height: 90%;
-    width: 60%;
+    width: 1000px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -903,7 +903,7 @@ footer {
     }
     :root {
         /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
-        --lawyerContainerBase: 300px;
+        --lawyerContainerBase: 250px;
         /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
         --lawyerContainerExtended: 480px;
         /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
@@ -919,13 +919,13 @@ footer {
     }
     /* TEAM */
     .lawyerContainer {
-        width: 95%;
+        width: 750px;
     }
     .lawyerDescription {
-        width: 66%;
+        width:450px;
     }
     .lawyerPicture {
-        width: 31%;
+        width: 300px;
     }
     .lawyerName li {
         margin-bottom: 4px;
@@ -936,6 +936,9 @@ footer {
     }
     .lawyerInfoExtended {
         bottom: 0;
+    }
+    .chevron{
+        padding: 10px;
     }
     /* CONTACT */
     #contactContainer {
