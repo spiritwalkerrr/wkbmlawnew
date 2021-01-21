@@ -614,6 +614,7 @@ main {
 
 .beckerPicture {
     background: url("/images/stefan.png");
+    margin-top: 35px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
