@@ -435,7 +435,7 @@ main {
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
     --lawyerContainerH4Font: normal normal 300 25px/30px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER NAME LIST */
-    --lawyerNameFont: normal normal 200 20px/20px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerNameFont: normal normal 200 18px/18px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER INFO LIST */
     --lawyerInfoFont: normal normal 200 17px/20px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
@@ -469,6 +469,16 @@ main {
     width: 730px;
     height: 100%;
     margin-left: auto;
+}
+.lawyerDescription a {
+    text-decoration: none;
+}
+.lawyerEmail{
+    border-bottom: 1px solid transparent;
+    transition: 200ms;
+}
+.lawyerEmail:hover{
+    border-bottom: 1px solid black;
 }
 
 .lawyerPicture {
@@ -536,7 +546,7 @@ main {
 
 .lawyerInfo svg {
     position: relative;
-    bottom: -8px;
+    bottom: -4px;
     padding-right: 5px;
 }
 
