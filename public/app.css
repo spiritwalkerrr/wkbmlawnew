@@ -596,7 +596,8 @@ main {
 /* WOHLMACHER */
 
 .wohlmacherPicture {
-    /* background: url("/images/dummy.png"); */
+    background: url("/images/fritz.png");
+    margin-top: 20px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
