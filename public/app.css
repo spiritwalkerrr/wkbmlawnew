@@ -604,7 +604,8 @@ main {
 /* KAISER */
 
 .kaiserPicture {
-    /* background: url("/images/kaiser.png"); */
+    background: url("/images/nicole.png");
+    margin-top: 12px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
