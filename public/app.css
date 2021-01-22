@@ -486,6 +486,7 @@ main {
     height: var(--lawyerContainerExtended);
     position: absolute;
     top: 0;
+    filter: grayscale(100%);
 }
 
 .lawyerName {
