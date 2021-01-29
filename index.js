@@ -24,6 +24,36 @@ app.get("/", (req,res)=>{
 app.get("/de", (req,res)=>{
     res.render("indexDE.ejs")
 })
+app.get("/portrait", (req,res)=>{
+    res.render("portrait.ejs")
+});
+app.get("/lawyers", (req,res)=>{
+    res.render("lawyers.ejs")
+});
+app.get("/contact", (req,res)=>{
+    res.render("contact.ejs")
+});
+app.get("/imp", (req,res)=>{
+    res.render("imp.ejs")
+});
+app.get("/stmt", (req,res)=>{
+    res.render("stmt.ejs")
+});
+app.get("/portraitDE", (req,res)=>{
+    res.render("portraitDE.ejs")
+});
+app.get("/lawyersDE", (req,res)=>{
+    res.render("lawyersDE.ejs")
+});
+app.get("/contactDE", (req,res)=>{
+    res.render("contactDE.ejs")
+});
+app.get("/impDE", (req,res)=>{
+    res.render("impDE.ejs")
+});
+app.get("/stmtDE", (req,res)=>{
+    res.render("stmtDE.ejs")
+});
 //RUNNING THE SERVER ON PORT 3K
 const port = process.env.PORT || 3000;
 app.listen(port, ()=>{

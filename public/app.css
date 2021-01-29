@@ -673,8 +673,6 @@ main {
     height: 350px;
     position: relative;
     background: none;
-    /* cursor: pointer */
-    transition: 300ms;
 }
 
 .mapLoaded {
@@ -683,29 +681,6 @@ main {
     background-position: center;
     position: relative;
 }
-
-/* .mapInfo {
-    position: absolute;
-    display: none;
-    color: white;
-    background: var(--menuColor);
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
-    height: 25px;
-    padding-top: 10px;
-    bottom: 0;
-    left: 0;
-    opacity: 0.7;
-}
-
-.mapEnlarged {
-    transform: scale(1.7) translate(32%);
-}
-
-.contactInfoHidden {
-    color: white;
-} */
 
 /* LEGAL NOTICE */
 

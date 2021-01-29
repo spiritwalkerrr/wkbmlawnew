@@ -26,6 +26,7 @@ const lawyerImages = document.querySelectorAll(".lawyerPicture");
 const map = document.querySelector(".map");
 const mapInfo = document.querySelector(".mapInfo")
 const contactInfo = document.querySelector(".contactInfo")
+const changeLanguage = document.querySelector(".changeLanguage")
 
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
@@ -420,21 +421,31 @@ window.addEventListener("mouseover", (event) => {
         mouseRemoved = true;
     }
 })
-
-// ENLARGE MAP SCRIPT
-// let mapExpanded = false;
-// const mapToggle = () => {
-//     map.classList.toggle("mapEnlarged");
-//     contactInfo.classList.toggle("contactInfoHidden");
-//     if (mapExpanded == false) {
-//         mapInfo.innerHTML = "Click to Hide";
-//         mapExpanded = true;
-//     } else {
-//         mapInfo.innerHTML = "Click to Enlarge";
-//         mapExpanded = false;
-//     }
-// }
-// map.addEventListener("click", () => {
-//     if (window.innerWidth >= 768) {
-//         mapToggle();
-//     }
+let language; 
+changeLanguage.addEventListener("click", ()=>{
+    if (language == "en" && currentPage == 1){
+        changeLanguage.setAttribute("href", "/de")
+    } else if (language == "de" && currentPage == 1){
+        changeLanguage.setAttribute("href", "/")
+    } else if (language == "en" && currentPage == 2){
+        changeLanguage.setAttribute("href", "/portraitDE")
+    } else if (language == "de" && currentPage == 2){
+        changeLanguage.setAttribute("href", "/portrait")
+    } else if (language == "en" && currentPage == 3){
+        changeLanguage.setAttribute("href", "/lawyersDE")
+    } else if (language == "de" && currentPage == 3){
+        changeLanguage.setAttribute("href", "/lawyers")
+    } else if (language == "en" && currentPage == 4){
+        changeLanguage.setAttribute("href", "/contactDE")
+    } else if (language == "de" && currentPage == 4){
+        changeLanguage.setAttribute("href", "/contact")
+    } else if (language == "en" && currentPage == 5){
+        changeLanguage.setAttribute("href", "/impDE")
+    } else if (language == "de" && currentPage == 5){
+        changeLanguage.setAttribute("href", "/imp")
+    } else if (language == "en" && currentPage == 6){
+        changeLanguage.setAttribute("href", "/stmtDE")
+    } else if (language == "de" && currentPage == 6){
+        changeLanguage.setAttribute("href", "/stmt")
+    }
+})
