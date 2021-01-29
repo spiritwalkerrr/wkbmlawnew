@@ -313,7 +313,6 @@ let currentPage = 1
 // 4 = CONTACT
 // 5 = LEGAL NOTICE
 // 6 = PRIVACY STATEMENT
-
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "PORTRAIT"
 menuNavButton[0].addEventListener("click", () => {
     navToggle();
