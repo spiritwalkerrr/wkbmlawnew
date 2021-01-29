@@ -8,7 +8,7 @@ const footer = document.querySelector(".footerWrapper");
 const navButton = document.querySelector(".navButton");
 const menuNavButton = document.querySelectorAll(".menuNavButton");
 const languages = document.querySelector(".languages");
-
+const mouseDetect = document.querySelector(".mouseDetect")
 
 const homeContainer = document.querySelector("#homeContainer");
 const aboutContainer = document.querySelector("#aboutContainer")
@@ -16,9 +16,6 @@ const teamContainer = document.querySelector("#teamContainer");
 const contactContainer = document.querySelector("#contactContainer");
 const impContainer = document.querySelector("#impContainer");
 const stmtContainer = document.querySelector("#stmtContainer");
-
-const impButton = document.querySelector(".impButton");
-const stmtButton = document.querySelector(".stmtButton");
 
 const lawyerContainer = document.querySelectorAll(".lawyerContainer");
 const lawyerName = document.querySelectorAll(".lawyerName");
@@ -52,9 +49,9 @@ const navToggle = () => {
 }
 // SCRIPT TO HIDE THE TOP LEFT LANGUAGE BUTTONS ON PHONE UNLESS ON THE LANDING PAGE
 const languageToggle = () => {
-    if (window.innerWidth < 768 && currentPage !== 1){
+    if (window.innerWidth < 768) {
         languages.classList.add("noDisplay");
-    } else if (window.innerWidth < 768){
+    } else if (window.innerWidth < 768) {
         languages.classList.remove("noDisplay");
     }
 }
@@ -62,8 +59,8 @@ const languageToggle = () => {
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", ""); //SPAM PROTECTION
     navToggle(); //EXTENDS/HIDES NAV
-    if (footer.classList.length == 1 && currentPage !== 1) {// length 1 means footer is shown
-        footer.classList.add("footerHidden");
+    if (footer.classList.length == 1) {// length 1 means footer is shown
+        footerHide();
     } else if (currentPage !== 1) {
         footer.classList.remove("footerHidden")
     }
@@ -120,7 +117,7 @@ const fixFooter = () => {
 }
 // SHOW AND HIDE FOOTER FOOTER FUNCTION
 const footerShow = () => {
-    if (bodyLargerThanWindow() && currentPage !== 1 && window.innerHeight >= 768) { // THIS RUNS WHEN COMING FROM A SCROLLABLE TO A NON SCROLLABLE PAGE
+    if (bodyLargerThanWindow() && window.innerHeight >= 768) { // THIS RUNS WHEN COMING FROM A SCROLLABLE TO A NON SCROLLABLE PAGE
         setTimeout(() => {
             footer.classList.remove("footerHidden")
         }, 250)
@@ -134,7 +131,7 @@ const footerHide = () => {
 // LOAD IMAGES SCRIPT
 let imagesLoaded = false;
 const loadImages = () => {
-    if (!imagesLoaded){
+    if (!imagesLoaded) {
         lawyerImages[0].classList.add("wohlmacherPicture")
         lawyerImages[1].classList.add("kaiserPicture")
         lawyerImages[2].classList.add("beckerPicture");
@@ -317,7 +314,6 @@ let currentPage = 1
 // 6 = PRIVACY STATEMENT
 
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "PORTRAIT"
-let delay;
 menuNavButton[0].addEventListener("click", () => {
     navToggle();
     if (currentPage !== 1) {
@@ -325,6 +321,7 @@ menuNavButton[0].addEventListener("click", () => {
         languageToggle();
         window.scrollTo(0, 0);
         showHome();
+        footerShow();
     }
 })
 menuNavButton[1].addEventListener("click", () => {
@@ -385,33 +382,6 @@ menuNavButton[5].addEventListener("click", () => {
         }, 250)
     }
 })
-// OTHER "REDIRECT" SCRIPTS - USING THE FOOTER BUTTONS
-impButton.addEventListener("click", () => {
-    if (currentPage !== 5) {
-        if (bodyLargerThanWindow()) {
-            footerHide();
-            setTimeout(() => {
-                footerShow();
-            }, 250)
-        }
-        currentPage = 5;
-        window.scrollTo(0, 0);
-        showImp();
-    }
-
-})
-stmtButton.addEventListener("click", () => {
-    if (currentPage !== 6) {
-        if (!bodyLargerThanWindow()) {
-            footerHide();
-            footerShow();
-        }
-        currentPage = 6;
-        window.scrollTo(0, 0);
-        showStmt();
-        ;
-    }
-})
 // EXTEND LAWYER DESCRIPTION SCRIPT
 chevronExtended = [false, false, false, false];
 for (let i = 0; i <= 3; i++) {
@@ -432,6 +402,24 @@ for (let i = 0; i <= 3; i++) {
 
     })
 }
+// MOVE MOUSE TO SIDE TO TOGGLE NAV
+mouseRemoved = true;
+mouseDetect.addEventListener("mouseenter", () => {
+    if (mouseRemoved) {
+        navToggle(); //EXTENDS/HIDES NAV
+        mouseRemoved = false;
+        if (footer.classList.length == 1) {// length 1 means footer is shown
+            footerHide();
+        } else if (currentPage !== 1) {
+            footer.classList.remove("footerHidden")
+        }
+    }
+})
+window.addEventListener("mouseover", (event) => {
+    if (event.clientX >= 300) {
+        mouseRemoved = true;
+    }
+})
 
 // ENLARGE MAP SCRIPT
 // let mapExpanded = false;

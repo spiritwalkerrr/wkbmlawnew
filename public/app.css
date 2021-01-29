@@ -182,6 +182,14 @@ header {
     background-repeat: no-repeat;
     background-position: center;
 }
+/* MOUSEDETECT */
+
+.mouseDetect{
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    left: 0;
+}
 
 /* NAVICON */
 
@@ -377,6 +385,9 @@ main {
 
 .container {
     width: var(--containerWidth);
+    max-width: 95%;
+    width: 1000px !important;
+    margin-top: 50px;
 }
 
 .container h2, .container p {
@@ -387,8 +398,11 @@ main {
 
 .container h2 {
     text-align: left;
+    width: 100%;
     font: var(--containerH2Font);
     padding-bottom: var(--h2Padding);
+    color: rgb(87, 87, 87);
+    letter-spacing: 1px;
 }
 
 .container p {
@@ -401,24 +415,13 @@ main {
 /* ABOUT */
 
 #aboutContainer {
-    margin-top: 90px;
     width: 1000px;
 }
 
 #aboutContainer div {
     display: flex;
     margin-bottom: 20px;
-}
-
-.centerAlign {
-    display: flex;
     flex-wrap: wrap;
-    width: 850px;
-    margin: auto;
-}
-
-.centerAlign h2 {
-    width: 100%;
 }
 
 /* LAWYERS */
@@ -442,13 +445,7 @@ main {
     --lawyerWrapperWidth: 80%;
 }
 
-#teamContainer {
-    width: 1150px !important;
-    margin-top: 50px;
-}
-
 .lawyerContainer {
-    width: 1150px;
     height: var(--lawyerContainerBase);
     display: flex;
     position: relative;
@@ -466,7 +463,7 @@ main {
 }
 
 .lawyerDescription {
-    width: 730px;
+    width: 600px;
     height: 100%;
     margin-left: auto;
 }
@@ -482,7 +479,7 @@ main {
 }
 
 .lawyerPicture {
-    width: 400px;
+    width: 350px;
     height: var(--lawyerContainerExtended);
     position: absolute;
     top: 0;
@@ -637,7 +634,6 @@ main {
 
 #contactContainer {
     height: 90%;
-    width: 1000px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -649,10 +645,8 @@ main {
 }
 
 #contactContainer h2 {
-    padding: 0;
     font-weight: 200;
     align-self: flex-start;
-    margin: 30px 0 20px 0;
 }
 
 .phoneAlign {
@@ -714,10 +708,6 @@ main {
 } */
 
 /* LEGAL NOTICE */
-
-#impContainer {
-    margin-top: 90px;
-}
 
 #impContainer p {
     text-align: justify;
@@ -787,42 +777,17 @@ footer {
 
 .footerContent {
     height: 100%;
-    width: 60%;
+    width: 80%;
     margin: auto;
-    display: flex;
     line-height: 1.4em;
+    display: flex;
     font-size: var(--footerFontSize);
-}
-
-.footerLeft {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-}
-
-.footerLeft a {
-    display: block;
     color: white;
-    font-family: 'HelveticaKVAFont', "arial", sans-serif;
-    font-weight: 200;
 }
-
-.footerRight {
-    margin-left: auto;
-    width: 50%;
-    color: white;
-    font-weight: 200;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.footerRight div {
-    margin: 0 4px;
+.footerSeparator{
+    margin: 0 5px;
 }
 
 .phoneLanguages {
@@ -899,21 +864,18 @@ footer {
         width: 70%;
     }
     /* CONTAINER SETTINGS */
+    .container{
+        width: 750px;
+        margin-top: 20px;
+    }
     .container p {
         padding-bottom: 20px;
     }
     /* INDIVIDUAL CONTAINERS */
     /* ABOUT */
-    #aboutContainer {
-        margin-top: 50px;
-    }
     #aboutContainer div {
         display: flex;
         margin-bottom: 20px;
-    }
-    .centerAlign {
-        width: 600px;
-        margin: auto;
     }
     :root {
         /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
@@ -961,9 +923,6 @@ footer {
     .map {
         height: 300px;
     }
-    #contactContainer h2 {
-        margin: 10px 0 10px;
-    }
     .phoneAlign p:nth-of-type(1) {
         margin-right: 10px;
     }
@@ -975,9 +934,6 @@ footer {
         --footerHidden: -60px;
         /* FONT SIZE FOR THE FOOTER CONTENT */
         --footerFontSize: 12px;
-    }
-    .footerContent {
-        width: 80%;
     }
 }
 
@@ -1152,9 +1108,6 @@ footer {
         display: none;
     }
     /* LEGAL NOTICE */
-    #impContainer {
-        margin-top: 0;
-    }
     /* FOOTER */
     :root {
         /* SETS THE HEIGHT OF THE FOOTER */
@@ -1170,17 +1123,14 @@ footer {
         right: 0;
         z-index: 20;
     }
+    .footerContent{
+        flex-direction: column;
+    }
+    .footerContent .footerSeparator:nth-of-type(4){
+        display: none;
+    }
     .footerRelative {
         position: relative;
-    }
-    .footerRight {
-        margin: auto;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .footerLeft {
-        display: none;
     }
 }
 
