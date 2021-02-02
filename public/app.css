@@ -19,6 +19,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
     line-height: 1;
+    color: var(--menuColor);
 }
 
 ol, ul {
@@ -339,6 +340,20 @@ main {
     display: flex;
     justify-content: center;
 }
+.grayOverlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: white;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 150ms;
+    z-index: 6;
+}
+.overlayOpacity{
+    opacity: 0.4;
+}
 
 /* LANDING PAGE */
 
@@ -401,7 +416,7 @@ main {
     width: 100%;
     font: var(--containerH2Font);
     padding-bottom: var(--h2Padding);
-    color: rgb(87, 87, 87);
+    color: var(--menuColor);
     letter-spacing: 1px;
 }
 
@@ -434,9 +449,9 @@ main {
     /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
     --lawyerNameExtended: 230px;
     /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH3Font: normal normal 300 32px/46px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerContainerH3Font: normal normal 300 27px/46px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH4Font: normal normal 300 25px/30px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerContainerH4Font: normal normal 300 23px/30px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER NAME LIST */
     --lawyerNameFont: normal normal 200 18px/18px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER INFO LIST */
@@ -485,7 +500,9 @@ main {
     top: 0;
     filter: grayscale(100%);
 }
-
+.lawyerPicture:hover {
+    filter: none;
+}
 .lawyerName {
     height: var(--lawyerContainerBase);
     width: auto;

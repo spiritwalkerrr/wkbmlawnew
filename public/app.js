@@ -27,6 +27,7 @@ const map = document.querySelector(".map");
 const mapInfo = document.querySelector(".mapInfo")
 const contactInfo = document.querySelector(".contactInfo")
 const changeLanguage = document.querySelector(".changeLanguage")
+const grayOverlay = document.querySelector(".grayOverlay")
 
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
@@ -38,6 +39,10 @@ const navToggle = () => {
         navButton.classList.remove("navButtonRotateOut")
         menu.classList.toggle("menuExtended");
         navButton.classList.add("navButtonRotateIn");
+        grayOverlay.classList.remove("noDisplay");
+        setTimeout(()=>{
+            grayOverlay.classList.add("overlayOpacity");
+        },20)
         setTimeout(() => {
             navExtended = true;
         }, 250)
@@ -46,6 +51,11 @@ const navToggle = () => {
         menu.classList.toggle("menuExtended");
         navButton.classList.add("navButtonRotateOut");
         navExtended = false;
+        grayOverlay.classList.remove("overlayOpacity");
+        setTimeout(()=>{
+            grayOverlay.classList.add("noDisplay");
+        },150)
+
     }
 }
 // SCRIPT TO HIDE THE TOP LEFT LANGUAGE BUTTONS ON PHONE UNLESS ON THE LANDING PAGE
@@ -70,14 +80,14 @@ navButton.addEventListener("click", () => {
     }, 250) //SPAM PROTECTION LASTS FOR 250MS
 })
 // TOGGLE SIDE BAR BY HOVERING OFF IT
-main.addEventListener("mouseenter", (event) => {
-    if (event.target == main && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
+grayOverlay.addEventListener("mouseenter", (event) => {
+    if (event.target =grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
         navToggle();
         footerShow();
     }
 })
-header.addEventListener("mouseenter", (event) => {
-    if (event.target == header && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> HEADER
+grayOverlay.addEventListener("mouseenter", (event) => {
+    if (event.target == grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> HEADER
         navToggle();
         footerShow();
     }
