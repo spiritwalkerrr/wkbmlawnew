@@ -33,25 +33,25 @@ app.get("/lawyers", (req,res)=>{
 app.get("/contact", (req,res)=>{
     res.render("contact.ejs")
 });
-app.get("/imp", (req,res)=>{
+app.get("/legal-notice", (req,res)=>{
     res.render("imp.ejs")
 });
-app.get("/stmt", (req,res)=>{
+app.get("/data", (req,res)=>{
     res.render("stmt.ejs")
 });
-app.get("/portraitDE", (req,res)=>{
+app.get("/de/portrait", (req,res)=>{
     res.render("portraitDE.ejs")
 });
-app.get("/lawyersDE", (req,res)=>{
+app.get("/de/lawyers", (req,res)=>{
     res.render("lawyersDE.ejs")
 });
-app.get("/contactDE", (req,res)=>{
+app.get("/de/contact", (req,res)=>{
     res.render("contactDE.ejs")
 });
-app.get("/impDE", (req,res)=>{
+app.get("/de/legal-notice", (req,res)=>{
     res.render("impDE.ejs")
 });
-app.get("/stmtDE", (req,res)=>{
+app.get("/de/data", (req,res)=>{
     res.render("stmtDE.ejs")
 });
 //RUNNING THE SERVER ON PORT 3K

@@ -86,6 +86,10 @@ grayOverlay.addEventListener("mouseenter", (event) => {
         navToggle();
         footerShow();
         mouseRemoved = true;
+        navButton.setAttribute("disabled", "");
+        setTimeout(() => {
+            navButton.removeAttribute("disabled", "")
+        }, 250);
     }
 })
 // grayOverlay.addEventListener("mouseenter", (event) => {
@@ -445,24 +449,24 @@ changeLanguage.addEventListener("click", ()=>{
     } else if (language == "de" && currentPage == 1){
         changeLanguage.setAttribute("href", "/")
     } else if (language == "en" && currentPage == 2){
-        changeLanguage.setAttribute("href", "/portraitDE")
+        changeLanguage.setAttribute("href", "/de/portrait")
     } else if (language == "de" && currentPage == 2){
         changeLanguage.setAttribute("href", "/portrait")
     } else if (language == "en" && currentPage == 3){
-        changeLanguage.setAttribute("href", "/lawyersDE")
+        changeLanguage.setAttribute("href", "/de/lawyers")
     } else if (language == "de" && currentPage == 3){
         changeLanguage.setAttribute("href", "/lawyers")
     } else if (language == "en" && currentPage == 4){
-        changeLanguage.setAttribute("href", "/contactDE")
+        changeLanguage.setAttribute("href", "/de/contact")
     } else if (language == "de" && currentPage == 4){
         changeLanguage.setAttribute("href", "/contact")
     } else if (language == "en" && currentPage == 5){
-        changeLanguage.setAttribute("href", "/impDE")
+        changeLanguage.setAttribute("href", "/de/legal-notice")
     } else if (language == "de" && currentPage == 5){
-        changeLanguage.setAttribute("href", "/imp")
+        changeLanguage.setAttribute("href", "/legal-notice")
     } else if (language == "en" && currentPage == 6){
-        changeLanguage.setAttribute("href", "/stmtDE")
+        changeLanguage.setAttribute("href", "/de/data")
     } else if (language == "de" && currentPage == 6){
-        changeLanguage.setAttribute("href", "/stmt")
+        changeLanguage.setAttribute("href", "/data")
     }
 })
