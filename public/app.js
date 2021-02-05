@@ -56,7 +56,7 @@ const navToggle = () => {
         setTimeout(()=>{
             grayOverlay.classList.add("noDisplay");
         },150)
-
+        mouseDetect.classList.add("noDisplay"); // we disable this to stop flickering of the menu bar
     }
 }
 // SCRIPT TO HIDE THE TOP LEFT LANGUAGE BUTTONS ON PHONE UNLESS ON THE LANDING PAGE
@@ -82,7 +82,7 @@ navButton.addEventListener("click", () => {
 })
 // TOGGLE SIDE BAR BY HOVERING OFF IT
 grayOverlay.addEventListener("mouseenter", (event) => {
-    if (event.target =grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
+    if (event.target == grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
         navToggle();
         footerShow();
         mouseRemoved = true;
@@ -420,7 +420,7 @@ for (let i = 0; i <= 3; i++) {
     })
 }
 // MOVE MOUSE TO SIDE TO TOGGLE NAV
-mouseRemoved = true;
+mouseRemoved = true;;
 mouseDetect.addEventListener("mouseenter", () => {
     if (mouseRemoved) {
         navToggle(); //EXTENDS/HIDES NAV
@@ -435,6 +435,7 @@ mouseDetect.addEventListener("mouseenter", () => {
 window.addEventListener("mouseover", (event) => {
     if (event.clientX >= 300) {
         mouseRemoved = true;
+        mouseDetect.classList.remove("noDisplay")
     }
 })
 let language; 

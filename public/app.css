@@ -346,7 +346,7 @@ main {
     position: absolute;
     background: white;
     top: 0;
-    left: 0;
+    left: 300px;
     opacity: 0;
     transition: 150ms;
     z-index: 6;
@@ -608,10 +608,8 @@ main {
 .wohlmacherPicture{
     background: url("/images/fritz.png");
     margin-top: 20px;
-    margin-left: 20px;
-    width: 310px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 90%;
     background-position: top;
 }
 .wohlmacherMobile{
