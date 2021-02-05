@@ -189,6 +189,7 @@ header {
     position: absolute;
     height: 100%;
     width: 300px;
+    left: 0;
 }
 
 /* NAVICON */
