@@ -22,6 +22,7 @@ const lawyerName = document.querySelectorAll(".lawyerName");
 const lawyerInfo = document.querySelectorAll(".lawyerInfo");
 const chevron = document.querySelectorAll(".chevron");
 const lawyerImages = document.querySelectorAll(".lawyerPicture");
+const mobileImages = document.querySelectorAll(".mobilePicture")
 
 const map = document.querySelector(".map");
 const mapInfo = document.querySelector(".mapInfo")
@@ -84,14 +85,15 @@ grayOverlay.addEventListener("mouseenter", (event) => {
     if (event.target =grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
         navToggle();
         footerShow();
+        mouseRemoved = true;
     }
 })
-grayOverlay.addEventListener("mouseenter", (event) => {
-    if (event.target == grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> HEADER
-        navToggle();
-        footerShow();
-    }
-})
+// grayOverlay.addEventListener("mouseenter", (event) => {
+//     if (event.target == grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> HEADER
+//         navToggle();
+//         footerShow();
+//     }
+// })
 //MENU NAV BUTTON SPAM PROTECTION
 const menuLock = () => {
     for (let button of menuNavButton) {
@@ -147,6 +149,10 @@ const loadImages = () => {
         lawyerImages[1].classList.add("kaiserPicture")
         lawyerImages[2].classList.add("beckerPicture");
         lawyerImages[3].classList.add("mohrEggerPicture")
+        mobileImages[0].classList.add("wohlmacherMobile");
+        mobileImages[1].classList.add("kaiserMobile");
+        mobileImages[2].classList.add("beckerMobile");
+        mobileImages[3].classList.add("mohrEggerMobile");
     }
 }
 // LOAD MAP ONLY WHEN "CONTACT IS ACCESSED TO REDUCE LAG/STUTTER ON BAD HARDWARE"

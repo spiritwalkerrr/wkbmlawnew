@@ -273,9 +273,9 @@ header {
 
 :root {
     /* SETS THE WIDTH OF THE SIDEBAR MENU */
-    --menuWidth: 18%;
+    --menuWidth: 300px;
     /* NEGATIVE VALUE OF ABOVE */
-    --menuHidden: -18%;
+    --menuHidden: -300px;
 }
 
 .menu {
@@ -498,10 +498,6 @@ main {
     height: var(--lawyerContainerExtended);
     position: absolute;
     top: 0;
-    filter: grayscale(100%);
-}
-.lawyerPicture:hover {
-    filter: none;
 }
 .lawyerName {
     height: var(--lawyerContainerBase);
@@ -609,32 +605,58 @@ main {
 
 /* WOHLMACHER */
 
-.wohlmacherPicture {
+.wohlmacherPicture{
     background: url("/images/fritz.png");
     margin-top: 20px;
+    margin-left: 20px;
+    width: 310px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
+}
+.wohlmacherMobile{
+    background: url("/images/fritz.png");
+    margin-top: 20px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    background-size: 80%;
     background-position: top;
 }
 
 /* KAISER */
 
-.kaiserPicture {
+.kaiserPicture{
     background: url("/images/nicole.png");
     margin-top: 12px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
 }
+.kaiserMobile{
+    background: url("/images/nicole.png");
+    margin-top: 12px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 70%;
+    background-position: top;
+}
 
 /* BECKER */
 
 .beckerPicture {
     background: url("/images/stefan.png");
-    margin-top: 35px;
+    margin-top: 20px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
+}
+.beckerMobile{
+    background: url("/images/stefan.png");
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 85%;
+    background-position: top;
 }
 
 /* MOHR-EGGER */
@@ -645,6 +667,14 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
+}
+.mohrEggerMobile{
+    background: url("/images/sabine.png");
+    margin-top: 35px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 75%;
+    background-position: top;
 }
 
 /* CONTACT */
@@ -694,10 +724,42 @@ main {
 
 .mapLoaded {
     background: url("/images/map.jpg");
-    background-size: cover;
+    background-size:180%;
     background-position: center;
     position: relative;
+    transition: 200ms;
 }
+.mapLoaded:hover{
+    background-size: 350%;
+}
+.mapLoaded::after{
+    content: "";
+    background: url("images/geo-alt.svg");
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 45%;
+    left: 48%;
+    transition: 200ms;
+}
+.mapLoaded:hover::after{
+    top: 50%;
+}
+/* 
+.mapLoaded:before{
+    content: "hover to zoom";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 135px;
+    z-index: 2;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+} */
 
 /* LEGAL NOTICE */
 
@@ -974,6 +1036,9 @@ footer {
         left: 5px;
         transform: scale(0.8);
     }
+    .mouseDetect{
+        display: none;
+    }
     @keyframes navIconRotateIn {
         from {
             transform: rotate(0deg) scale(0.8);
@@ -1026,7 +1091,7 @@ footer {
         /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
         --lawyerContainerBase: 170px;
         /* SETS THE HEIGHT OF THE INDIVIDUAL CONTAINERS EXTENDED */
-        --lawyerContainerExtended: 470px;
+        --lawyerContainerExtended: 450px;
         /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
         --lawyerNameExtended: 170px;
         /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
@@ -1056,19 +1121,21 @@ footer {
     }
     .mobilePicture {
         width: 95%;
-        height: 300px;
-        border: 1px solid black;
+        height: 250px;
         margin: auto;
     }
     .lawyerInfo svg {
         transform: scale(0.7);
         padding-right: 0;
-        bottom: -10px;
+        bottom: -6px;
+    }
+    .lawyerInfo{
+        height: 280px;
     }
     .chevron {
         z-index: 3;
         position: absolute;
-        bottom: -5px;
+        bottom: -3px;
         right: 10px;
         padding: 0;
     }
