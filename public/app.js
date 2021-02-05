@@ -27,7 +27,7 @@ const mobileImages = document.querySelectorAll(".mobilePicture")
 const map = document.querySelector(".map");
 const mapInfo = document.querySelector(".mapInfo")
 const contactInfo = document.querySelector(".contactInfo")
-const changeLanguage = document.querySelector(".changeLanguage")
+const changeLanguage = document.querySelectorAll(".changeLanguage")
 const grayOverlay = document.querySelector(".grayOverlay")
 
 // NAV MENU TOGGLE FUNCTION
@@ -41,9 +41,9 @@ const navToggle = () => {
         menu.classList.toggle("menuExtended");
         navButton.classList.add("navButtonRotateIn");
         grayOverlay.classList.remove("noDisplay");
-        setTimeout(()=>{
+        setTimeout(() => {
             grayOverlay.classList.add("overlayOpacity");
-        },20)
+        }, 20)
         setTimeout(() => {
             navExtended = true;
         }, 250)
@@ -53,9 +53,9 @@ const navToggle = () => {
         navButton.classList.add("navButtonRotateOut");
         navExtended = false;
         grayOverlay.classList.remove("overlayOpacity");
-        setTimeout(()=>{
+        setTimeout(() => {
             grayOverlay.classList.add("noDisplay");
-        },150)
+        }, 150)
         mouseDetect.classList.add("noDisplay"); // we disable this to stop flickering of the menu bar
     }
 }
@@ -148,7 +148,7 @@ const footerHide = () => {
 // LOAD IMAGES SCRIPT
 let imagesLoaded = false;
 const loadImages = () => {
-    if (!imagesLoaded && window.innerWidth >=768) {
+    if (!imagesLoaded && window.innerWidth >= 768) {
         lawyerImages[0].classList.add("wohlmacherPicture")
         lawyerImages[1].classList.add("kaiserPicture")
         lawyerImages[2].classList.add("beckerPicture");
@@ -442,31 +442,33 @@ window.addEventListener("mouseover", (event) => {
         mouseDetect.classList.remove("noDisplay")
     }
 })
-let language; 
-changeLanguage.addEventListener("click", ()=>{
-    if (language == "en" && currentPage == 1){
-        changeLanguage.setAttribute("href", "/de")
-    } else if (language == "de" && currentPage == 1){
-        changeLanguage.setAttribute("href", "/")
-    } else if (language == "en" && currentPage == 2){
-        changeLanguage.setAttribute("href", "/de/portrait")
-    } else if (language == "de" && currentPage == 2){
-        changeLanguage.setAttribute("href", "/portrait")
-    } else if (language == "en" && currentPage == 3){
-        changeLanguage.setAttribute("href", "/de/lawyers")
-    } else if (language == "de" && currentPage == 3){
-        changeLanguage.setAttribute("href", "/lawyers")
-    } else if (language == "en" && currentPage == 4){
-        changeLanguage.setAttribute("href", "/de/contact")
-    } else if (language == "de" && currentPage == 4){
-        changeLanguage.setAttribute("href", "/contact")
-    } else if (language == "en" && currentPage == 5){
-        changeLanguage.setAttribute("href", "/de/legal-notice")
-    } else if (language == "de" && currentPage == 5){
-        changeLanguage.setAttribute("href", "/legal-notice")
-    } else if (language == "en" && currentPage == 6){
-        changeLanguage.setAttribute("href", "/de/data")
-    } else if (language == "de" && currentPage == 6){
-        changeLanguage.setAttribute("href", "/data")
-    }
-})
+let language;
+for (let languageButton of changeLanguage) {
+    languageButton.addEventListener("click", () => {
+        if (language == "en" && currentPage == 1) {
+            languageButton.setAttribute("href", "/de")
+        } else if (language == "de" && currentPage == 1) {
+            languageButton.setAttribute("href", "/")
+        } else if (language == "en" && currentPage == 2) {
+            languageButton.setAttribute("href", "/de/portrait")
+        } else if (language == "de" && currentPage == 2) {
+            languageButton.setAttribute("href", "/portrait")
+        } else if (language == "en" && currentPage == 3) {
+            languageButton.setAttribute("href", "/de/lawyers")
+        } else if (language == "de" && currentPage == 3) {
+            languageButton.setAttribute("href", "/lawyers")
+        } else if (language == "en" && currentPage == 4) {
+            languageButton.setAttribute("href", "/de/contact")
+        } else if (language == "de" && currentPage == 4) {
+            languageButton.setAttribute("href", "/contact")
+        } else if (language == "en" && currentPage == 5) {
+            languageButton.setAttribute("href", "/de/legal-notice")
+        } else if (language == "de" && currentPage == 5) {
+            languageButton.setAttribute("href", "/legal-notice")
+        } else if (language == "en" && currentPage == 6) {
+            languageButton.setAttribute("href", "/de/data")
+        } else if (language == "de" && currentPage == 6) {
+            languageButton.setAttribute("href", "/data")
+        }
+    })
+}
