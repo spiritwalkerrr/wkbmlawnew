@@ -144,11 +144,12 @@ const footerHide = () => {
 // LOAD IMAGES SCRIPT
 let imagesLoaded = false;
 const loadImages = () => {
-    if (!imagesLoaded) {
+    if (!imagesLoaded && window.innerWidth >=768) {
         lawyerImages[0].classList.add("wohlmacherPicture")
         lawyerImages[1].classList.add("kaiserPicture")
         lawyerImages[2].classList.add("beckerPicture");
         lawyerImages[3].classList.add("mohrEggerPicture")
+    } else if (!imagesLoaded) {
         mobileImages[0].classList.add("wohlmacherMobile");
         mobileImages[1].classList.add("kaiserMobile");
         mobileImages[2].classList.add("beckerMobile");
