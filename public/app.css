@@ -636,7 +636,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-    filter: saturate(115%) brightness(95%)
+    filter: saturate(112%) brightness(97%) 
 }
 .kaiserMobile{
     background: url("/images/nicole.png");
@@ -645,7 +645,7 @@ main {
     background-size: cover;
     background-size: 70%;
     background-position: top;
-    filter: saturate(115%) brightness(95%)
+    filter: saturate(112%) brightness(97%)
 }
 
 /* BECKER */
@@ -674,7 +674,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-    filter:saturate(110%)
+    filter:saturate(110%) brightness(98%)
 }
 .mohrEggerMobile{
     background: url("/images/sabine.png");
@@ -683,7 +683,7 @@ main {
     background-size: cover;
     background-size: 75%;
     background-position: top;
-    filter:saturate(110%)
+    filter:saturate(110%) brightness(98%)
 }
 
 /* CONTACT */
