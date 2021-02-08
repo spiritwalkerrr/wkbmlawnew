@@ -616,16 +616,16 @@ main {
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: top;
-    filter: saturate(80%)
+    filter: saturate(80%) brightness(105%)
 }
 .wohlmacherMobile{
     background: url("/images/fritz.png");
     margin-top: 20px;
     margin-left: 20px;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 95%;
     background-position: top;
-    filter: saturate(80%)
+    filter: saturate(95%) brightness(105%)
 }
 
 /* KAISER */
@@ -636,7 +636,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-    filter: saturate(120%)
+    filter: saturate(115%) brightness(95%)
 }
 .kaiserMobile{
     background: url("/images/nicole.png");
@@ -645,7 +645,7 @@ main {
     background-size: cover;
     background-size: 70%;
     background-position: top;
-    filter: saturate(120%)
+    filter: saturate(115%) brightness(95%)
 }
 
 /* BECKER */
@@ -674,7 +674,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-    filter:saturate(120%)
+    filter:saturate(110%)
 }
 .mohrEggerMobile{
     background: url("/images/sabine.png");
@@ -683,7 +683,7 @@ main {
     background-size: cover;
     background-size: 75%;
     background-position: top;
-    filter:saturate(120%)
+    filter:saturate(110%)
 }
 
 /* CONTACT */
