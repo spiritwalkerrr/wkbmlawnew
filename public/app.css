@@ -186,7 +186,7 @@ header {
 /* MOUSEDETECT */
 
 .mouseDetect{
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 300px;
     left: 0;
@@ -252,7 +252,6 @@ header {
     text-decoration: none;
     transition: 250ms;
     padding: 4px;
-    padding-top: 7px;
     border-radius: 3px;
 }
 
@@ -343,7 +342,7 @@ main {
 .grayOverlay{
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     background: white;
     top: 0;
     left: 300px;
@@ -390,12 +389,12 @@ main {
     /* SETS THE WIDTH OF THE CONTAINER FOR THE MAIN CONTENT */
     --containerWidth: 60%;
     /* FONT FOR THE H2 IN THE ABOUT CONTAINER */
-    --containerH2Font: normal normal 500 33px/36px 'HelveticaKVAFont', "arial", sans-serif;
+    --containerH2Font: normal normal 500 30px/36px 'HelveticaKVAFont', "arial", sans-serif;
     /* FONT FOR THE PARAGRAPHS IN THE ABOUT CONTAINER */
     --containerPFont: normal normal 100 18px/22px 'HelveticaKVAFont', "arial", sans-serif;
     ;
     /* SETS THE PADDING OF THE H2 IN THE CONTAINERS */
-    --h2Padding: 25px;
+    --h2Padding: 20px;
 }
 
 .container {
@@ -438,6 +437,9 @@ main {
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
+#aboutContainer p {
+    text-align: justify;
+}
 
 /* LAWYERS */
 
@@ -449,13 +451,13 @@ main {
     /* SETS THE HEIGHT OF THE NAME CONTAINER EXTENDED */
     --lawyerNameExtended: 230px;
     /* SETS THE FONT OF THE HEADERS(3) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH3Font: normal normal 300 27px/46px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerContainerH3Font: normal normal 300 25px/46px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE HEADERS(4) IN THE INDIVIDUAL CONTAINERS */
-    --lawyerContainerH4Font: normal normal 300 23px/30px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerContainerH4Font: normal normal 300 22px/30px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER NAME LIST */
-    --lawyerNameFont: normal normal 200 18px/18px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerNameFont: normal normal 200 17px/18px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE FONT OF THE LAWYER INFO LIST */
-    --lawyerInfoFont: normal normal 200 17px/20px 'HelveticaKVAFont', "arial", sans-serif;
+    --lawyerInfoFont: normal normal 200 17px/18px 'HelveticaKVAFont', "arial", sans-serif;
     /* SETS THE WIDTH OF THE WRAPPER THAT CONTAINS THE INFO ABOUT THE LAWYERS */
     --lawyerWrapperWidth: 80%;
 }
@@ -498,6 +500,9 @@ main {
     height: var(--lawyerContainerExtended);
     position: absolute;
     top: 0;
+}
+.lawyerPicture:hover{
+    filter: none;
 }
 .lawyerName {
     height: var(--lawyerContainerBase);
@@ -611,6 +616,7 @@ main {
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: top;
+    filter: saturate(80%)
 }
 .wohlmacherMobile{
     background: url("/images/fritz.png");
@@ -619,6 +625,7 @@ main {
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: top;
+    filter: saturate(80%)
 }
 
 /* KAISER */
@@ -629,6 +636,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
+    filter: saturate(120%)
 }
 .kaiserMobile{
     background: url("/images/nicole.png");
@@ -637,6 +645,7 @@ main {
     background-size: cover;
     background-size: 70%;
     background-position: top;
+    filter: saturate(120%)
 }
 
 /* BECKER */
@@ -665,6 +674,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
+    filter:saturate(120%)
 }
 .mohrEggerMobile{
     background: url("/images/sabine.png");
@@ -673,6 +683,7 @@ main {
     background-size: cover;
     background-size: 75%;
     background-position: top;
+    filter:saturate(120%)
 }
 
 /* CONTACT */
@@ -1249,7 +1260,7 @@ footer {
         color: black;
     }
     .phoneLanguages a {
-        padding: 5px 4px 4px 3px;
+        padding: 5px 4px 4px 5px;
         border-radius: 2px;
         text-decoration: none;
     }

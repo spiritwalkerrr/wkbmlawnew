@@ -33,6 +33,7 @@ const grayOverlay = document.querySelector(".grayOverlay")
 // NAV MENU TOGGLE FUNCTION
 // EXTENDS/RETRACTS THE NAV SIDE MENU AND FOOTER WHEN CALLED
 let navExtended = false;
+let noDelay = false;
 // false = Menu Hidden
 // true = Menu Extended
 const navToggle = () => {
@@ -46,7 +47,8 @@ const navToggle = () => {
         }, 20)
         setTimeout(() => {
             navExtended = true;
-        }, 250)
+        }, 150)
+        footerHide();
     } else { //HIDES THE MENU AND CHANGES THE STYLE OF THE NAV BUTTON BACK TO DEFAULT
         navButton.classList.remove("navButtonRotateIn");
         menu.classList.toggle("menuExtended");
@@ -57,7 +59,16 @@ const navToggle = () => {
             grayOverlay.classList.add("noDisplay");
         }, 150)
         mouseDetect.classList.add("noDisplay"); // we disable this to stop flickering of the menu bar
+        if (noDelay) {
+            footerShow();
+            noDelay = false;
+        } else {
+            setTimeout(() => {
+                footerShow();
+            }, 250);
+        }
     }
+
 }
 // SCRIPT TO HIDE THE TOP LEFT LANGUAGE BUTTONS ON PHONE UNLESS ON THE LANDING PAGE
 const languageToggle = () => {
@@ -71,33 +82,28 @@ const languageToggle = () => {
 navButton.addEventListener("click", () => {
     navButton.setAttribute("disabled", ""); //SPAM PROTECTION
     navToggle(); //EXTENDS/HIDES NAV
-    if (footer.classList.length == 1) {// length 1 means footer is shown
-        footerHide();
-    } else if (currentPage !== 1) {
-        footer.classList.remove("footerHidden")
-    }
+    noDelay = true;
     setTimeout(() => {
         navButton.removeAttribute("disabled", "");
     }, 250) //SPAM PROTECTION LASTS FOR 250MS
 })
 // TOGGLE SIDE BAR BY HOVERING OFF IT
-grayOverlay.addEventListener("mouseenter", (event) => {
-    if (event.target == grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
+grayOverlay.addEventListener("mouseenter", () => {
+    if (navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
         navToggle();
-        footerShow();
+        noDelay = true;
         mouseRemoved = true;
         navButton.setAttribute("disabled", "");
         setTimeout(() => {
             navButton.removeAttribute("disabled", "")
         }, 250);
     }
+    setTimeout(() => { //removes the menu if the user swipes across quickly
+        if(!grayOverlay.classList.contains("noDisplay")){
+            navToggle();
+        }
+    }, 250);
 })
-// grayOverlay.addEventListener("mouseenter", (event) => {
-//     if (event.target == grayOverlay && navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> HEADER
-//         navToggle();
-//         footerShow();
-//     }
-// })
 //MENU NAV BUTTON SPAM PROTECTION
 const menuLock = () => {
     for (let button of menuNavButton) {
@@ -134,13 +140,7 @@ const fixFooter = () => {
 }
 // SHOW AND HIDE FOOTER FOOTER FUNCTION
 const footerShow = () => {
-    if (bodyLargerThanWindow() && window.innerHeight >= 768) { // THIS RUNS WHEN COMING FROM A SCROLLABLE TO A NON SCROLLABLE PAGE
-        setTimeout(() => {
-            footer.classList.remove("footerHidden")
-        }, 250)
-    } else {
-        footer.classList.remove("footerHidden")
-    }
+    footer.classList.remove("footerHidden")
 }
 const footerHide = () => {
     footer.classList.add("footerHidden")
@@ -342,7 +342,6 @@ menuNavButton[0].addEventListener("click", () => {
         languageToggle();
         window.scrollTo(0, 0);
         showHome();
-        footerShow();
     }
 })
 menuNavButton[1].addEventListener("click", () => {
@@ -352,7 +351,6 @@ menuNavButton[1].addEventListener("click", () => {
         languageToggle();
         window.scrollTo(0, 0);
         showAbout();
-        footerShow();
     }
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "TEAM"
@@ -363,15 +361,11 @@ menuNavButton[2].addEventListener("click", () => {
         languageToggle();
         window.scrollTo(0, 0);
         showTeam();
-        setTimeout(() => {
-            footerShow();
-        }, 250)
     }
 })
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "CONTACT"
 menuNavButton[3].addEventListener("click", () => {
     navToggle();
-    footerShow();
     if (currentPage !== 4) {
         currentPage = 4;
         languageToggle();
@@ -382,7 +376,6 @@ menuNavButton[3].addEventListener("click", () => {
 //SCRIPT THAT SHOWS THE CORRECT MAIN SECTION FOR "LEGAL NOTICE"
 menuNavButton[4].addEventListener("click", () => {
     navToggle();
-    footerShow();
     if (currentPage !== 5) {
         currentPage = 5;
         languageToggle();
@@ -398,9 +391,6 @@ menuNavButton[5].addEventListener("click", () => {
         languageToggle();
         window.scrollTo(0, 0);
         showStmt();
-        setTimeout(() => {
-            footerShow();
-        }, 250)
     }
 })
 // EXTEND LAWYER DESCRIPTION SCRIPT
@@ -429,11 +419,6 @@ mouseDetect.addEventListener("mouseenter", () => {
     if (mouseRemoved) {
         navToggle(); //EXTENDS/HIDES NAV
         mouseRemoved = false;
-        if (footer.classList.length == 1) {// length 1 means footer is shown
-            footerHide();
-        } else if (currentPage !== 1) {
-            footer.classList.remove("footerHidden")
-        }
     }
 })
 window.addEventListener("mouseover", (event) => {
