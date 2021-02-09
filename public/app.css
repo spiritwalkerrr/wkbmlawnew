@@ -501,9 +501,6 @@ main {
     position: absolute;
     top: 0;
 }
-.lawyerPicture:hover{
-    filter: none;
-}
 .lawyerName {
     height: var(--lawyerContainerBase);
     width: auto;
