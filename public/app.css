@@ -188,7 +188,7 @@ header {
 .mouseDetect{
     position: fixed;
     height: 100%;
-    width: 300px;
+    width: 200px;
     left: 0;
 }
 
@@ -936,6 +936,9 @@ footer {
     #aboutContainer div {
         display: flex;
         margin-bottom: 20px;
+    }
+    .largeLineBreak{
+        display: none;
     }
     :root {
         /* SETS THE HEIGHT OF THE INDIVIDUAL LAWYER CONTAINERS UNEXTENDED */
