@@ -24,8 +24,6 @@ const chevron = document.querySelectorAll(".chevron");
 const lawyerImages = document.querySelectorAll(".lawyerPicture");
 const mobileImages = document.querySelectorAll(".mobilePicture")
 
-const map = document.querySelector(".map");
-const mapInfo = document.querySelector(".mapInfo")
 const contactInfo = document.querySelector(".contactInfo")
 const changeLanguage = document.querySelectorAll(".changeLanguage")
 const grayOverlay = document.querySelector(".grayOverlay")
@@ -160,14 +158,6 @@ const loadImages = () => {
         mobileImages[3].classList.add("mohrEggerMobile");
     }
 }
-// LOAD MAP ONLY WHEN "CONTACT IS ACCESSED TO REDUCE LAG/STUTTER ON BAD HARDWARE"
-let mapLoaded = false;
-const loadMap = () => {
-    if (mapLoaded == false) {
-        map.classList.add("mapLoaded");
-        mapLoaded = true;
-    }
-}
 // TOGGLE FUNCTIONS FOR MAIN CONTENT SECTIONS
 const showHome = () => {
     menuLock();
@@ -242,7 +232,6 @@ const showTeam = () => {
     }, 500)
 }
 const showContact = () => {
-    loadMap();
     menuLock();
     resetOpacity();
     homeContainer.classList.add("nullOpacity");
