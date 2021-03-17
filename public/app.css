@@ -345,7 +345,6 @@ main {
     position: fixed;
     background: white;
     top: 0;
-    /* left: 300px; */
     opacity: 0;
     transition: 150ms;
     z-index: 6;

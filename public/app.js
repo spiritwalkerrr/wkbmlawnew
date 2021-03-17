@@ -86,7 +86,7 @@ navButton.addEventListener("click", () => {
     }, 250) //SPAM PROTECTION LASTS FOR 250MS
 })
 // TOGGLE SIDE BAR BY HOVERING OFF IT
-grayOverlay.addEventListener("mouseenter", () => {
+menu.addEventListener("mouseleave", () => {
     if (navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
         navToggle();
         noDelay = true;
