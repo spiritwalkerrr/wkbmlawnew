@@ -179,7 +179,7 @@ header {
 .headerLogo {
     width: var(--headerLogoWidth);
     height: var(--headerLogoHeight);
-    background-image: url("/images/logo2.svg");
+    background-image: url("/images/logo.svg");
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -377,7 +377,7 @@ main {
     width: 60%;
     max-width: 800px;
     height: 100px;
-    background: url("/images/logo2.svg");
+    background: url("/images/logo.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
