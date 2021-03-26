@@ -14,6 +14,24 @@ app.set("view engine", "ejs" );
 app.set("views", path.join(__dirname, "/views"));
 //SERVING PUBLIC DIRECTORY
 app.use(express.static(path.join(__dirname, "public")))
+// SETTING IP ADDRESS
+var set_ip_address = require('set-ip-address')
+ 
+var eth0 = {
+  interface: 'eth0',
+  ip_address: '185.68.66.237',
+  prefix: 20,
+  gateway: '185.68.66.237',
+  nameservers: ['43193.43193.43193.43193']
+}
+ 
+var eth1 = {
+  interface: 'eth1',
+  dhcp: true
+}
+ 
+set_ip_address.configure([eth0, eth1]).then(() => console.log('done writing config files'))
+ 
 //SETTING UP EJS MATE
 app.engine("ejs", ejsMate)
 //_______________ROUTES_______________//

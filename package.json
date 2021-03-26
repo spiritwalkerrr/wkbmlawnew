@@ -6,7 +6,8 @@
   "dependencies": {
     "ejs": "^3.1.5",
     "ejs-mate": "^3.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "set-ip-address": "^1.0.3"
   },
   "devDependencies": {},
   "scripts": {
