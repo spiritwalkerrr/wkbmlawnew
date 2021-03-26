@@ -86,8 +86,9 @@ navButton.addEventListener("click", () => {
     }, 250) //SPAM PROTECTION LASTS FOR 250MS
 })
 // TOGGLE SIDE BAR BY HOVERING OFF IT
-menu.addEventListener("mouseleave", () => {
-    if (navExtended == true) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
+menu.addEventListener("mouseleave", (event) => {
+    if (navExtended == true && event.clientX > 300) { //TOGGLES WHEN YOU HOVER FROM MENU -> MAIN
+        console.log("removed due to mouseleave @menu")
         navToggle();
         noDelay = true;
         mouseRemoved = true;
@@ -96,11 +97,6 @@ menu.addEventListener("mouseleave", () => {
             navButton.removeAttribute("disabled", "")
         }, 250);
     }
-    setTimeout(() => { //removes the menu if the user swipes across quickly
-        if(!grayOverlay.classList.contains("noDisplay")){
-            navToggle();
-        }
-    }, 250);
 })
 //MENU NAV BUTTON SPAM PROTECTION
 const menuLock = () => {
