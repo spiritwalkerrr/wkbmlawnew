@@ -10,66 +10,47 @@ const path = require("path");
 const ejsMate = require("ejs-mate");
 //_______________MIDDLEWARE ETC_______________//
 //SETTING EJS AS VIEW ENGINE & SETTING THE PATH TO /VIEWS
-app.set("view engine", "ejs" );
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 //SERVING PUBLIC DIRECTORY
 app.use(express.static(path.join(__dirname, "public")))
-// SETTING IP ADDRESS
-var set_ip_address = require('set-ip-address')
- 
-var eth0 = {
-  interface: 'eth0',
-  ip_address: '185.68.66.237',
-  prefix: 20,
-  gateway: '185.68.66.237',
-  nameservers: ['43193.43193.43193.43193']
-}
- 
-var eth1 = {
-  interface: 'eth1',
-  dhcp: true
-}
- 
-set_ip_address.configure([eth0, eth1]).then(() => console.log('done writing config files'))
- 
 //SETTING UP EJS MATE
 app.engine("ejs", ejsMate)
 //_______________ROUTES_______________//
-//INDEX
-app.get("/", (req,res)=>{
+app.get("/", (req, res) => {
     res.render("index.ejs")
 });
-app.get("/de", (req,res)=>{
+app.get("/de", (req, res) => {
     res.render("indexDE.ejs")
 })
-app.get("/portrait", (req,res)=>{
+app.get("/portrait", (req, res) => {
     res.render("portrait.ejs")
 });
-app.get("/lawyers", (req,res)=>{
+app.get("/lawyers", (req, res) => {
     res.render("lawyers.ejs")
 });
-app.get("/contact", (req,res)=>{
+app.get("/contact", (req, res) => {
     res.render("contact.ejs")
 });
-app.get("/legal-notice", (req,res)=>{
+app.get("/legal-notice", (req, res) => {
     res.render("imp.ejs")
 });
-app.get("/data", (req,res)=>{
+app.get("/data", (req, res) => {
     res.render("stmt.ejs")
 });
-app.get("/de/portrait", (req,res)=>{
+app.get("/de/portrait", (req, res) => {
     res.render("portraitDE.ejs")
 });
-app.get("/de/lawyers", (req,res)=>{
+app.get("/de/lawyers", (req, res) => {
     res.render("lawyersDE.ejs")
 });
-app.get("/de/contact", (req,res)=>{
+app.get("/de/contact", (req, res) => {
     res.render("contactDE.ejs")
 });
-app.get("/de/legal-notice", (req,res)=>{
+app.get("/de/legal-notice", (req, res) => {
     res.render("impDE.ejs")
 });
-app.get("/de/data", (req,res)=>{
+app.get("/de/data", (req, res) => {
     res.render("stmtDE.ejs")
 });
 //RUNNING THE SERVER ON PORT 3K

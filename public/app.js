@@ -442,3 +442,9 @@ for (let languageButton of changeLanguage) {
         }
     })
 }
+
+// load images after 500ms
+
+setTimeout(()=>{
+    loadImages()
+},500)
