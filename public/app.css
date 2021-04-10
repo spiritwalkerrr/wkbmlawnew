@@ -366,7 +366,6 @@ main {
 }
 
 .homeIntro {
-    width: 55%;
     text-align: center;
     padding-top: 40px;
     font: var(--containerPFont);
@@ -920,7 +919,6 @@ footer {
     }
     .homeIntro {
         padding-top: 0;
-        width: 70%;
     }
     /* CONTAINER SETTINGS */
     .container{
