@@ -841,6 +841,7 @@ footer {
     display: flex;
     font-size: var(--footerFontSize);
     align-items: center;
+    text-align: center;
     justify-content: center;
     color: white;
 }
