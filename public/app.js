@@ -204,7 +204,6 @@ const showAbout = () => { //SHOWS "PORTRAIT"
     }, 500)
 }
 const showTeam = () => {
-    loadImages();
     menuLock();
     resetOpacity();
     homeContainer.classList.add("nullOpacity");
@@ -443,8 +442,3 @@ for (let languageButton of changeLanguage) {
     })
 }
 
-// load images after 500ms
-
-setTimeout(()=>{
-    loadImages()
-},500)
